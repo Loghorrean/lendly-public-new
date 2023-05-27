@@ -1,0 +1,28 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.content_separator {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-block: 1.5rem;
+    &__text {
+        display: block;
+        width: fit-content;
+        padding-inline: 1rem;
+        text-align: center;
+        @include typo.baseNormal;
+        background-color: var(--white-color);
+        position: relative;
+        z-index: 2;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        @include m.centerWithPositioning;
+        height: 1px;
+        background-color: var(--primary-gray-color-border);
+    }
+}

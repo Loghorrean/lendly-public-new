@@ -1,0 +1,37 @@
+.common_aside {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 60;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-color: var(--white-color);
+    min-width: 25rem;
+    width: 1px;
+    will-change: transform;
+    transition: margin-right 0.25s ease-in-out;
+    &___enter {
+        transform: translateX(100%);
+    }
+    &___enter_active {
+        transform: translateX(0);
+        transition: transform 0.25s ease-in-out;
+    }
+    &___enter_done {
+        transform: translateX(0);
+    }
+    &___exit {
+        transform: translateX(0);
+    }
+    &___exit_active {
+        transform: translateX(100%);
+        transition: transform 0.25s ease-in-out;
+    }
+    &___exit_done {
+        transform: translateX(100%);
+    }
+    &___expanded {
+        margin-right: 15rem;
+    }
+}

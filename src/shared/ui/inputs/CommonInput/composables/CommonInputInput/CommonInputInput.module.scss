@@ -1,0 +1,21 @@
+@use "src/shared/ui/typography/CommonText/CommonText.module" as cm;
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.common_input_input {
+    @include cm.commonText;
+    background-color: transparent;
+    border: none;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    @include typo.lgNormalText;
+    color: var(--primary-dark-color);
+    &___numeric {
+        @include m.hideNumericArrows;
+    }
+    &::placeholder {
+        @include typo.lgNormalText;
+        color: var(--primary-dark-color-lightest);
+    }
+}

@@ -1,0 +1,20 @@
+@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/mixins" as m;
+
+.common_aside_header {
+    max-height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--primary-gray-color-border);
+    &__heading {
+        letter-spacing: v.$letter-spacing-higher;
+        color: var(--primary-dark-color);
+        @include m.font-size(1rem);
+        font-weight: 600;
+        flex-grow: 1;
+    }
+}

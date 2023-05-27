@@ -1,0 +1,12 @@
+.common_navigation {
+    width: 100%;
+    border-bottom: 1px solid var(--primary-gray-color-border);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    &__elements {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}

@@ -1,0 +1,12 @@
+@use "../commonStyles" as common;
+@use "src/shared/styles/mixins" as m;
+
+.common_input {
+    @include common.commonInputStyles;
+    &___numeric {
+        @include m.hideNumericArrows;
+    }
+    &_container {
+        @include common.commonInputContainerStyles;
+    }
+}

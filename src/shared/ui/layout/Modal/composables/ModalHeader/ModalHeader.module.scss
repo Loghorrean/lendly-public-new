@@ -1,0 +1,14 @@
+@use "src/shared/styles/typography" as typo;
+
+.modal_header {
+    padding-block: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+    &__heading {
+        flex-grow: 1;
+        @include typo.lgNormalText;
+        font-weight: 600;
+    }
+}

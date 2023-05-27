@@ -1,0 +1,6 @@
+@use "../commonOverlay" as co;
+
+.secondary_overlay {
+    @include co.commonOverlay;
+    z-index: 70;
+}

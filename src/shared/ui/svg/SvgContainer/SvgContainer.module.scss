@@ -1,0 +1,23 @@
+@use "src/shared/styles/mixins" as m;
+
+.svg_container {
+    @include m.centerWithFlex;
+    &___12 {
+        @include m.box(0.75rem);
+    }
+    &___14 {
+        @include m.box(0.875rem);
+    }
+    &___16 {
+        @include m.box(1rem);
+    }
+    &___18 {
+        @include m.box(1.125rem);
+    }
+    &___20 {
+        @include m.box(1.25rem);
+    }
+    &___24 {
+        @include m.box(1.5rem);
+    }
+}

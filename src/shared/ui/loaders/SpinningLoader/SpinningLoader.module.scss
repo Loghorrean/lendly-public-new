@@ -1,0 +1,82 @@
+@use "src/shared/styles/mixins" as m;
+
+@keyframes rotateLoader {
+    0% {
+        rotate: 0;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes loaderOpacity {
+    to {
+        opacity: 1;
+    }
+}
+
+.spinning_loader {
+    &___small {
+        @include m.box(0.875rem);
+        & > .spinning_loader__dot {
+            font-size: 0.875rem;
+            & i {
+                @include m.box(0.375rem);
+            }
+        }
+    }
+    &___medium {
+        @include m.box(1.25rem);
+        & > .spinning_loader__dot {
+            font-size: 1.25rem;
+            & i {
+                @include m.box(calc(0.5rem + 1px));
+            }
+        }
+    }
+    &___high {
+        @include m.box(2rem);
+        & > .spinning_loader__dot {
+            font-size: 2rem;
+            & i {
+                @include m.box(0.875rem);
+            }
+        }
+    }
+    &__dot {
+        display: inline-block;
+        @include m.box(1em);
+        transform: rotate(45deg);
+        animation: rotateLoader 1.2s infinite linear;
+        position: relative;
+        &_item {
+            position: absolute;
+            display: block;
+            background-color: var(--primary-purple-color);
+            animation: loaderOpacity 1s infinite linear alternate;
+            opacity: 0.3;
+            border-radius: 100%;
+            transform: scale(0.75);
+            transform-origin: 50% 50%;
+            &:nth-child(1) {
+                top: 0;
+                inset-inline-start: 0;
+            }
+            &:nth-child(2) {
+                top: 0;
+                inset-inline-end: 0;
+                animation-delay: 0.4s;
+            }
+            &:nth-child(3) {
+                inset-inline-end: 0;
+                bottom: 0;
+                animation-delay: 0.8s;
+            }
+            &:nth-child(4) {
+                bottom: 0;
+                inset-inline-start: 0;
+                animation-delay: 1.2s;
+            }
+        }
+    }
+}

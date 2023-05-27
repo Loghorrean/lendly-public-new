@@ -1,0 +1,27 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/variables" as v;
+
+.common_table {
+    border-radius: 0.375rem;
+    background-color: var(--white-color);
+    &__header {
+        border-bottom: var(--primary-gray-color-border);
+        background-color: var(--primary-gray-color);
+        &_element {
+            padding: 1rem;
+            &:not(:first-child) {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    height: 1.375rem;
+                    width: 1px;
+                    background-color: var(--primary-gray-color-border);
+                    left: 0;
+                    @include m.centerColumnWithPositioning;
+                }
+            }
+        }
+    }
+    &__content {
+    }
+}

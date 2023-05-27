@@ -1,0 +1,80 @@
+@use "src/shared/styles/mixins" as m;
+
+.tooltip {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    &__content {
+        position: absolute;
+        opacity: 0;
+        z-index: 10;
+        &___enter {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+        &___enter_active {
+            max-height: fit-content;
+            opacity: 1;
+            visibility: visible;
+            transition-property: opacity;
+            transition-timing-function: ease-in-out;
+        }
+        &___enter_done {
+            max-height: fit-content;
+            visibility: visible;
+            opacity: 1;
+        }
+        &___exit {
+            max-height: fit-content;
+            visibility: visible;
+            opacity: 1;
+        }
+        &___exit_active {
+            max-height: fit-content;
+            opacity: 0;
+            visibility: visible;
+            transition-property: opacity;
+            transition-timing-function: ease-in-out;
+        }
+        &___exit_done {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+        &___top {
+            @include m.centerLineWithPositioning;
+            bottom: calc(100% + 1rem);
+        }
+        &___bottom {
+            @include m.centerLineWithPositioning;
+            top: calc(100% + 1rem);
+        }
+        &___left {
+            @include m.centerColumnWithPositioning;
+            right: 1rem;
+        }
+        &___right {
+            @include m.centerColumnWithPositioning;
+            left: 1rem;
+        }
+        &___right_bottom {
+            top: calc(100% + 1rem);
+            left: 1rem;
+        }
+        &___left_bottom {
+            top: calc(100% + 1rem);
+            right: 1rem;
+        }
+        &___right_top {
+            bottom: calc(100% + 1rem);
+            left: 1rem;
+        }
+        &___left_top {
+            bottom: calc(100% + 1rem);
+            right: 1rem;
+        }
+    }
+}

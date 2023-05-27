@@ -1,0 +1,12 @@
+.pagination_content {
+    &__loading {
+        display: flex;
+        justify-content: center;
+        padding-block: 2rem;
+    }
+    &__no_data {
+        display: flex;
+        justify-content: center;
+        padding-block: 2rem;
+    }
+}

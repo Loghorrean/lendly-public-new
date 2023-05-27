@@ -1,0 +1,38 @@
+@use "src/shared/styles/variables" as v;
+
+.multi_select__content {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    overflow: hidden;
+    max-height: 0;
+    z-index: 5;
+    width: calc(max(100%, 10rem));
+    background-color: var(--white-color);
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease-in-out;
+    &___active {
+        overflow: scroll;
+        scrollbar-width: none;
+        max-height: 14rem;
+    }
+}
+
+.multi_select__element {
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.5s ease-in-out;
+    padding: 0.5rem;
+
+    &:not(&___selected):hover {
+        color: var(--primary-green-color);
+    }
+    &___selected {
+        background-color: var(--primary-green-color);
+        color: var(--white-color);
+    }
+}
+
+.multi_select__list {
+}
