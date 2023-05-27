@@ -1,0 +1,64 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/variables" as v;
+
+.radio_button {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 1rem;
+    padding-left: 2.5rem;
+    print-color-adjust: exact;
+    &__input {
+        box-sizing: border-box;
+        padding: 0;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        width: 1rem;
+        height: 1.25rem;
+        opacity: 0;
+    }
+    &__label {
+        position: relative;
+        margin-bottom: 0;
+        &___disabled {
+            color: var(--pale-color);
+            &::after,
+            &::before {
+                cursor: initial;
+            }
+        }
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            cursor: pointer;
+            left: -2.5rem;
+            display: block;
+            border-radius: 50%;
+        }
+        &::before {
+            border: 2px solid var(--gray-color);
+            pointer-events: none;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            border-radius: 50%;
+            @include m.box(1rem);
+            background-color: var(--white-color);
+            top: -0.1rem;
+        }
+        &::after {
+            @include m.box(0.625rem);
+            background-color: var(--white-color);
+            top: 0.2rem;
+            left: -2.2rem;
+            transition: background-color 0.15s ease-in-out;
+        }
+    }
+    &__input:hover ~ &__label::before {
+        border-color: var(--black-color);
+    }
+    &__input:checked ~ &__label::after {
+        background-color: var(--primary-green-color);
+    }
+}

@@ -1,0 +1,16 @@
+@use "src/shared/styles/mixins" as m;
+
+.image_gallery_images {
+    position: relative;
+    @include m.box(100%);
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        z-index: 4;
+        & > div {
+            flex: 1;
+            height: 100%;
+        }
+    }
+}

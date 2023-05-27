@@ -1,0 +1,19 @@
+.option_box__head {
+    cursor: pointer;
+    background-color: var(--white-color);
+    padding: 1rem 1rem 1rem 1.25rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &:active,
+    &:focus-within,
+    &[aria-expanded="true"] {
+        outline: 2px solid var(--primary-purple-color);
+    }
+}
+
+.option_box__selected {
+    flex-grow: 1;
+    font-weight: 400;
+}

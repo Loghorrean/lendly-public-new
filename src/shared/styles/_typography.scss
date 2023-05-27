@@ -1,0 +1,43 @@
+@use "mixins" as m;
+@use "variables" as v;
+
+@mixin lgNormalText {
+    @include m.font-size(1rem);
+    font-weight: 400;
+    letter-spacing: v.$letter-spacing-higher;
+}
+
+@mixin baseNormal {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: v.$letter-spacing;
+}
+
+@mixin baseStrong {
+    @include baseNormal;
+    font-weight: 600;
+}
+
+@mixin smNormal {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    letter-spacing: v.$letter-spacing-lesser;
+    font-weight: 400;
+}
+
+@mixin smStrong {
+    @include smNormal;
+    font-weight: 600;
+}
+
+@mixin xlNormal {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: v.$letter-spacing-higher;
+}
+
+@mixin xlStrong {
+    @include xlNormal;
+    font-weight: 600;
+}

@@ -1,0 +1,7 @@
+@use "src/shared/styles/mixins" as m;
+
+#secondary-aside-container {
+    position: fixed;
+    right: 0;
+    @include m.centerColumnWithPositioning;
+}

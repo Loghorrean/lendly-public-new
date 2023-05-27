@@ -1,0 +1,129 @@
+@use "variables" as v;
+
+@mixin centerWithFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerWithPositioning($additionalTransform: "") {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) #{$additionalTransform};
+}
+
+@mixin centerLineWithPositioning($additionalTransform: "") {
+    left: 50%;
+    transform: translateX(-50%) #{$additionalTransform};
+}
+
+@mixin centerColumnWithPositioning($additionalTransform: "") {
+    top: 50%;
+    transform: translateY(-50%) #{$additionalTransform};
+}
+
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}
+
+$widths: (
+    min: min-width,
+    max: max-width,
+);
+
+//TODO: REWORK TO RANGE SELECTORS
+@mixin media($breakpoint, $width: "max") {
+    @if (map-has-key($widths, $width) == false) {
+        @error "Please, provide valid width parameter";
+    }
+    @if (map-has-key(v.$container-breakpoints, $breakpoint)) {
+        $breakpoint: map-get(v.$container-breakpoints, $breakpoint);
+        @if ($width == "max") {
+            $breakpoint: calc($breakpoint - 1px);
+        }
+        @media screen and (#{$width + "-width"}: $breakpoint) {
+            @content;
+        }
+    } @else if (type-of($breakpoint) == "number") {
+        @media screen and (#{$width + "-width"}: $breakpoint) {
+            @content;
+        }
+    } @else {
+        @error "Please, provide valid breakpoint";
+    }
+}
+
+@mixin hideOnBreakpoint($breakpoint, $width: "max") {
+    @include media($breakpoint, $width) {
+        display: none !important;
+    }
+}
+
+@mixin scrollbarWidth() {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin lineClamp($number) {
+    @if (type-of($number) != "number") {
+        @error "Provide number of lines as number type";
+    }
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;
+}
+
+@mixin supportsSubgrid($value: true) {
+    @if ($value) {
+        @supports (grid-template-columns: subgrid) {
+            @content;
+        }
+    } @else {
+        @supports not (grid-template-columns: subgrid) {
+            @content;
+        }
+    }
+}
+
+@mixin mountAnimation() {
+    transition: all 0.5s;
+    opacity: 1;
+    &:not(.mounted) {
+        opacity: 0;
+    }
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    line-height: calc(1.5 * $size);
+}
+
+@mixin hideNumericArrows() {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+@mixin clearInput {
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin useInterFont {
+    font-family: "Inter", sans-serif !important;
+}
+
+@mixin useResizableImage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+}

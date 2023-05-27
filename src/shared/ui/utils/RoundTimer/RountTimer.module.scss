@@ -1,0 +1,21 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.round_timer {
+    @include m.centerWithFlex;
+    &__background,
+    &__progress {
+        fill: none;
+    }
+    &__background {
+        stroke: var(--primary-gray-color-border);
+    }
+    &__progress {
+        stroke: var(--primary-purple-color);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+    &__text {
+        @include typo.baseNormal;
+    }
+}

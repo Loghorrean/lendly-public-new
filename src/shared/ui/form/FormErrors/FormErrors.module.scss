@@ -1,0 +1,18 @@
+@use "src/shared/styles/variables" as v;
+
+.form_errors {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    & > li {
+        transition-property: opacity, transform;
+        transition-timing-function: ease-in, ease-out;
+        opacity: 0;
+        transform: translateX(-25%);
+        color: var(--error-color);
+        &[data-mounted="true"] {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

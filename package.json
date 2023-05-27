@@ -9,14 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.2.5",
-    "@types/react": "18.2.7",
-    "@types/react-dom": "18.2.4",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.4",
+    "dayjs": "^1.11.7",
+    "jotai": "^2.1.0",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "@types/react-transition-group": "^4.4.6",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "typescript": "5.0.4"
   }
 }

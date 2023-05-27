@@ -1,0 +1,44 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/variables" as v;
+
+.primary_button {
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+    @include m.centerWithFlex;
+    gap: 0.5rem;
+    box-shadow: 0 2px 0 rgba(19, 18, 19, 0.02);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+    &___purple {
+        background-color: var(--primary-purple-color);
+        color: var(--white-color);
+        border: 1px solid var(--primary-purple-color);
+        &:hover,
+        &:focus {
+            background-color: var(--primary-purple-color-lighter);
+        }
+    }
+    &___white {
+        background-color: var(--white-color);
+        border: 1px solid var(--primary-gray-color-border-lighter);
+        color: var(--primary-dark-color);
+    }
+    &___red {
+        background-color: var(--color-error-base);
+        color: var(--white-color);
+        border: 1px solid var(--color-error-base);
+    }
+    &[disabled="true"] {
+        color: var(--primary-dark-color-lightest);
+        border-color: var(--primary-gray-color-border-lighter);
+        background-color: var(--primary-gray-color);
+    }
+    &___wide {
+        @include m.font-size(1rem);
+        width: 100%;
+        flex-grow: 1;
+        padding-block: 0.5rem;
+        max-height: 2.5rem;
+    }
+}

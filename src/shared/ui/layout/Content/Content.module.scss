@@ -1,0 +1,12 @@
+.content {
+    min-height: 100vh;
+    display: grid;
+    position: relative;
+    grid-gap: 0;
+    &___basic {
+        grid-template-rows: auto 1fr auto;
+    }
+    &___no_header {
+        grid-template-rows: 1fr auto;
+    }
+}

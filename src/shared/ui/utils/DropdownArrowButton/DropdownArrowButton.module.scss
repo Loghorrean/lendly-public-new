@@ -1,0 +1,9 @@
+@use "src/shared/styles/variables" as v;
+
+.dropdown_arrow {
+    transition: rotate 0.25s linear;
+    rotate: 0;
+    &__active {
+        rotate: -180deg;
+    }
+}

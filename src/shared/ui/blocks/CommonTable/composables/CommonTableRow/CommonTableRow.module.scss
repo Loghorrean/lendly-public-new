@@ -1,0 +1,8 @@
+.common_table_row {
+    & > div {
+        padding: 1rem;
+    }
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--primary-gray-color-border);
+    }
+}

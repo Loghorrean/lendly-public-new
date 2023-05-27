@@ -1,0 +1,13 @@
+@mixin commonOverlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    background-color: var(--bg-mask-color);
+    transition: opacity 0.25s ease-in;
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

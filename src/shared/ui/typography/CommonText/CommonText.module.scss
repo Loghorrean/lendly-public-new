@@ -1,0 +1,28 @@
+@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/typography" as typo;
+
+@mixin commonText {
+    @include typo.baseNormal;
+}
+
+.common_text {
+    @include commonText;
+    &___dark {
+        color: var(--primary-dark-color);
+    }
+    &___gray {
+        color: var(--primary-gray-color-text);
+    }
+    &___dark_lighter {
+        color: var(--primary-dark-color-lighter);
+    }
+    &___purple {
+        color: var(--primary-purple-color);
+    }
+    &___white {
+        color: var(--white-color);
+    }
+    &___bold {
+        font-weight: 600;
+    }
+}

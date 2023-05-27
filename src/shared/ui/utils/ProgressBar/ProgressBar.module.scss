@@ -1,0 +1,23 @@
+.progress_bar {
+    width: 100%;
+    min-height: 0.5rem;
+    background-color: var(--bg-active-color);
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    &__filled {
+        width: 0;
+        transition: width 0.5s ease-in-out;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 0.5rem 0 0 0.5rem;
+        background-color: var(--primary-purple-color);
+        box-shadow: inset 0 -2px 1px #4c19dc;
+        &___finished {
+            border-radius: 0.5rem;
+        }
+    }
+}

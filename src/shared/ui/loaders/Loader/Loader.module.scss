@@ -1,0 +1,15 @@
+@use "src/shared/styles/mixins" as m;
+
+@keyframes loader-animation {
+    0% {
+        rotate: 0;
+    }
+    100% {
+        rotate: 1800deg;
+    }
+}
+
+.loader {
+    @include m.box(1rem);
+    animation: loader-animation 2s cubic-bezier(0.61, 1.63, 1, 0.67) infinite;
+}
