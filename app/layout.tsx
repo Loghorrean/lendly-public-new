@@ -1,5 +1,6 @@
-import './globals.css'
+import "@/src/main/index.scss";
 import {PropsWithChildren} from "react";
+import MainContent from "@/src/widgets/layout/MainContent";
 
 export const metadata = {
   title: 'Lendly',
@@ -11,7 +12,11 @@ export default function RootLayout({
 }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MainContent>
+          {children}
+        </MainContent>
+      </body>
     </html>
   )
 }

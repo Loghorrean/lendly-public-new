@@ -1,0 +1,9 @@
+@use "src/shared/styles/variables" as v;
+
+:root {
+    --letter-spacing-1: #{v.$letter-spacing-1};
+    --letter-spacing-2: #{v.$letter-spacing-2};
+    --letter-spacing-3: #{v.$letter-spacing-3};
+    --letter-spacing-4: #{v.$letter-spacing-4};
+    --letter-spacing-5: #{v.$letter-spacing-5};
+}

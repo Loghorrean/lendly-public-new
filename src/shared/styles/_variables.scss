@@ -1,32 +1,29 @@
 $white-color: #fff;
-$white-color-transparent: #ffffffbf;
 $black-color: #000;
-$primary-purple-color: #5e2cec;
-$primary-purple-color-lighter: #8857fa;
-$primary-purple-color-darker: #441cc7;
-$dark-color: #050505;
-$primary-dark-color: #050505e0;
-$primary-dark-color-lighter: #050505a6;
-$primary-dark-color-lightest: #05050540;
-$color-error-border: #ffa39e;
-$color-error-background: #fff1f0;
-$color-error-base: #ff4d4f;
-$primary-gray-border-color: #0505050f;
-$primary-gray-border-color-lighter: #05050526;
-$primary-gray-color-text: #05050573;
-$primary-gray-color: #05050505;
-$bg-mask-color: #00000073;
-$bg-active-color: #0505050a;
-$success-color: #52c41a;
+$font-logo-color: #24252B;
+$font-dark-color: #212226;
+$dark-background-color: #313236;
+$font-secondary-gray-color: #828282;
+$main-background-color: #4E4E4E;
+$gray-background-color: #B6B6B6;
+$divider-color: #b6b6b7;
+$primary-green-color: #05B768;
+$stroke-on-white-color: #E0E0E0;
+$font-medium-gray-color: #B2B2B2;
+$font-green-secondary-color: #129F60;
+$transparent-white-color-80: #FFFFFFCC;
+$light-theme-gray-color: #F5F5F5;
+$bg-green-color: #2B9159;
 
 $container-breakpoints: (
     "tablet": 73.75em,
     "mobile": 59em,
 );
 
-$letter-spacing: -0.5px;
-$letter-spacing-lesser: -0.25px;
-$letter-spacing-higher: -0.75px;
+$letter-spacing-1: -0.01em;
+$letter-spacing-2: -0.02em;
+$letter-spacing-3: -0.03em;
+$letter-spacing-4: -0.04em;
+$letter-spacing-5: -0.05em;
 
-$common-box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.08), 0 3px 0.375rem -0.25rem rgba(0, 0, 0, 0.12),
-    0 0.5rem 1.75rem 0.5rem rgba(0, 0, 0, 0.05);
+$base-block-height: 32.5rem;
