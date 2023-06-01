@@ -1,0 +1,20 @@
+@use "src/shared/styles/variables" as v;
+
+:root {
+    --white-color: #{v.$white-color};
+    --black-color: #{v.$black-color};
+    --font-logo-color: #{v.$font-logo-color};
+    --font-dark-color: #{v.$font-dark-color};
+    --dark-background-color: #{v.$dark-background-color};
+    --font-secondary-color: #{v.$font-secondary-gray-color};
+    --main-background-color: #{v.$main-background-color};
+    --gray-background-color: #{v.$gray-background-color};
+    --divider-color: #{v.$divider-color};
+    --primary-green-color: #{v.$primary-green-color};
+    --stroke-on-white-color: #{v.$stroke-on-white-color};
+    --font-medium-gray-color: #{v.$font-medium-gray-color};
+    --font-green-secondary-color: #{v.$font-green-secondary-color};
+    --transparent-white-color-80: #{v.$transparent-white-color-80};
+    --light-theme-gray-color: #{v.$light-theme-gray-color};
+    --bg-green-color: #{v.$bg-green-color};
+}

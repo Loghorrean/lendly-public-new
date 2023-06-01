@@ -3,7 +3,7 @@
 import { useEvent } from "@/src/shared/utils";
 import { useEffect } from "react";
 
-function useWindowEvent(type: keyof WindowEventHandlersEventMap, cb: (event: Event) => void) {
+function useWindowEvent(type: keyof GlobalEventHandlersEventMap, cb: (event: Event) => void) {
     const eventCb = useEvent(cb);
 
     useEffect(() => {

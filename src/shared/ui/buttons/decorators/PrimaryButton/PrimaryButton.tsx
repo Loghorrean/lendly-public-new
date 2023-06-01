@@ -5,7 +5,7 @@ import styles from "./PrimaryButton.module.scss";
 import { cn, ObjectValues, resultIf } from "@/src/shared/utils";
 
 export const PRIMARY_BUTTON_COLOR = {
-    PURPLE: styles.primary_button___purple,
+    BLACK: styles.primary_button___black,
     WHITE: styles.primary_button___white,
 } as const;
 
@@ -16,7 +16,7 @@ interface Props {
     wide?: boolean;
 }
 
-const PrimaryButton: ClassNameDecorator<PropsWithChildren<Props>> = ({ color, wide, children, className }) => {
+const PrimaryButton: ClassNameDecorator<PropsWithChildren<Props>> = ({ color = PRIMARY_BUTTON_COLOR.BLACK, wide, children, className }) => {
     return (
         <ClassInjector
             classNames={cn(styles.primary_button, color, resultIf(wide, styles.primary_button___wide))}
