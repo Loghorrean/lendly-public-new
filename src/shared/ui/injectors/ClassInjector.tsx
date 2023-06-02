@@ -8,7 +8,7 @@ interface Props {
 
 const ClassInjector = ({ classNames, oldClassName, children }: PropsWithChildren<Props>) => {
     if (Children.count(children) > 1 || isValueEmpty(children)) {
-        throw new Error("Wrong children type");
+        throw new Error(`Wrong children type (count: ${Children.count(children)})`);
     }
     const StyledChild = () => {
         const onlyChild = Children.only(children);

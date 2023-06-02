@@ -2,7 +2,10 @@
 @use "src/shared/styles/functions" as func;
 
 .hero_section {
+  position: fixed;
+  width: calc(100% - 1rem);
   background: url("../../../../public/images/landing/landing-background.png") center 25% no-repeat;
+  padding-bottom: 1.5rem;
   & > div {
     height: 100%;
   }

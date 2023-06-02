@@ -1,16 +1,12 @@
 "use client";
 
-import { useTooltipContext } from "@/src/shared/ui/utils/Tooltip/context/TooltipContext";
 import { PropsWithChildren } from "react";
 import styles from "./TooltipContent.module.scss";
-import { CommonText } from "@/src/shared/ui/typography";
-import { COMMON_TEXT_COLOR } from "@/src/shared/ui/typography/CommonText/CommonText";
 
 const TooltipContent = ({ children }: PropsWithChildren) => {
-    const data = useTooltipContext();
     return (
         <div className={styles.tooltip_content}>
-            <CommonText color={COMMON_TEXT_COLOR.WHITE}>{children}</CommonText>
+            <span>{children}</span>
             <svg
                 className={styles.tooltip_content__arrow}
                 width="16"
