@@ -14,8 +14,10 @@ import {
 import {Container} from "@/src/shared/ui/layout";
 import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
+import React from "react";
 
 const HeroSection = () => {
+    console.log("RERENDER HERO SECTION")
     return (
         <MainSection className={styles.hero_section}>
             <Container>
@@ -54,4 +56,6 @@ const HeroSection = () => {
     );
 }
 
-export default HeroSection;
+const MemoizedHeroSection = React.memo(HeroSection);
+
+export default MemoizedHeroSection;

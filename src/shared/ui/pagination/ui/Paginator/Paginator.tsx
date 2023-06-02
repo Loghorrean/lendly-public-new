@@ -10,8 +10,6 @@ import { cn, getQueryObject, resultIf } from "@/src/shared/utils";
 import PaginationArrowLeft from "@/src/shared/ui/svg/pagination/PaginationArrowLeft";
 import PaginationArrowRight from "@/src/shared/ui/svg/pagination/PaginationArrowRight";
 import Loader from "@/src/shared/ui/loaders/Loader";
-import { CommonText } from "@/src/shared/ui/typography";
-import { COMMON_TEXT_COLOR } from "@/src/shared/ui/typography/CommonText/CommonText";
 
 type PaginatorQuery = {
     [key: string]: number;
@@ -65,12 +63,7 @@ const Paginator = () => {
                             resultIf(isActive, cn(styles.my_page_link___active, styles.my_page_link_container))
                         )}
                     >
-                        <CommonText
-                            bold={isActive}
-                            color={isActive ? COMMON_TEXT_COLOR.PURPLE : COMMON_TEXT_COLOR.DARK}
-                        >
-                            {i + 1}
-                        </CommonText>
+                        <span>{i + 1}</span>
                     </ProjectLink>
                 </li>
             );

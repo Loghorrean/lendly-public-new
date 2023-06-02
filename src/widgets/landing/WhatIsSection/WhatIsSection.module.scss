@@ -1,0 +1,48 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.what_is_section {
+  padding-bottom: 6.5rem;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -6.5rem;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(var(--dark-background-color-rgb), 0.25);
+    }
+  }
+  &__caption {
+    text-transform: uppercase;
+    @include typo.captionText;
+  }
+  &__main {
+    max-width: calc(100% - 1rem);
+  }
+  &__main_text {
+    margin-bottom: 1.5rem;
+  }
+  &__gray_text {
+    color: var(--font-secondary-color);
+  }
+  &__crest {
+    margin-bottom: 1rem;
+  }
+  &__license {
+    @include typo.secondaryText;
+    margin-bottom: 3.25rem;
+    max-width: 24.375rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__more {
+    max-width: 20.25rem;
+    justify-content: space-between;
+  }
+}

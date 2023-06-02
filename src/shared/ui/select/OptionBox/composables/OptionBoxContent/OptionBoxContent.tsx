@@ -4,7 +4,6 @@ import { CSSTransition } from "react-transition-group";
 import { useOptionBoxContext } from "@/src/shared/ui/select/OptionBox/context/OptionBoxContext";
 import { cn, isNotEmpty, isScrollable, useEffectOnUpdate } from "@/src/shared/utils";
 import { maintainScrollVisibility } from "@/src/shared/utils/dom";
-import { CommonText } from "@/src/shared/ui/typography";
 
 interface Props<T> extends AllHTMLAttributes<HTMLDivElement> {
     onSelected: (selected: T) => void;
@@ -43,7 +42,7 @@ const OptionBoxContent = <T,>({ onSelected, ...props }: Props<T>) => {
                             onClick={() => selectOption(option)}
                             className={styles.option_box__item}
                         >
-                            <CommonText>{render(option)}</CommonText>
+                            <span>{render(option)}</span>
                         </li>
                     );
                 })}
