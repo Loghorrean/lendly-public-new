@@ -1,16 +1,28 @@
 .header {
-    background: var(--gray-background-color);
+    background: linear-gradient(180deg, #F4F3F4 -37.5%, rgba(247, 246, 247, 0) 92.54%);
     border-radius: 0 0 1rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     max-height: 4.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem 0.5rem;
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        &::after {
+            content: "";
+            background-color: var(--dark-background-color);
+            display: block;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: -1rem;
+            left: 0;
+            opacity: 0.25;
+        }
     }
     &__navigation {
         display: flex;

@@ -11,3 +11,7 @@
     $arr: append($arr, $str);
     @return $arr;
 }
+
+@function hexToRgb($hex) {
+    @return red($hex), green($hex), blue($hex);
+}

@@ -1,7 +1,5 @@
+@use "@/src/shared/styles/typography" as typo;
+
 .primary_heading {
-    color: var(--primary-dark-color);
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-weight: 600;
-    letter-spacing: -1.5px;
+    @include typo.primaryHeading;
 }
