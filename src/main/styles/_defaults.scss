@@ -24,8 +24,14 @@ body {
     padding: 0.5rem;
 }
 
+::selection {
+    background-color: var(--primary-green-color);
+    color: var(--white-color);
+}
+
 a {
     text-decoration: none;
+    color: var(--font-dark-color);
 }
 
 ul {

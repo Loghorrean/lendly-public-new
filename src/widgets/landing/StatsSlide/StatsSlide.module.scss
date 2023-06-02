@@ -1,0 +1,52 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/variables" as v;
+
+.stats_slide {
+  display: flex;
+  max-width: 27.5rem;
+  position: absolute;
+  &___enter {
+    opacity: 0;
+    z-index: 25;
+  }
+  &___enter_active {
+    transition: z-index 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+    z-index: 30;
+  }
+  &___enter_done {
+    opacity: 1;
+    z-index: 30;
+  }
+  &___exit {
+    opacity: 1;
+    z-index: 30;
+  }
+  &___exit_active {
+    transition: z-index 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 25;
+  }
+  &___exit_done {
+    opacity: 0;
+    z-index: 25;
+  }
+  &__value {
+    margin-right: 0.75rem;
+    font-weight: 500;
+    font-size: 5rem;
+    line-height: 94%;
+    letter-spacing: v.$letter-spacing-5;
+    display: flex;
+    &, & > * {
+      @include typo.trimProperties;
+    }
+  }
+  &__prefix {
+    margin-right: 0.375rem;
+    @include typo.secondaryTextAccent;
+  }
+  &__text {
+    @include typo.secondaryText;
+  }
+}

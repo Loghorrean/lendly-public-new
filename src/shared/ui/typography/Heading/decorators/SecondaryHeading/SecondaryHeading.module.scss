@@ -1,8 +1,5 @@
-@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/typography" as typo;
 
 .secondary_heading {
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    letter-spacing: v.$letter-spacing-higher;
+    @include typo.secondaryHeading;
 }

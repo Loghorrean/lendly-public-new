@@ -1,0 +1,19 @@
+@use "src/shared/styles/mixins" as m;
+
+.primary_button_arrow {
+  border-radius: 50%;
+  @include m.box(2.5rem);
+  @include m.centerWithFlex;
+  &___white {
+    background-color: var(--white-color);
+    & svg > path {
+      fill: var(--font-dark-color);
+    }
+  }
+  &___black {
+    background-color: var(--dark-background-color);
+    & svg > path {
+      fill: var(--white-color);
+    }
+  }
+}

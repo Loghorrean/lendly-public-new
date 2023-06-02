@@ -1,0 +1,43 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/functions" as func;
+
+.hero_section {
+  background: url("../../../../public/images/landing/landing-background.png") center 25% no-repeat;
+  & > div {
+    height: 100%;
+  }
+  &__container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  &__footer {
+    padding-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    border-top: 1px solid rgba(var(--dark-background-color-rgb), 0.25);
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  &__second_heading {
+    max-width: 27.5rem;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__link {
+    flex-grow: 1;
+    justify-content: space-between;
+    @include typo.buttonBigText;
+  }
+}
