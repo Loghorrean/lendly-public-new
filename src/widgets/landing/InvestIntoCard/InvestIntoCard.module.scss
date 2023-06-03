@@ -1,0 +1,47 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.invest_into_card {
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  min-height: 42.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: var(--white-color);
+  background-repeat: no-repeat;
+  &__header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      @include m.centerLineWithPositioning;
+      top: 0;
+      background-color: rgba(var(--white-color-rgb), 0.2);
+      height: 100%;
+      width: 1px;
+    }
+  }
+  &__title {
+    @include typo.tertiaryHeading;
+  }
+  &__index {
+    @include typo.quaternaryHeading;
+  }
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    padding-top: 2rem;
+    border-top: 1px solid rgba(var(--white-color-rgb), 0.2);
+  }
+  &__info {
+    grid-column: 2 / 3;
+    @include typo.primaryText;
+    max-width: 27.5rem;
+  }
+}

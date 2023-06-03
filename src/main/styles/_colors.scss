@@ -3,6 +3,7 @@
 
 :root {
     --white-color: #{v.$white-color};
+    --white-color-rgb: #{func.hexToRgb(v.$white-color)};
     --black-color: #{v.$black-color};
     --font-logo-color: #{v.$font-logo-color};
     --font-dark-color: #{v.$font-dark-color};
