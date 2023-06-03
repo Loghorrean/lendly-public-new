@@ -14,12 +14,13 @@ import {
 import {Container} from "@/src/shared/ui/layout";
 import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
-import React from "react";
+import React, {ForwardedRef} from "react";
+import {BlockProps} from "@/src/shared/utils";
 
-const HeroSection = () => {
+const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     console.log("RERENDER HERO SECTION")
     return (
-        <MainSection className={styles.hero_section}>
+        <MainSection className={styles.hero_section} ref={ref}>
             <Container>
                 <div className={styles.hero_section__container}>
                     <div></div>
@@ -56,6 +57,7 @@ const HeroSection = () => {
     );
 }
 
-const MemoizedHeroSection = React.memo(HeroSection);
+const ForwardedHeroSection = React.forwardRef(HeroSection);
+const MemoizedHeroSection = React.memo(ForwardedHeroSection);
 
 export default MemoizedHeroSection;
