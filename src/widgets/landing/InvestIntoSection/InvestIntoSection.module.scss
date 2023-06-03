@@ -3,4 +3,25 @@
   &__green_text {
     color: var(--primary-green-color);
   }
+  &__cards {
+    margin-block: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__first_card {
+    background-color: var(--font-green-secondary-color);
+    background-image: url("../../../../public/images/landing/cards/card-1-background-1.png"), url("../../../../public/images/landing/cards/card-1-background-2.png");
+    background-position: right 25rem top 50%, center bottom;
+    background-size: 122px, cover;
+  }
+  &__second_card {
+    background-color: var(--dark-background-color);
+    background-image: url("../../../../public/images/landing/cards/card-2-background-1.png");
+    background-position: center bottom;
+    background-size: 90%;
+  }
+  &__more {
+    justify-content: space-between;
+  }
 }
