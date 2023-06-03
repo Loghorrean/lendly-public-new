@@ -1,0 +1,12 @@
+.info_block {
+  padding: 2rem;
+  min-height: 32.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  border: 1px solid var(--stroke-on-white-color);
+  & > img {
+    margin-inline: auto;
+  }
+}

@@ -8,6 +8,7 @@ import styles from "./styles.module.scss";
 import FinancingSection from "@/src/widgets/landing/FinancingSection";
 import ReturnedLoansSection from "@/src/widgets/landing/ReturnedLoansSection";
 import {useEffect, useRef} from "react";
+import LoanTermsSection from "@/src/widgets/landing/LoanTermsSection";
 
 export default function Home() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -16,8 +17,6 @@ export default function Home() {
     useEffect(() => {
         const callback = () => {
             const topDiff = parallaxRef.current!.getBoundingClientRect().top;
-            console.log(topDiff);
-            console.log(fixed.current)
             if (topDiff <= 0 && fixed.current) {
                 heroRef.current!.classList.add(styles.hero_section_unfixed);
                 parallaxRef.current?.classList.add(styles.parallax_block___unfixed);
@@ -45,6 +44,7 @@ export default function Home() {
                 <FinancingSection />
             </CommonBlock>
             <ReturnedLoansSection />
+            <LoanTermsSection />
         </div>
       </>
   );
