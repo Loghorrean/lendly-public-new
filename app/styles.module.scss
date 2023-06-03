@@ -1,6 +1,13 @@
 .parallax_block {
-  padding-top: 100vh;
+  margin-top: 100vh;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
   z-index: 40;
+  &___unfixed {
+    margin-top: initial;
+  }
+}
+
+.hero_section_unfixed {
+  position: initial;
 }
