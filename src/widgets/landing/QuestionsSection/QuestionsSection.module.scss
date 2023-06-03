@@ -1,0 +1,49 @@
+@use "src/shared/styles/typography" as typo;
+
+.questions_section {
+  &__heading {
+    margin-bottom: 2.5rem;
+  }
+  &__green_text {
+    color: var(--primary-green-color);
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__main_block {
+    grid-column: 1 / -1;
+  }
+  &__block_header {
+    @include typo.tertiaryHeading;
+    max-width: 26.875rem;
+  }
+  &__wallet {
+    max-width: 148px;
+    max-height: 193px;
+    transform: scaleX(-1);
+  }
+  &__block_footer {
+    @include typo.primaryText;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  &__multiline_text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    &, &:visited {
+      & > span {
+        text-decoration: underline;
+        color: var(--primary-green-color);
+      }
+    }
+  }
+}

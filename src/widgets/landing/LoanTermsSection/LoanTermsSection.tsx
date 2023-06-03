@@ -51,7 +51,7 @@ const LoanTermsSection = () => {
                         <header className={styles.loan_terms_section__block_header}>
                             Залог
                         </header>
-                        <ProjectImage src={macbookImage} alt="Gears image" />
+                        <ProjectImage src={macbookImage} alt="Computer image" />
                         <footer className={styles.loan_terms_section__block_footer}>
                             Недвижимость
                         </footer>
