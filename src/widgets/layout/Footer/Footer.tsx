@@ -1,7 +1,72 @@
+import styles from "./Footer.module.scss";
+import {ProjectImage} from "@/src/shared/ui/images";
+import footerLogo from "@/public/images/logo/footer-logo.png";
+import {ProjectLink} from "@/src/shared/ui/links";
+import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
+import footerCompanyNameImage from "@/public/images/footer-company-name.png";
+import ExternalLink from "@/src/shared/ui/links/ExternalLink";
+import CedroIcon from "@/src/shared/ui/svg/CedroIcon";
+import {Container} from "@/src/shared/ui/layout";
+
 const Footer = () => {
     return (
-        <footer>
-
+        <footer className={styles.footer}>
+            <Container>
+                <div className={styles.footer__grid}>
+                    <div>
+                        <ProjectImage src={footerLogo} alt="Lendly Logo" />
+                    </div>
+                    <div>
+                        <ProjectImage src={footerCompanyNameImage} alt="Company name" className={styles.footer__company_name} />
+                    </div>
+                    <address className={styles.footer__address}>
+                        <p>ООО "Лендли" ИНН: 7814733360</p>
+                        <p>&copy;2020 - 2023 ООО "Лендли"</p>
+                    </address>
+                    <ul className={styles.footer__links}>
+                        <li>
+                            <ProjectLink href="information-disclosure" className={styles.footer__link}>
+                                Ракрытие информации&nbsp;<ArrowRight fill="#ffffff" />
+                            </ProjectLink>
+                        </li>
+                        <li>
+                            <ProjectLink href="documents" className={styles.footer__link}>
+                                Актуальные документы&nbsp;<ArrowRight fill="#ffffff" />
+                            </ProjectLink>
+                        </li>
+                        <li>
+                            <ProjectLink href="archive" className={styles.footer__link}>
+                                Архив документов&nbsp;<ArrowRight fill="#ffffff" />
+                            </ProjectLink>
+                        </li>
+                        <li>
+                            <ProjectLink href="about-us" className={styles.footer__link}>
+                                О платформе&nbsp;<ArrowRight fill="#ffffff" />
+                            </ProjectLink>
+                        </li>
+                        <li>
+                            <ProjectLink href="faq" className={styles.footer__link}>
+                                FAQ&nbsp;<ArrowRight fill="#ffffff" />
+                            </ProjectLink>
+                        </li>
+                    </ul>
+                </div>
+                <footer className={styles.footer__bottom}>
+                    <address className={styles.footer__bottom_address}>
+                        <span>197342, г. Санкт-Петербург</span>
+                        <span>наб. Черной речки д. 47, стр. 2, помещ. 1-н, ч. 34</span>
+                    </address>
+                    <div className={styles.footer__bottom_right}>
+                        <ProjectLink href="#top" className={styles.footer__link_to_top}>
+                            Наверх <ArrowRight className={styles.footer__top_arrow} fill="#ffffff" />
+                        </ProjectLink>
+                        <ExternalLink href="https://www.cedro.agency" className={styles.footer__cedro}>
+                            Сделано в Cedro
+                            <CedroIcon />
+                        </ExternalLink>
+                    </div>
+                </footer>
+            </Container>
         </footer>
     );
 }

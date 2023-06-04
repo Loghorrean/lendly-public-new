@@ -16,10 +16,12 @@ import QuestionsSection from "@/src/widgets/landing/QuestionsSection";
 export default function Home() {
     const heroRef = useRef<HTMLDivElement | null>(null);
     const parallaxRef = useRef<HTMLDivElement | null>(null);
-    const fixed = useRef(true);
+    const fixed = useRef(false);
     useEffect(() => {
         const callback = () => {
             const topDiff = parallaxRef.current!.getBoundingClientRect().top;
+            console.log(topDiff);
+            console.log(fixed.current);
             if (topDiff <= 0 && fixed.current) {
                 heroRef.current!.classList.add(styles.hero_section_unfixed);
                 parallaxRef.current?.classList.add(styles.parallax_block___unfixed);
@@ -32,6 +34,7 @@ export default function Home() {
                 fixed.current = true;
             }
         }
+        callback();
         window.addEventListener("scroll", callback);
         return () => {
             window.removeEventListener("scroll", callback);
@@ -39,7 +42,7 @@ export default function Home() {
     }, []);
     return (
       <>
-        <HeroSection ref={heroRef} />
+        <HeroSection ref={heroRef} className={styles.hero_section_unfixed} />
         <div className={styles.parallax_block} ref={parallaxRef}>
             <CommonBlock first>
                 <WhatIsSection />

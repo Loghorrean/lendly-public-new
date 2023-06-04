@@ -13,7 +13,7 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 
 const WhatIsSection = () => {
     return (
-        <section className={styles.what_is_section}>
+        <section className={styles.what_is_section} id="what-is">
             <Container>
                 <div className={styles.what_is_section__container}>
                     <p className={styles.what_is_section__caption}>
