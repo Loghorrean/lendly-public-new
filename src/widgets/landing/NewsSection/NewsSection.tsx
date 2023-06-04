@@ -3,6 +3,14 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import {Container} from "@/src/shared/ui/layout";
+import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
+import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
+import {ProjectLink} from "@/src/shared/ui/links";
+import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow";
+import {
+    PRIMARY_BUTTON_ARROW_COLOR
+} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import NewsList from "@/src/widgets/landing/NewsList";
 
 const NewsSection = () => {
     return (
@@ -13,6 +21,13 @@ const NewsSection = () => {
                         СМИ о Lendly
                     </Heading>
                 </SecondaryHeading>
+                <NewsList />
+                <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow wide>
+                    <ProjectLink href="/blog">
+                        Все новости
+                        <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.BLACK} />
+                    </ProjectLink>
+                </PrimaryButton>
             </Container>
         </section>
     );
