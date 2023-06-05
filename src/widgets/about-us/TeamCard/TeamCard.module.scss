@@ -1,0 +1,54 @@
+@use "src/shared/styles/typography" as typo;
+
+.team_card {
+  border-radius: 1rem;
+  max-width: 20.25rem;
+  min-height: 28.75rem;
+  position: relative;
+  color: var(--white-color);
+  overflow: hidden;
+  &:nth-child(6) {
+    grid-column: 4 / 5;
+  }
+  &:nth-child(8) {
+    grid-column: 3 / 4;
+  }
+  &__content {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 10;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__image {
+    border-radius: inherit;
+    filter: grayscale(100%);
+  }
+  &__name {
+    @include typo.quaternaryHeading;
+  }
+  &__position {
+    @include typo.secondaryTextAccent;
+  }
+  &__description {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    transition: transform 0.375s ease-in-out;
+    transform: translateY(100%);
+    padding: 1.875rem 1.5rem;
+    @include typo.primaryText;
+    color: var(--white-color);
+    background:
+            linear-gradient(0deg, rgba(4, 172, 98, 0.96), rgba(4, 172, 98, 0.96)),
+            linear-gradient(360deg, rgba(0, 0, 0, 0.5) 13.41%, rgba(0, 0, 0, 0) 36.99%);
+  }
+  &:hover {
+    & > .team_card__description {
+      transform: translateY(0);
+    }
+  }
+}

@@ -7,6 +7,7 @@ import ParallaxBlock from "@/src/shared/ui/layout/ParallaxBlock";
 import CommonBlock from "@/src/shared/ui/blocks/CommonBlock";
 import WhatIsSection from "@/src/widgets/about-us/WhatIsSection";
 import DevPointsSection from "@/src/widgets/about-us/DevPointsSection";
+import TeamSection from "@/src/widgets/about-us/TeamSection";
 
 export default function AboutUs() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -20,6 +21,7 @@ export default function AboutUs() {
                     <WhatIsSection />
                     <DevPointsSection />
                 </CommonBlock>
+                <TeamSection />
             </ParallaxBlock>
         </>
     );
