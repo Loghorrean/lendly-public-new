@@ -19,7 +19,7 @@ import {BlockProps, cn} from "@/src/shared/utils";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
-        <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
+        <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref} style={{position: "initial"}}>
             <Container>
                 <div className={styles.hero_section__container}>
                     <div></div>

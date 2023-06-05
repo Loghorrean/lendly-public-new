@@ -1,0 +1,53 @@
+.dev_points_section {
+  padding-block: 6.5rem 8.75rem;
+  position: relative;
+  &__heading {
+    margin-bottom: 2.5rem;
+    position: sticky;
+    top: 7rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  &__first_card, &__third_card, &__fifth_card {
+    background-color: var(--bg-green-color);
+  }
+  &__second_card, &__fourth_card {
+    background-color: var(--dark-background-color);
+  }
+  &__first_card {
+    z-index: 11;
+    background-image: url("../../../../public/images/about-us/card-background-2019.png");
+  }
+  &__second_card {
+    z-index: 12;
+    background-image: url("../../../../public/images/about-us/card-background-2020.png");
+    background-position: center bottom;
+  }
+  &__third_card {
+    z-index: 13;
+    background-image: url("../../../../public/images/about-us/card-background-2021.png");
+    background-position: right bottom;
+  }
+  &__fourth_card {
+    z-index: 14;
+    background-image: url("../../../../public/images/about-us/card-background-2022.png");
+    &_content {
+      grid-column: 3 / -1;
+      max-width: 26.25rem;
+    }
+  }
+  &__fifth_card {
+    z-index: 15;
+    background-image: url("../../../../public/images/about-us/card-background-2023.png");
+    &_first_content {
+      grid-column: 1 / 2;
+    }
+    &_second_content {
+      grid-column: 3 / 4;
+    }
+  }
+}

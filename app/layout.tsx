@@ -11,7 +11,7 @@ export default function RootLayout({
   children,
 }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body>
         <div id="top"></div>
         <MainContent>

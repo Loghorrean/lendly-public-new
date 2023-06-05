@@ -1,0 +1,19 @@
+@use "src/shared/styles/typography" as typo;
+
+.what_is_section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    border-bottom: 1px solid var(--stroke-on-white-color);
+  }
+  &__left {
+    text-transform: uppercase;
+    @include typo.captionText;
+  }
+  &__right {
+    @include typo.secondaryHeading;
+  }
+  &__gray_text {
+    color: var(--font-medium-gray-color);
+  }
+}
