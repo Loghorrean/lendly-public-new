@@ -1,0 +1,21 @@
+@use "src/shared/styles/typography" as typo;
+
+.hero_section {
+  position: fixed;
+  width: calc(min(100%, 120rem));
+  background: url("../../../../public/images/about-us/hero-pic-about.png") right no-repeat;
+  padding-bottom: 1.5rem;
+  & > div {
+    height: 100%;
+  }
+  &__heading {
+    max-width: 56.25rem;
+    margin-bottom: 2rem;
+  }
+  &__green_text {
+    color: var(--primary-green-color);
+  }
+  &__link {
+    max-width: 20rem;
+  }
+}

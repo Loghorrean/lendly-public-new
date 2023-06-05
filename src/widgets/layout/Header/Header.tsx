@@ -11,7 +11,9 @@ const Header = () => {
         <header className={styles.header}>
             <Container>
                 <div className={styles.header__container}>
-                    <ProjectImage src={headerLogo} alt="Header logo" />
+                    <ProjectLink href="/">
+                        <ProjectImage src={headerLogo} alt="Header logo" />
+                    </ProjectLink>
                     <nav className={styles.header__navigation}>
                         <ul className={styles.header__links}>
                             <li>

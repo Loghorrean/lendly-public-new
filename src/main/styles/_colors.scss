@@ -9,11 +9,15 @@
     --font-dark-color: #{v.$font-dark-color};
     --dark-background-color: #{v.$dark-background-color};
     --dark-background-color-rgb: #{func.hexToRgb(v.$dark-background-color)};
+    --dark-background-color-active: #{v.$dark-background-color-active};
+    --medium-dark-background-color: #{v.$medium-dark-background-color};
     --font-secondary-color: #{v.$font-secondary-gray-color};
     --main-background-color: #{v.$main-background-color};
     --gray-background-color: #{v.$gray-background-color};
     --divider-color: #{v.$divider-color};
     --primary-green-color: #{v.$primary-green-color};
+    --primary-green-color-hover: #{v.$primary-green-color-hover};
+    --primary-green-color-active: #{v.$primary-green-color-active};
     --stroke-on-white-color: #{v.$stroke-on-white-color};
     --font-medium-gray-color: #{v.$font-medium-gray-color};
     --font-green-secondary-color: #{v.$font-green-secondary-color};
