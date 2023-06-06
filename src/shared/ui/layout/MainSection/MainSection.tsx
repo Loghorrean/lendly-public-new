@@ -4,7 +4,7 @@ import {BlockProps, cn} from "@/src/shared/utils";
 
 const MainSection = ({ children, className, ...props }: PropsWithChildren<BlockProps>, ref: ForwardedRef<HTMLDivElement>) => {
     return (
-        <section {...props} className={cn(styles.main_section, className)} ref={ref}>
+        <section {...props} className={cn(styles.main_section, className)} ref={ref} style={{position: "initial"}}>
             { children }
         </section>
     );

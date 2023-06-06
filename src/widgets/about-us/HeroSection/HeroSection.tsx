@@ -16,7 +16,7 @@ import {
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
-        <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref} style={{position: "initial"}}>
+        <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
             <Container>
                 <PrimaryHeading>
                     <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
