@@ -1,0 +1,7 @@
+@use "src/shared/styles/typography" as typo;
+
+.actual_documents {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10px, 1fr));
+  grid-gap: 1.5rem;
+}

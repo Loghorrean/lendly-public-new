@@ -1,0 +1,24 @@
+.requisites_section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+    padding-bottom: 7.5rem;
+    border-bottom: 1px solid var(--stroke-on-white-color);
+  }
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  &__tab {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--font-medium-gray-color);
+    transition: color 0.4s;
+    &[aria-current="true"] {
+      color: var(--font-dark-color);
+      text-decoration: none;
+    }
+  }
+}

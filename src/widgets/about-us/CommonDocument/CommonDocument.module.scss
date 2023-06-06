@@ -1,0 +1,52 @@
+@use "src/shared/styles/typography" as typo;
+
+.common_document {
+  padding: 2rem;
+  min-height: 20rem;
+  border: 1px solid var(--stroke-on-white-color);
+  border-radius: 1rem;
+  &__content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: 2.25rem;
+  }
+  &__title {
+    @include typo.primaryText;
+  }
+  &__link {
+    @include typo.secondaryTextAccent;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: 1.5rem;
+  }
+  &__file {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  &__mimetype {
+    @include typo.secondaryText;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  &:hover {
+    border: none;
+    box-shadow: 0 0.125rem 2rem rgba(0, 0, 0, 0.08);
+    & .common_document__mimetype {
+      font-weight: 500;
+    }
+    & .common_document__link {
+      text-decoration: none;
+      color: var(--primary-green-color);
+    }
+  }
+}
