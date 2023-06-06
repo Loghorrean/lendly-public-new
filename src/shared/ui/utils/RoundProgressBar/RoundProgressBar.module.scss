@@ -1,0 +1,18 @@
+@use "src/shared/styles/typography" as typo;
+
+.round_progress_bar {
+  &__background, &__progress {
+    fill: none;
+  }
+  &__background {
+    stroke: var(--light-theme-gray-color);
+  }
+  &__progress {
+    stroke: var(--primary-green-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  &__text {
+    @include typo.secondaryTextAccent;
+  }
+}
