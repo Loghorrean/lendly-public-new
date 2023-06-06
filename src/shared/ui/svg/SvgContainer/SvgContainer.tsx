@@ -10,6 +10,7 @@ export const SVG_CONTAINER_SIZE = {
     SIZE_20: styles.svg_container___20,
     SIZE_24: styles.svg_container___24,
     SIZE_40: styles.svg_container___40,
+    SIZE_48: styles.svg_container___48,
 } as const;
 
 export type SvgContainerSize = ObjectValues<typeof SVG_CONTAINER_SIZE>;
