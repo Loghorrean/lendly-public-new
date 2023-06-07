@@ -1,7 +1,8 @@
 import SvgContainer from "@/src/shared/ui/svg/SvgContainer";
 import {SvgProps} from "@/src/shared/ui/svg/SvgProps";
+import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
 
-const ForBorrowersFirstIcon = ({ size, ...props }: SvgProps) => {
+const ForBorrowersFirstIcon = ({ size = SVG_CONTAINER_SIZE.SIZE_40, ...props }: SvgProps) => {
     return (
         <SvgContainer size={size}>
             <svg {...props} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
