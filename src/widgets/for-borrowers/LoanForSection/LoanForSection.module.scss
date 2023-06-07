@@ -1,0 +1,21 @@
+@use "src/shared/styles/typography" as typo;
+
+.loan_for_section {
+  &__container {
+    padding-bottom: 6.5rem;
+    border-bottom: 1px solid var(--stroke-on-white-color);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__caption {
+    text-transform: uppercase;
+    @include typo.captionText;
+  }
+  &__text {
+    @include typo.secondaryHeading;
+    &___gray {
+      color: var(--font-medium-gray-color);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/variables" as v;
+
+.questions_section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__card {
+    grid-row: 2 / 3;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--stroke-on-white-color);
+    min-height: v.$base-block-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-position: center;
+    background-repeat: no-repeat;
+    &_heading {
+      @include typo.tertiaryHeading;
+    }
+    &_text {
+      @include typo.primaryText;
+    }
+    &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      &___small {
+        width: calc(min(50%, 21.125rem));
+      }
+    }
+    &_link {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      text-decoration: underline;
+      color: var(--primary-green-color) !important;
+    }
+    &___first {
+      background-image: url("../../../../public/images/for-investors/questions-card-back-1.png");
+    }
+    &___second {
+      background-image: url("../../../../public/images/for-investors/questions-card-back-2.png");
+    }
+  }
+}

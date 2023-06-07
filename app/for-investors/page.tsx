@@ -12,6 +12,9 @@ import styles from "./styles.module.scss";
 import LoanRegisterSection from "@/src/widgets/for-investors/LoanRegisterSection";
 import WantToInvestSection from "@/src/widgets/for-investors/WantToInvestSection";
 import ClosedClubSection from "@/src/widgets/for-investors/ClosedClubSection";
+import WhyInvestSection from "@/src/widgets/for-investors/WhyInvestSection";
+import PersonalCabinetSection from "@/src/widgets/for-investors/PersonalCabinetSection";
+import QuestionsSection from "@/src/widgets/for-investors/QuestionsSection/QuestionsSection";
 
 export default function ForInvestors() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -29,6 +32,9 @@ export default function ForInvestors() {
                 <LoanRegisterSection />
                 <WantToInvestSection />
                 <ClosedClubSection />
+                <WhyInvestSection />
+                <PersonalCabinetSection />
+                <QuestionsSection />
             </ParallaxBlock>
         </>
     );
