@@ -14,6 +14,7 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import StatsSlider from "@/src/widgets/for-investors/StatsSlider";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
@@ -23,9 +24,9 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                     <div>
                         <PrimaryHeading>
                             <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
-                                Получайте <span className={styles.hero_section__green_text}>
-                                пассивный доход
-                                </span> от инвестиций в проекты и займы
+                                Получайте <GreenText>
+                                    <span>пассивный доход</span>
+                                </GreenText> от инвестиций в проекты и займы
                             </Heading>
                         </PrimaryHeading>
                         <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow>

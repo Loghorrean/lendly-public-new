@@ -6,6 +6,12 @@ import HeroSection from "@/src/widgets/for-investors/HeroSection";
 import ParallaxBlock from "@/src/shared/ui/layout/ParallaxBlock";
 import CommonBlock from "@/src/shared/ui/blocks/CommonBlock";
 import WhereToInvestSection from "@/src/widgets/for-investors/WhereToInvestSection";
+import DifferencesSection from "@/src/widgets/for-investors/DifferencesSection";
+import FinancingSection from "@/src/widgets/landing/FinancingSection";
+import styles from "./styles.module.scss";
+import LoanRegisterSection from "@/src/widgets/for-investors/LoanRegisterSection";
+import WantToInvestSection from "@/src/widgets/for-investors/WantToInvestSection";
+import ClosedClubSection from "@/src/widgets/for-investors/ClosedClubSection";
 
 export default function ForInvestors() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -17,7 +23,12 @@ export default function ForInvestors() {
             <ParallaxBlock ref={parallaxRef}>
                 <CommonBlock first>
                     <WhereToInvestSection />
+                    <DifferencesSection />
                 </CommonBlock>
+                <FinancingSection className={styles.financing_section} />
+                <LoanRegisterSection />
+                <WantToInvestSection />
+                <ClosedClubSection />
             </ParallaxBlock>
         </>
     );

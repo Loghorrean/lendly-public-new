@@ -5,6 +5,8 @@
   min-height: 20rem;
   border: 1px solid var(--stroke-on-white-color);
   border-radius: 1rem;
+  box-shadow: 0 0.125rem 2rem transparent;
+  transition: box-shadow 0.5s border-color 0.5s;
   &__content {
     height: 100%;
     display: grid;
@@ -39,7 +41,7 @@
     justify-content: space-between;
   }
   &:hover {
-    border: none;
+    border-color: transparent;
     box-shadow: 0 0.125rem 2rem rgba(0, 0, 0, 0.08);
     & .common_document__mimetype {
       font-weight: 500;

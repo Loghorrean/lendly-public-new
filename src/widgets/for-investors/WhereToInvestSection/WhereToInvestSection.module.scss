@@ -1,6 +1,7 @@
 @use "src/shared/styles/typography" as typo;
 
 .where_to_invest_section {
+  margin-bottom: 8.75rem;
   &__heading {
     margin-bottom: 1rem;
     grid-column: 1 / -1;

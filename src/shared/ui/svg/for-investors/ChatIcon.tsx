@@ -1,0 +1,18 @@
+import SvgContainer from "@/src/shared/ui/svg/SvgContainer";
+import {SvgProps} from "@/src/shared/ui/svg/SvgProps";
+import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
+
+const ChatIcon = ({ size = SVG_CONTAINER_SIZE.SIZE_48, ...props }: SvgProps) => {
+    return (
+        <SvgContainer size={size}>
+            <svg {...props} width="46" height="43" viewBox="0 0 46 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10.0854" y="13.3433" width="5.94283" height="5.94283" fill="#05B768"/>
+                <rect x="20.0283" y="13.3433" width="5.94283" height="5.94283" fill="#05B768"/>
+                <rect x="29.9712" y="13.3433" width="5.94283" height="5.94283" fill="#05B768"/>
+                <path d="M2.19995 2.15161V0.651611H0.699951V2.15161H2.19995ZM43.7998 2.15161H45.2998V0.651611H43.7998V2.15161ZM2.19995 29.8848H0.699951V31.3848H2.19995V29.8848ZM2.20192 29.8848H3.70192V28.3848H2.20192V29.8848ZM2.20192 38.6503H0.701922V42.0732L3.21863 39.7531L2.20192 38.6503ZM11.7102 29.8848V28.3848H11.1243L10.6935 28.7819L11.7102 29.8848ZM43.7998 29.8848V31.3848H45.2998V29.8848H43.7998ZM2.19995 3.65161H43.7998V0.651611H2.19995V3.65161ZM3.69995 29.8848V2.15161H0.699951V29.8848H3.69995ZM2.20192 28.3848H2.19995V31.3848H2.20192V28.3848ZM0.701922 29.8848V38.6503H3.70192V29.8848H0.701922ZM3.21863 39.7531L12.7269 30.9877L10.6935 28.7819L1.18522 37.5474L3.21863 39.7531ZM43.7998 28.3848H11.7102V31.3848H43.7998V28.3848ZM42.2998 2.15161V29.8848H45.2998V2.15161H42.2998Z" fill="white"/>
+            </svg>
+        </SvgContainer>
+    );
+}
+
+export default ChatIcon;

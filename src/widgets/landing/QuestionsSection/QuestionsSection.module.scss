@@ -4,9 +4,6 @@
   &__heading {
     margin-bottom: 2.5rem;
   }
-  &__green_text {
-    color: var(--primary-green-color);
-  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));

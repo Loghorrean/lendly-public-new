@@ -12,6 +12,7 @@ import {
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import ReturnedLoanCard from "@/src/widgets/landing/ReturnedLoanCard";
 import mockImage from "@/public/images/landing/mock-pic.png";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const ReturnedLoansSection = () => {
     return (
@@ -19,7 +20,7 @@ const ReturnedLoansSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.returned_loans_section__heading}>
-                        Эти займы&nbsp;<span className={styles.returned_loans_section__green_text}>уже вернули</span>
+                        Эти займы&nbsp;<GreenText><span>уже вернули</span></GreenText>
                     </Heading>
                 </SecondaryHeading>
                 <div className={styles.returned_loans_section__list}>

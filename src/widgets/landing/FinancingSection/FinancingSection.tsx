@@ -1,5 +1,5 @@
 import styles from "./FinancingSection.module.scss";
-import {ObjectValues} from "@/src/shared/utils";
+import {BlockProps, cn, ObjectValues} from "@/src/shared/utils";
 import {useState} from "react";
 import {Container} from "@/src/shared/ui/layout";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
@@ -17,10 +17,10 @@ const LIST_TYPE = {
 
 type ListType = ObjectValues<typeof LIST_TYPE>;
 
-const FinancingSection = () => {
+const FinancingSection = ({ ...props }: BlockProps) => {
     const [currentList, setCurrentList] = useState<ListType>(LIST_TYPE.PROJECTS);
     return (
-        <section className={styles.financing_section}>
+        <section {...props} className={cn(styles.financing_section, props.className)}>
             <Container>
                 <ul className={styles.financing_section__tabs}>
                     <li
