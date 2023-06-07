@@ -1,0 +1,37 @@
+@use "src/shared/styles/typography" as typo;
+
+.why_invest_section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__heading {
+    position: sticky;
+    top: 7rem;
+    display: flex;
+    flex-direction: column;
+    &_container {
+      position: relative;
+    }
+  }
+  &__block {
+    &:not(:last-child) {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--stroke-on-white-color);
+    }
+    &:not(:first-child) {
+      padding-top: 2.5rem;
+    }
+    &_icon {
+      margin-bottom: 2rem;
+    }
+    &_heading {
+      margin-bottom: 1.5rem;
+      @include typo.tertiaryHeading;
+    }
+    &_text {
+      @include typo.primaryText;
+    }
+  }
+}
