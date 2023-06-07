@@ -17,6 +17,7 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const LoanTermsSection = () => {
     return (
@@ -24,7 +25,7 @@ const LoanTermsSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.loan_terms_section__heading}>
-                        <p>Хочу <span className={styles.loan_terms_section__green_text}>получить заём.</span></p>
+                        <p>Хочу <GreenText><span>получить заём.</span></GreenText></p>
                         <p>Какие условия?</p>
                     </Heading>
                 </SecondaryHeading>

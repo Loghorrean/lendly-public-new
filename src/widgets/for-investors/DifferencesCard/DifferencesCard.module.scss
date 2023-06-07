@@ -1,0 +1,23 @@
+@use "src/shared/styles/typography" as typo;
+
+.differences_card {
+  border-radius: 1rem;
+  padding: 2.625rem 2rem;
+  border: 1px solid var(--stroke-on-white-color);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
+  grid-gap: 1.5rem;
+  background-color: var(--white-color);
+  transition: background-color 0.5s;
+  &:hover {
+    background-color: var(--gray-background-color);
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+  &__heading {
+    @include typo.quaternaryHeading;
+    max-width: 13.75rem;
+  }
+}

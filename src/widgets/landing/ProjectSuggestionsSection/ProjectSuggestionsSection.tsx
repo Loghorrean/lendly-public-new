@@ -17,6 +17,7 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import {Container} from "@/src/shared/ui/layout";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const ProjectSuggestionsSection = () => {
     return (
@@ -24,7 +25,7 @@ const ProjectSuggestionsSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.project_suggestions_section__heading}>
-                        <p>Хочу <span className={styles.project_suggestions_section__green_text}>предложить проект.</span></p>
+                        <p>Хочу <GreenText><span>предложить проект.</span></GreenText></p>
                         <p>Какие требования?</p>
                     </Heading>
                 </SecondaryHeading>

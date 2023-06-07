@@ -1,0 +1,22 @@
+@use "src/shared/styles/typography" as typo;
+
+.loan_register_section {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__heading {
+    max-width: 32.5rem;
+  }
+  &__content {
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  &__text {
+    @include typo.quaternaryHeading;
+  }
+}

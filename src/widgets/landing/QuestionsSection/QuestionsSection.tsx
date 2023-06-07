@@ -11,6 +11,7 @@ import gearsImage from "@/public/images/landing/gears-image.png";
 import macbookImage from "@/public/images/landing/macbook-image.png";
 import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const QuestionsSection = () => {
     return (
@@ -18,7 +19,7 @@ const QuestionsSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.questions_section__heading}>
-                        <p>У меня <span className={styles.questions_section__green_text}>есть вопрос.</span></p>
+                        <p>У меня <GreenText><span>есть вопрос.</span></GreenText></p>
                         <p>Как с вами связаться?</p>
                     </Heading>
                 </SecondaryHeading>

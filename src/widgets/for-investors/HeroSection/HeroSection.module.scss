@@ -3,9 +3,6 @@
   width: calc(100% - 1rem);
   background: url("../../../../public/images/for-investors/for-investors-hero.png") center right no-repeat;
   padding-bottom: 2.5rem;
-  &__green_text {
-    color: var(--primary-green-color);
-  }
   & > div {
     height: 100%;
   }

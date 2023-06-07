@@ -1,0 +1,29 @@
+@use "src/shared/styles/typography" as typo;
+
+.want_to_invest_section {
+  padding-block: 7.5rem;
+  &__heading {
+    max-width: 35rem;
+    margin-bottom: 1.5rem;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__element {
+    padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: 1rem;
+    min-height: 32.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(1.875rem);
+    &_footer {
+      @include typo.tertiaryHeading;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

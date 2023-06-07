@@ -11,6 +11,7 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const InvestIntoSection = () => {
     return (
@@ -18,7 +19,7 @@ const InvestIntoSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2}>
-                        <p>Хочу <span className={styles.invest_into_section__green_text}>инвестировать.</span></p>
+                        <p>Хочу <GreenText><span>инвестировать.</span></GreenText></p>
                         <p>Какие варианты?</p>
                     </Heading>
                 </SecondaryHeading>

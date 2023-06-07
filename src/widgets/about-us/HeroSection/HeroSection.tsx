@@ -13,6 +13,7 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import GreenText from "@/src/shared/ui/typography/GreenText";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
@@ -20,7 +21,7 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
             <Container>
                 <PrimaryHeading>
                     <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
-                        Сотни инвесторов уже <span className={styles.hero_section__green_text}>зарабатывают</span> вместе с Lendly
+                        Сотни инвесторов уже <GreenText><span>зарабатывают</span></GreenText> вместе с Lendly
                     </Heading>
                 </PrimaryHeading>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow>
