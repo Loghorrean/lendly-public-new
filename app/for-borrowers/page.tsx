@@ -7,6 +7,13 @@ import ParallaxBlock from "@/src/shared/ui/layout/ParallaxBlock";
 import LoanForSection from "@/src/widgets/for-borrowers/LoanForSection";
 import CommonBlock from "@/src/shared/ui/blocks/CommonBlock";
 import LoanTermsSection from "@/src/widgets/for-borrowers/LoanTermsSection";
+import BorrowerRequirementsSection from "@/src/widgets/for-borrowers/BorrowerRequirementsSection";
+import AvailableEstateSection from "@/src/widgets/for-borrowers/AvailableEstateSection";
+import UnavailableEstateSection from "@/src/widgets/for-borrowers/UnavailableEstateSection";
+import WhoCanSection from "@/src/widgets/for-borrowers/WhoCanSection";
+import LoanRatingSection from "@/src/widgets/for-borrowers/LoanRatingSection";
+import LoanDocumentSection from "@/src/widgets/for-borrowers/LoanDocumentSection";
+import CallbackSection from "@/src/widgets/for-borrowers/CallbackSection";
 
 export default function ForBorrowers() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -20,6 +27,13 @@ export default function ForBorrowers() {
                     <LoanForSection />
                     <LoanTermsSection />
                 </CommonBlock>
+                <BorrowerRequirementsSection />
+                <AvailableEstateSection />
+                <UnavailableEstateSection />
+                <WhoCanSection />
+                <LoanRatingSection />
+                <LoanDocumentSection />
+                <CallbackSection />
             </ParallaxBlock>
         </>
     );

@@ -1,0 +1,20 @@
+@use "src/shared/styles/variables" as v;
+
+.who_can_section {
+  margin-top: 0.5rem;
+  border-radius: 1.25rem;
+  background-color: var(--bg-green-color);
+  padding: 8.75rem;
+  color: var(--white-color);
+  &__heading {
+    margin-bottom: 1.5rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__card {
+
+  }
+}
