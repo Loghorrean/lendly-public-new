@@ -2,7 +2,6 @@
 
 .hero_section {
   position: fixed;
-  width: calc(min(100%, 120rem));
   background: url("../../../../public/images/about-us/hero-pic-about.png") right no-repeat;
   padding-bottom: 1.5rem;
   & > div {
