@@ -1,0 +1,34 @@
+@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/typography" as typo;
+
+.borrower_requirements_section {
+  padding: 8.75rem;
+  background:
+          url("../../../../public/images/for-borrowers/borrower-requirements-background.png") no-repeat left bottom,
+          var(--dark-background-color);
+  border-radius: 1.25rem;
+  color: var(--white-color);
+  &__heading {
+    margin-bottom: 2.5rem;
+    max-width: 28.125rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__block {
+    min-height: v.$base-block-height;
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(0.875rem);
+    background-color: rgba(var(--white-color-rgb), 0.06);
+    border: 1px solid rgba(212, 212, 212, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__text {
+    @include typo.tertiaryHeading;
+  }
+}

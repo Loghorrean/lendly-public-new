@@ -1,0 +1,22 @@
+@use "src/shared/styles/typography" as typo;
+
+.common_list_icon_element {
+  max-width: 28.125rem;
+  &:not(:last-child) {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--stroke-on-white-color);
+  }
+  &:not(:first-child) {
+    padding-top: 2.5rem;
+  }
+  &__icon {
+    margin-bottom: 2rem;
+  }
+  &_heading {
+    margin-bottom: 1.5rem;
+    @include typo.tertiaryHeading;
+  }
+  &_text {
+    @include typo.primaryText;
+  }
+}

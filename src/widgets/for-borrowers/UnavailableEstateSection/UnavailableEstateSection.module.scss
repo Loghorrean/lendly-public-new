@@ -1,0 +1,18 @@
+.unavailable_estate_section {
+  margin-top: 0.5rem;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__heading {
+    position: sticky;
+    top: 7rem;
+    max-width: 38rem;
+    display: flex;
+    flex-direction: column;
+    &_container {
+      position: relative;
+    }
+  }
+}
