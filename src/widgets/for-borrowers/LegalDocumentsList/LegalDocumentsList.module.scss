@@ -1,0 +1,5 @@
+.legal_documents_list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(10px, 1fr));
+  grid-gap: 1.5rem;
+}
