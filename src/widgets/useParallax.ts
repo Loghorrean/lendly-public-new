@@ -7,6 +7,7 @@ export function useParallax(heroRef: MutableRefObject<HTMLDivElement | null>, pa
             const topDiff = parallaxRef.current!.getBoundingClientRect().top;
             if (topDiff <= 0 && fixed.current) {
                 heroRef.current!.style.position = "initial";
+                heroRef.current!.style.width = "calc(100% - 1rem)"
                 parallaxRef.current!.style.marginTop = "initial";
                 fixed.current = false;
                 return;

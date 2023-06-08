@@ -23,6 +23,7 @@ const StatsSlider = () => {
                 exitDone: styles.stats_slider__cell___exit_done,
             }}
             mountOnEnter
+            key={1}
         >
             <div className={styles.stats_slider}>
                 <div className={styles.stats_slider__cell}>
@@ -55,6 +56,7 @@ const StatsSlider = () => {
                 exitDone: styles.stats_slider__cell___exit_done,
             }}
             mountOnEnter
+            key={2}
         >
             <div className={styles.stats_slider}>
                 <div className={styles.stats_slider__cell}>

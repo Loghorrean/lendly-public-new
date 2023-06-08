@@ -1,3 +1,44 @@
-.loan_rating_section {
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/variables" as v;
 
+.loan_rating_section {
+  margin-top: 0.5rem;
+  padding-block: 8.75rem;
+  &__heading {
+    max-width: 60.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  &__card {
+    min-height: 42.25rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    &___first {
+      background-image: url("../../../../public/images/for-borrowers/portfolio-image.png");
+    }
+    &___second {
+      background-image: url("../../../../public/images/for-borrowers/house-image.png");
+      & > footer {
+        max-width: 21.125rem;
+      }
+    }
+    &_header {
+      @include typo.tertiaryHeading;
+    }
+    &_footer {
+      @include typo.primaryText;
+    }
+  }
 }
