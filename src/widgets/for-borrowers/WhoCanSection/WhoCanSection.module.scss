@@ -1,4 +1,5 @@
 @use "src/shared/styles/variables" as v;
+@use "src/shared/styles/typography" as typo;
 
 .who_can_section {
   margin-top: 0.5rem;
@@ -15,6 +16,15 @@
     grid-gap: 1.5rem;
   }
   &__card {
-
+    padding: 2rem;
+    min-height: v.$base-block-height;
+    backdrop-filter: blur(1.875rem);
+    border-radius: 0.75rem;
+    background-color: rgba(var(--white-color-rgb), 0.1);
+    border: 1px solid rgba(var(--white-color-rgb), 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include typo.tertiaryHeading;
   }
 }
