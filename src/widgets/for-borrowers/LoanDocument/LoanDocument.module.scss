@@ -1,0 +1,21 @@
+@use "src/shared/styles/typography" as typo;
+
+.loan_document {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 27.625rem;
+  @include typo.tertiaryHeading;
+  &:nth-child(-n+3) {
+    grid-column: span 2;
+  }
+  &:nth-last-child(-n+2) {
+    grid-column: span 3;
+  }
+  &__header {
+    color: var(--primary-green-color);
+  }
+}

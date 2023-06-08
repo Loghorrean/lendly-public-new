@@ -3,9 +3,11 @@ import styles from "./CommonInputInput.module.scss";
 import React, { ForwardedRef, InputHTMLAttributes, SyntheticEvent, useCallback } from "react";
 import { useCommonInputContext } from "@/src/shared/ui/inputs/CommonInput/context/CommonInputContext";
 
-export type CommonInputInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
+export type CommonInputInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange"> & {
+    asTextarea?: boolean;
+};
 
-const CommonInputInput = ({ ...props }: CommonInputInputProps, ref: ForwardedRef<HTMLInputElement>) => {
+const CommonInputInput = ({ asTextarea = false, ...props }: CommonInputInputProps, ref: ForwardedRef<HTMLInputElement>) => {
     const { value, onChange, id } = useCommonInputContext();
     const inputMode = () => {
         if (props.inputMode) {
@@ -19,6 +21,17 @@ const CommonInputInput = ({ ...props }: CommonInputInputProps, ref: ForwardedRef
         },
         [onChange]
     );
+    if (asTextarea) {
+        return <textarea
+            placeholder={props.placeholder}
+            id={props.id}
+            defaultValue={value}
+            onChange={handleChange}
+            className={cn(styles.common_input_input, props.className)}
+            rows={5}
+            style={{resize: "none"}}
+        ></textarea>
+    }
     return (
         <input
             id={id}

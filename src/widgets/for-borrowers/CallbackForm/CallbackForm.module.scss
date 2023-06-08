@@ -1,0 +1,29 @@
+@use "src/shared/styles/typography" as typo;
+
+.callback_form {
+  padding: 3rem;
+  border-radius: 1.125rem;
+  background-color: var(--white-color);
+  &__heading {
+    margin-bottom: 1.5rem;
+  }
+  &__input_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &:last-child {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__submit {
+    @include typo.buttonBigText;
+    margin-bottom: 1.5rem;
+  }
+  &__rules_link {
+    text-decoration: underline;
+    color: var(--font-secondary-color) !important;
+  }
+}

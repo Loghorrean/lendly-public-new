@@ -1,3 +1,41 @@
-.loan_document_section {
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
 
+.loan_document_section {
+  padding-bottom: 8.75rem;
+  margin-bottom: 0.5rem;
+  &__heading {
+    max-width: 60rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__tabs {
+    padding: 0.5rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-radius: 1.125rem;
+    border: 1px solid var(--medium-dark-background-color);
+    margin-bottom: 1.5rem;
+  }
+  &__tab {
+    min-height: 4rem;
+    cursor: pointer;
+    flex: 1;
+    @include m.centerWithFlex;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    transition: background-color 0.35s;
+    color: var(--font-dark-color);
+    @include typo.quaternaryHeading;
+    &:hover {
+      background-color: var(--stroke-on-white-color);
+    }
+    &[aria-current="true"] {
+      color: var(--white-color);
+      background-color: var(--primary-green-color);
+    }
+  }
 }

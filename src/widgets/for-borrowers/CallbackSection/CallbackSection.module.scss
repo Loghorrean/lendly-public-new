@@ -1,3 +1,19 @@
 .callback_section {
-
+  padding-block: 8.75rem;
+  background-color: var(--dark-background-color);
+  border-radius: 1.25rem;
+  mix-blend-mode: normal;
+  background-image: url("../../../../public/images/for-borrowers/callback-section-background.png");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(28.1875rem, 1fr) minmax(10px, 1fr);
+    grid-gap: 1.5rem;
+  }
+  &__heading {
+    color: var(--white-color);
+    max-width: 28.1875rem;
+  }
 }
