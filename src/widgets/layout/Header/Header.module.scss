@@ -1,3 +1,5 @@
+@use "src/shared/styles/typography" as typo;
+
 .header {
     background: linear-gradient(180deg, #F4F3F4 -37.5%, rgba(247, 246, 247, 0) 92.54%);
     border-radius: 0 0 1rem 1rem;
@@ -24,11 +26,25 @@
             left: 0;
             opacity: 0.25;
         }
+        &___landing {
+            &::after {
+                width: calc(50% + 2.5rem);
+                left: initial;
+                right: 0;
+            }
+        }
+        &___full {
+            &::after {
+                width: 100%;
+            }
+        }
     }
     &__navigation {
+        margin-left: auto;
         display: flex;
         align-items: center;
         gap: 4.5rem;
+        @include typo.secondaryTextAccent;
     }
     &__links {
         display: flex;
