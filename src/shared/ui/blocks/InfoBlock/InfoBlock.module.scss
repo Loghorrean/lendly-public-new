@@ -1,3 +1,5 @@
+@use "src/shared/styles/mixins" as m;
+
 .info_block {
   padding: 2rem;
   min-height: 32.5rem;
@@ -7,6 +9,13 @@
   border-radius: 1rem;
   border: 1px solid var(--stroke-on-white-color);
   & > img {
+    height: auto;
     margin-inline: auto;
+  }
+  @include m.media("tablet") {
+    min-height: 28.125rem;
+  }
+  @include m.media("mobile") {
+    min-height: 18.1875rem;
   }
 }

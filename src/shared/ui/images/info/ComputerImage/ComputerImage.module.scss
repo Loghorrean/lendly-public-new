@@ -1,0 +1,11 @@
+@use "src/shared/styles/mixins" as m;
+
+.computer_image {
+  max-width: 375px;
+  @include m.media("tablet") {
+    max-width: 284px;
+  }
+  @include m.media("mobile") {
+    max-width: 127px;
+  }
+}

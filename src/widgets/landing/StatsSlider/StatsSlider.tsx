@@ -51,7 +51,7 @@ const StatsSlider = () => {
             return () => {
                 clearInterval(intervalId);
             }
-        }, 5000);
+        }, 4000);
     }, []);
     return (
         <ul className={styles.stats_slider}>

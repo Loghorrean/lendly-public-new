@@ -3,7 +3,12 @@
 
 .financing_section {
   margin-top: 6.5rem;
-  padding-top: 2.25rem;
+  @include m.media("tablet", "min") {
+    padding-top: 2.25rem;
+  }
+  @include m.media("tablet") {
+    margin-top: 4rem;
+  }
   &__tabs {
     display: flex;
     align-items: center;
@@ -11,6 +16,7 @@
     margin-bottom: 2rem;
   }
   &__tab {
+    white-space: nowrap;
     cursor: pointer;
     text-decoration: underline;
     color: var(--font-medium-gray-color);
@@ -30,6 +36,9 @@
     }
     &[aria-current="true"] {
       color: var(--font-dark-color);
+    }
+    @include m.media("tablet") {
+      @include typo.tertiaryHeading;
     }
   }
 }

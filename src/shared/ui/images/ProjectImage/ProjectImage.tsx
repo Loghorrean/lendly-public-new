@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, {ForwardedRef} from "react";
 import Image, { ImageProps } from "next/image";
 
-const ProjectImage: FC<ImageProps> = props => {
-    return <Image {...props} src={props.src} alt={props.alt} />;
+const ProjectImage = (props: ImageProps, ref: ForwardedRef<HTMLImageElement>) => {
+    return <Image {...props} src={props.src} alt={props.alt} ref={ref} />;
 };
 
-export default ProjectImage;
+export default React.forwardRef(ProjectImage);

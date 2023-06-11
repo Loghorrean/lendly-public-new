@@ -21,7 +21,11 @@ const NewsSection = () => {
                         СМИ о Lendly
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <NewsList />
+            </Container>
+            <Container>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow wide>
                     <ProjectLink href="/blog">
                         Все новости

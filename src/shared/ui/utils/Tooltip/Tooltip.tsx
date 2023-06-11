@@ -43,7 +43,7 @@ const Tooltip = <T extends ElementType = "div">({
     children,
     tooltipContent,
     delay = 250,
-    direction = TOOLTIP_DIRECTION.TOP,
+    direction = TOOLTIP_DIRECTION.BOTTOM,
     ...props
 }: Props<T>) => {
     const Component = as || "div";

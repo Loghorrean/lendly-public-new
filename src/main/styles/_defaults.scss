@@ -21,7 +21,9 @@ body {
     background-color: var(--gray-background-color);
     font-weight: 400;
     @include m.useCoFoSansFont;
-    padding: 0.5rem;
+    @include m.media("tablet", "min") {
+        padding: 0.5rem;
+    }
 }
 
 ::selection {

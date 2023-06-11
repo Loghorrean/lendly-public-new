@@ -13,6 +13,7 @@ import NewsSection from "@/src/widgets/landing/NewsSection";
 import QuestionsSection from "@/src/widgets/landing/QuestionsSection";
 import ParallaxBlock from "@/src/shared/ui/layout/ParallaxBlock";
 import {useParallax} from "@/src/widgets/useParallax";
+import LandingLogo from "@/src/widgets/landing/LandingLogo";
 
 export default function Home() {
     const heroRef = useRef<HTMLDivElement | null>(null);

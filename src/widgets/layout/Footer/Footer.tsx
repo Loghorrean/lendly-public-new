@@ -13,10 +13,10 @@ const Footer = () => {
         <footer className={styles.footer}>
             <Container>
                 <div className={styles.footer__grid}>
-                    <div>
+                    <div className={styles.footer__company_logo}>
                         <ProjectImage src={footerLogo} alt="Lendly Logo" />
                     </div>
-                    <div>
+                    <div className={styles.footer__company_name_container}>
                         <ProjectImage src={footerCompanyNameImage} alt="Company name" className={styles.footer__company_name} />
                     </div>
                     <address className={styles.footer__address}>

@@ -1,0 +1,38 @@
+@use "src/shared/styles/mixins" as m;
+
+.landing_logo {
+  position: absolute;
+  top: 1.125rem;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.375s, transform 0.375s;
+  & > img, & > div {
+    @include m.hideOnBreakpoint("tablet");
+  }
+  & > a {
+    @include m.hideOnBreakpoint("tablet", "min");
+  }
+  &___loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &__link {
+    // Stupid hack
+    transform: translateY(-38%);
+  }
+  &__image {
+    max-width: 100%;
+    aspect-ratio: 3 / 1;
+  }
+  &__text {
+    transform: translateY(-100%);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    @include m.hideOnBreakpoint("tablet");
+  }
+}

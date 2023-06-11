@@ -61,9 +61,17 @@ $widths: (
 }
 
 @mixin scrollbarWidth() {
+    scrollbar-color: transparent transparent;
     scrollbar-width: none;
     &::-webkit-scrollbar {
         display: none;
+        width: 1px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
     }
 }
 

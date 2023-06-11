@@ -1,3 +1,6 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
 .header {
     background: linear-gradient(180deg, #F4F3F4 -37.5%, rgba(247, 246, 247, 0) 92.54%);
     border-radius: 0 0 1rem 1rem;
@@ -24,18 +27,40 @@
             left: 0;
             opacity: 0.25;
         }
+        @include m.media("tablet") {
+            &::after {
+                width: 100% !important;
+            }
+        }
+        &___landing {
+            &::after {
+                width: calc(50% + 2.5rem);
+                left: initial;
+                right: 0;
+            }
+        }
+        &___full {
+            &::after {
+                width: 100%;
+            }
+        }
     }
     &__navigation {
+        position: relative;
+        z-index: 60;
+        margin-left: auto;
         display: flex;
         align-items: center;
-        gap: 4.5rem;
+        gap: clamp(1rem, 4vw, 4.5rem);
+        @include typo.secondaryTextAccent;
     }
     &__links {
         display: flex;
         align-items: stretch;
+        @include m.hideOnBreakpoint("tablet");
     }
     &__link {
-        padding: 0.75rem 1rem;
+        padding: 0.75rem clamp(0.5rem, 1.25vw, 1rem);
     }
     &__auth {
         display: flex;
