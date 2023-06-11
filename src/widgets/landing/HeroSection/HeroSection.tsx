@@ -16,17 +16,24 @@ import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
 import React, {ForwardedRef} from "react";
 import {BlockProps, cn} from "@/src/shared/utils";
+import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
         <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
             <Container>
                 <div className={styles.hero_section__container}>
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
+                            Платформа для инвестиций в займы для бизнеса и проекты
+                        </Heading>
+                    </SecondaryHeading>
                     <div></div>
                     <footer className={styles.hero_section__footer}>
                         <div className={styles.hero_section__left}>
-                            <ProjectImage src={blackLogo} alt="Black logo" />
+                            <ProjectImage src={blackLogo} alt="Black logo" className={styles.hero_section__logo} />
                             <StatsSlider />
+                            <StatsSlider initial={2} className={styles.hero_section__second_slider} />
                         </div>
                         <div className={styles.hero_section__right}>
                             <TertiaryHeading>
