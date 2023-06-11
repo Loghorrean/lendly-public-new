@@ -29,7 +29,7 @@ const defaultStats: Array<PlatformStat> = [
     },
     {
         value: <><span>10.000</span><RubleSvg /></>,
-        text: "минимальная сумма инвестиций для входа"
+        text: "минимальная сумма инвестиций"
     },
 ]
 
