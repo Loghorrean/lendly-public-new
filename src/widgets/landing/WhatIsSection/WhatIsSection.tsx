@@ -13,7 +13,7 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 
 const WhatIsSection = () => {
     return (
-        <section className={styles.what_is_section} id="what-is">
+        <section className={styles.what_is_section}>
             <Container>
                 <div className={styles.what_is_section__container}>
                     <p className={styles.what_is_section__caption}>
@@ -30,12 +30,14 @@ const WhatIsSection = () => {
                                 </span>
                             </p>
                         </SecondaryHeading>
-                        <ProjectImage src={rfCrest} alt="Russian Federation crest" className={styles.what_is_section__crest} />
-                        <p className={styles.what_is_section__license}>
-                            <span>Лицензия ЦБ — №34 от 04.03.2021.</span>
-                            <span>Деятельность регулирует 259-ФЗ</span>
-                            <span>«О привлечении инвестиций».</span>
-                        </p>
+                        <div className={styles.what_is_section__country}>
+                            <ProjectImage src={rfCrest} alt="Russian Federation crest" className={styles.what_is_section__crest} />
+                            <p className={styles.what_is_section__license}>
+                                <span>Лицензия ЦБ — №34 от 04.03.2021.</span>
+                                <span>Деятельность регулирует 259-ФЗ</span>
+                                <span>«О привлечении инвестиций».</span>
+                            </p>
+                        </div>
                         <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE}>
                             <ProjectLink href="/" className={styles.what_is_section__more}>
                                 Узнать больше

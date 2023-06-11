@@ -1,6 +1,16 @@
+@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/mixins" as m;
+
 .container {
     margin-inline: auto;
     width: calc(min(100%, 90rem));
     padding-inline: 1.5rem;
     position: relative;
+    @include m.media("tablet") {
+        padding-inline: 1rem;
+        max-width: 48rem;
+    }
+    @include m.media("mobile") {
+        max-width: 23.4375em;
+    }
 }

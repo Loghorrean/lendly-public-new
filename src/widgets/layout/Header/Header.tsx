@@ -1,3 +1,5 @@
+"use client";
+
 import {ProjectImage} from "@/src/shared/ui/images";
 import headerLogo from "@/public/images/logo/header-logo.png";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
@@ -7,16 +9,16 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 import {Container} from "@/src/shared/ui/layout";
 import {usePathname} from "next/navigation";
 import LandingLogo from "@/src/widgets/landing/LandingLogo";
-import {cn, resultIf} from "@/src/shared/utils";
-import {useEffect, useRef, useState} from "react";
+import {cn, resultIf, useWindowSize} from "@/src/shared/utils";
+import {useLayoutEffect, useRef, useState} from "react";
+import MobileMenuButton from "@/src/widgets/layout/MobileMenuButton";
 
 const Header = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [isScrolled, setIsScrolled] = useState<boolean | null>(null);
-    useEffect(() => {
-        const windowHeight = window.innerHeight;
+    useLayoutEffect(() => {
         const onScroll = () => {
-            const percentage = Math.round((1 - window.scrollY / windowHeight) * 100);
+            const percentage = Math.round((1 - window.scrollY / window.innerHeight) * 100);
             setIsScrolled(percentage < 0);
         }
         onScroll();
@@ -84,6 +86,7 @@ const Header = () => {
                                     Вход
                                 </ProjectLink>
                             </PrimaryButton>
+                            <MobileMenuButton />
                         </div>
                     </nav>
                 </div>

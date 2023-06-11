@@ -1,0 +1,11 @@
+@use "src/shared/styles/mixins" as m;
+
+.gears_image {
+  max-width: 258px;
+  @include m.media("tablet") {
+    max-width: 230px;
+  }
+  @include m.media("mobile") {
+    max-width: 148px;
+  }
+}

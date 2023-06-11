@@ -1,3 +1,5 @@
+"use client";
+
 import landingLogoImage from "@/public/images/landing/landing-logo.png";
 import {useEffect, useRef, useState} from "react";
 import {ProjectImage} from "@/src/shared/ui/images";
@@ -6,6 +8,8 @@ import {cn, resultIf} from "@/src/shared/utils";
 import {Tooltip} from "@/src/shared/ui/utils";
 import QuestionIcon from "@/src/shared/ui/svg/QuestionIcon";
 import TooltipContent from "@/src/shared/ui/utils/Tooltip/composables/TooltipContent";
+import headerLogo from "@/public/images/logo/header-logo.png";
+import {ProjectLink} from "@/src/shared/ui/links";
 
 const minWidth = 120;
 const minHeight = 40;
@@ -46,10 +50,13 @@ const LandingLogo = () => {
                 alt="Landing logo image"
                 className={styles.landing_logo__image}
             />
-            <p ref={textRef} className={styles.landing_logo__text}>
+            <div ref={textRef} className={styles.landing_logo__text}>
                 <span>Инвестиционная платформа. Лицензия ЦБ №34</span>
                 <Tooltip tooltipContent={<TooltipContent>Какой-то текст</TooltipContent>}><QuestionIcon /></Tooltip>
-            </p>
+            </div>
+            <ProjectLink href="/" className={styles.landing_logo__link}>
+                <ProjectImage src={headerLogo} alt="Header logo" />
+            </ProjectLink>
         </div>
     );
 }

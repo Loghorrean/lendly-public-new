@@ -2,7 +2,7 @@
 @use "variables" as v;
 
 @mixin trimProperties {
-    //Both props will be added later, I guess
+    //Both props will be added later, I guess :/
     leading-trim: both;
     text-edge: cap;
 }

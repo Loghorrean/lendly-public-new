@@ -1,0 +1,11 @@
+@use "src/shared/styles/mixins" as m;
+
+.wallet_image {
+  max-width: 231px;
+  @include m.media("tablet") {
+    max-width: 182px;
+  }
+  @include m.media("mobile") {
+    max-width: 159px;
+  }
+}

@@ -1,4 +1,5 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .questions_section {
   &__heading {
@@ -16,11 +17,28 @@
   &__block_header {
     @include typo.tertiaryHeading;
     max-width: 26.875rem;
+    @include m.media("tablet") {
+      font-size: 1.5rem;
+    }
+    @include m.media("tablet") {
+      font-size: 1.25rem;
+    }
   }
   &__wallet {
     max-width: 148px;
-    max-height: 193px;
     transform: scaleX(-1);
+    @include m.media("tablet") {
+      max-width: 133px;
+    }
+  }
+  &__computer {
+    max-width: 319px;
+    @include m.media("tablet") {
+      max-width: 207px;
+    }
+    @include m.media("mobile") {
+      max-width: 127px;
+    }
   }
   &__block_footer {
     @include typo.primaryText;

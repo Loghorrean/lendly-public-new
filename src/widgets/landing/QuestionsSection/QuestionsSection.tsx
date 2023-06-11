@@ -12,6 +12,9 @@ import macbookImage from "@/public/images/landing/macbook-image.png";
 import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
 import GreenText from "@/src/shared/ui/typography/GreenText";
+import WalletImage from "@/src/shared/ui/images/info/WalletImage";
+import ComputerImage from "@/src/shared/ui/images/info/ComputerImage";
+import GearsImage from "@/src/shared/ui/images/info/GearsImage";
 
 const QuestionsSection = () => {
     return (
@@ -26,9 +29,9 @@ const QuestionsSection = () => {
                 <div className={styles.questions_section__grid}>
                     <InfoBlock className={styles.questions_section__main_block}>
                         <header className={styles.questions_section__block_header}>
-                            Сумма займа
+                            Телеграм-канал для инвесторов
                         </header>
-                        <ProjectImage src={macbookImage} alt="Computer image" />
+                        <ComputerImage className={styles.questions_section__computer} />
                         <footer className={styles.questions_section__block_footer}>
                             <p className={styles.questions_section__multiline_text}>
                                 <span>Если хотите быть в курсе</span>
@@ -44,7 +47,7 @@ const QuestionsSection = () => {
                         <header className={styles.questions_section__block_header}>
                             Почта для заёмщиков и управляющих проектами
                         </header>
-                        <ProjectImage src={walletImage} alt="Wallet image" className={styles.questions_section__wallet} />
+                        <WalletImage className={styles.questions_section__wallet} />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если хотите обсудить условия</p>
                             <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>
@@ -57,7 +60,7 @@ const QuestionsSection = () => {
                         <header className={styles.questions_section__block_header}>
                             Служба поддержки
                         </header>
-                        <ProjectImage src={gearsImage} alt="Gears image" />
+                        <GearsImage />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если у вас проблемы с личным кабинетом</p>
                             <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>

@@ -1,9 +1,14 @@
+@use "src/shared/styles/mixins" as m;
+
 .news_section {
   max-width: calc(100vw - 1rem);
   & > div {
     max-width: 100%;
   }
   padding-block: 8.75rem;
+  @include m.media("tablet") {
+    padding-block: 6rem;
+  }
   &__heading {
     margin-bottom: 2.5rem;
   }

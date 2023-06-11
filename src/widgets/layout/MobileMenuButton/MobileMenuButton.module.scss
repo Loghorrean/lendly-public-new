@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.mobile_menu_button {
+  margin-left: 0.75rem;
+  @include m.hideOnBreakpoint("tablet", "min");
+  padding: 0 !important;
+  border: none !important;
+}

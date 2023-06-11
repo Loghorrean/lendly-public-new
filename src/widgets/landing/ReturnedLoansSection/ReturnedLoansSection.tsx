@@ -23,6 +23,8 @@ const ReturnedLoansSection = () => {
                         Эти займы&nbsp;<GreenText><span>уже вернули</span></GreenText>
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <div className={styles.returned_loans_section__list}>
                     <ReturnedLoanCard
                         image={mockImage}
@@ -47,6 +49,8 @@ const ReturnedLoansSection = () => {
                         target={{ amount: 1300000000, currencyCode: "RUB" }}
                     />
                 </div>
+            </Container>
+            <Container>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} wide arrow>
                     <ProjectLink href="/auth/register">
                         Посмотреть все текущие проекты

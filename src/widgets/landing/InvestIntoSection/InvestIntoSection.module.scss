@@ -1,5 +1,10 @@
+@use "src/shared/styles/mixins" as m;
+
 .invest_into_section {
   padding-top: 6.5rem;
+  @include m.media("tablet") {
+    padding-top: 4rem;
+  }
   &__cards {
     margin-block: 2.5rem;
     display: flex;
@@ -8,15 +13,23 @@
   }
   &__first_card {
     background-color: var(--font-green-secondary-color);
-    background-image: url("../../../../public/images/landing/cards/card-1-background-1.png"), url("../../../../public/images/landing/cards/card-1-background-2.png");
-    background-position: right 25rem top 50%, center bottom;
-    background-size: 122px, cover;
+    background-image:
+            linear-gradient(24.22deg, #167948 1.63%, rgba(4, 93, 44, 0) 59.3%),
+            url("../../../../public/images/landing/cards/card-1-background-1.png"),
+            url("../../../../public/images/landing/cards/card-1-background-2.png");
+    background-position: center, right 25rem top 50%, center bottom;
+    background-size: cover, 122px, cover;
   }
   &__second_card {
     background-color: var(--dark-background-color);
-    background-image: url("../../../../public/images/landing/cards/card-2-background-1.png");
-    background-position: center bottom;
-    background-size: 90%;
+    background-image:
+            linear-gradient(23.69deg, #2B2B2B 3.1%, rgba(30, 30, 30, 0) 59.45%),
+            url("../../../../public/images/landing/cards/card-2-background-1.png");
+    background-position: center, center bottom;
+    background-size: cover, 90%;
+    @include m.media("tablet") {
+      background-size: cover, 150%;
+    }
   }
   &__more {
     justify-content: space-between;
