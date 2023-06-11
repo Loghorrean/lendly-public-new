@@ -1,5 +1,6 @@
 @use "src/shared/styles/typography" as typo;
 @use "src/shared/styles/variables" as v;
+@use "src/shared/styles/mixins" as m;
 
 .stats_slide {
   display: flex;
@@ -46,6 +47,9 @@
     display: flex;
     &, & > * {
       @include typo.trimProperties;
+    }
+    @include m.media("tablet") {
+      font-size: 4.5rem;
     }
   }
   &__prefix {

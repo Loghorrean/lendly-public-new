@@ -4,6 +4,7 @@ import {ReactNode, useEffect, useRef, useState} from "react";
 import styles from "./StatsSlider.module.scss";
 import RubleSvg from "@/src/shared/ui/svg/currency/RubleSvg";
 import StatsSlide from "@/src/widgets/landing/StatsSlide";
+import {BlockProps, cn} from "@/src/shared/utils";
 
 export type PlatformStat = {
     value: ReactNode;
@@ -32,8 +33,12 @@ const defaultStats: Array<PlatformStat> = [
     },
 ]
 
-const StatsSlider = () => {
-    const [activeSlide, setActiveSlide] = useState(0);
+type Props = BlockProps<HTMLUListElement> & {
+    initial?: number;
+};
+
+const StatsSlider = ({ initial = 0, ...props }: Props) => {
+    const [activeSlide, setActiveSlide] = useState(initial);
     const activeSlideRef = useRef(activeSlide);
     const renderSlides = () => {
         return defaultStats.map((stat, index) => <StatsSlide key={index} stat={stat} active={activeSlide === index} />);
@@ -54,7 +59,7 @@ const StatsSlider = () => {
         }, 4000);
     }, []);
     return (
-        <ul className={styles.stats_slider}>
+        <ul {...props} className={cn(styles.stats_slider, props.className)}>
             {renderSlides()}
         </ul>
     );
