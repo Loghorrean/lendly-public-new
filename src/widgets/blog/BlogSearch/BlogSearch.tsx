@@ -1,11 +1,11 @@
-import styles from "./FaqSearch.module.scss";
+import styles from "./BlogSearch.module.scss";
 import CommonInput from "@/src/shared/ui/inputs/CommonInput";
 import SearchSvg from "@/src/shared/ui/svg/SearchSvg";
 
-const FaqSearch = () => {
+const BlogSearch = () => {
     return (
-        <div className={styles.faq_search_container}>
-            <label htmlFor="search" className={styles.faq_search_text}>Что вас интересует</label>
+        <div className={styles.blog_search_container}>
+            <label htmlFor="search" className={styles.blog_search}>Что вас интересует</label>
             <CommonInput id="search">
                 <CommonInput.Container>
                     <SearchSvg />
@@ -16,4 +16,4 @@ const FaqSearch = () => {
     );
 }
 
-export default FaqSearch;
+export default BlogSearch;
