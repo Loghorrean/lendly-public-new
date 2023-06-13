@@ -3,17 +3,30 @@
 @use "src/shared/styles/typography" as typo;
 
 .news_card {
-  max-width: 26.25rem;
   min-height: 32.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
   background-color: var(--white-color);
+  position: relative;
+  border: 1px solid var(--stroke-on-white-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  &___large {
+    max-width: 56.8125rem;
+    grid-column: 1 / -1;
+  }
+  &___white {
+    background-color: var(--font-medium-gray-color);
+    background-blend-mode: multiply;
+    color: var(--white-color);
+  }
   &__photo {
-    position: relative;
     border-radius: 0.5rem 0.5rem 1rem 1rem;
     flex-grow: 1;
     max-height: 50%;
+    width: 100%;
+    position: relative;
     & > img {
       border-radius: inherit;
     }
@@ -22,7 +35,9 @@
     position: absolute;
     top: 2rem;
     left: 2rem;
+    z-index: 15;
     background-color: var(--light-theme-gray-color);
+    color: var(--font-dark-color);
     border-radius: 0.5rem;
     padding: 0.75rem;
     font-weight: 500;
@@ -34,24 +49,42 @@
   }
   &__content {
     padding: 2rem 2rem 1.5rem;
-    height: 100%;
+    max-height: 50%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    &___no_photo {
+      margin-top: 6rem;
+      max-height: 100%;
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    &___with_desciption {
+      max-width: calc(min(70%, 37rem));
+    }
   }
   &__title {
     @include typo.tertiaryHeading;
-    margin-bottom: 2.5rem;
     overflow: hidden;
     width: calc(100%);
     @include m.lineClamp(4);
     text-overflow: ellipsis;
+  }
+  &__description {
+    @include typo.primaryText;
+    margin-bottom: 1rem;
   }
   &__footer {
     padding-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     border-top: 1px solid var(--stroke-on-white-color);
   }
   &__link {
@@ -61,9 +94,15 @@
     text-decoration: underline;
     color: var(--primary-green-color);
     @include typo.secondaryTextAccent;
+    &___white {
+      color: var(--white-color);
+    }
   }
   &__date {
     color: var(--font-secondary-color);
     @include typo.secondaryText;
+    &___white {
+      color: var(--white-color);
+    }
   }
 }

@@ -19,12 +19,12 @@ const QUESTION_THEMES = {
     BORROWERS: "BORROWERS"
 } as const;
 
-export type QuestionTheme = ObjectValues<typeof QUESTION_THEMES>;
+type QuestionTheme = ObjectValues<typeof QUESTION_THEMES>;
 
 const QuestionThemesList = () => {
     const [currentTheme, setCurrentTheme] = useState<QuestionTheme>(QUESTION_THEMES.GENERAL);
     return (
-        <div className={styles.question_themes_list}>
+        <aside className={styles.question_themes_list}>
             <ul className={styles.question_themes_list__list}>
                 <li>
                     <a
@@ -91,7 +91,7 @@ const QuestionThemesList = () => {
                     </Button>
                 </PrimaryButton>
             </div>
-        </div>
+        </aside>
     );
 }
 

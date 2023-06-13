@@ -1,0 +1,40 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.blog_paginator {
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  &__pages {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  &__button {
+    @include m.buttonToLink;
+  }
+  &__arrow {
+    @include m.box(3rem);
+    @include m.centerWithFlex;
+    border-radius: 50%;
+    border: 1px solid var(--stroke-on-white-color);
+    background-color: var(--white-color);
+    transition: background-color 0.35s ease-in-out;
+    &:hover {
+      background-color: var(--gray-background-color);
+    }
+    &___disabled {
+      cursor: initial;
+      pointer-events: none;
+    }
+  }
+  &__page {
+    @include m.box(2.5rem);
+    @include typo.quaternaryHeading;
+    &___active {
+      cursor: initial;
+      color: var(--primary-green-color);
+    }
+  }
+}
