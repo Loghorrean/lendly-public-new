@@ -1,11 +1,19 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .what_is_section {
   &__container {
     padding-bottom: 6.5rem;
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     border-bottom: 1px solid var(--stroke-on-white-color);
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+    @include m.media("tablet") {
+      grid-row-gap: 3rem;
+      grid-template-rows: repeat(2, minmax(min-content, max-content));
+      padding-bottom: 4rem;
+    }
   }
   &__left {
     text-transform: uppercase;

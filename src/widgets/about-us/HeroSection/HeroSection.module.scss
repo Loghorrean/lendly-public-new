@@ -1,17 +1,27 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .hero_section {
   position: fixed;
-  background: url("../../../../public/images/about-us/hero-pic-about.png") right no-repeat;
+  background: url("../../../../public/images/about-us/hero-pic-about.png") right center no-repeat;
   padding-bottom: 1.5rem;
+  @include m.media("tablet") {
+    background-size: 175%;
+    background-position: 50% 25%;
+  }
   & > div {
     height: 100%;
   }
   &__heading {
     max-width: 56.25rem;
     margin-bottom: 2rem;
+    @include m.media("mobile", "min") {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__link {
     max-width: 20rem;
+    @include m.hideOnBreakpoint("tablet");
   }
 }

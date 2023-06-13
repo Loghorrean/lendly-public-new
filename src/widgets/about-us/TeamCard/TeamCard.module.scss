@@ -7,6 +7,17 @@
   position: relative;
   color: var(--white-color);
   overflow: hidden;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    filter: grayscale(100%);
+  }
   &:nth-child(6) {
     grid-column: 4 / 5;
   }
@@ -24,6 +35,8 @@
     gap: 0.5rem;
   }
   &__image {
+    max-width: 20.25rem;
+    max-height: 28.75rem;
     border-radius: inherit;
     filter: grayscale(100%);
   }

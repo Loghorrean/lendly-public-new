@@ -52,6 +52,10 @@
     line-height: 90%;
     letter-spacing: v.$letter-spacing-5;
     @include trimProperties;
+    @include m.media("tablet") {
+        line-height: 98%;
+        font-size: 2.875rem;
+    }
 }
 
 @mixin secondaryHeading {

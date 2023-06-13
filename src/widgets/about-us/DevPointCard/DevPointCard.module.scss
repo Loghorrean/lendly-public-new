@@ -13,6 +13,9 @@
   grid-gap: 1.5rem;
   color: var(--white-color);
   background-repeat: no-repeat;
+  @include m.media("tablet") {
+    top: 10rem;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
@@ -41,8 +44,14 @@
     border-top: 1px solid rgba(var(--white-color-rgb), 0.2);
     padding-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(10px, 1fr));
     grid-gap: 1rem;
     @include typo.primaryText;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(4, minmax(10px, 1fr));
+    }
+    @include m.media("tablet") {
+      padding-top: 2rem;
+      width: calc(min(100%, 37.5rem));
+    }
   }
 }

@@ -4,60 +4,52 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import TeamCard, {TeamMember} from "@/src/widgets/about-us/TeamCard/TeamCard";
-import volginA from "@/public/images/about-us/team/volgin-aleksandr.png";
-import vladislavZ from "@/public/images/about-us/team/vladislav-z.png";
-import aleksandrZ from "@/public/images/about-us/team/aleksandr-z.png";
-import ekaterinaG from "@/public/images/about-us/team/ekaterina-g.png";
-import aleksandrA from "@/public/images/about-us/team/aleksandr-a.png";
-import olgaS from "@/public/images/about-us/team/olga-s.png";
-import mariaP from "@/public/images/about-us/team/maria-p.png";
-import dmitryK from "@/public/images/about-us/team/dmitriy-k.png";
 
 const mockTeamMembers: Array<TeamMember> = [
     {
-        photo: volginA,
+        photo: "/images/about-us/team/volgin-aleksandr.png",
         name: "Александр Волгин",
         position: "CEO, учредитель",
         description: "Опыт в кредитовании бизнеса — 20 лет. Увлекается мотоспортом и яхтингом."
     },
     {
-        photo: vladislavZ,
+        photo: "/images/about-us/team/vladislav-z.png",
         name: "Владислав Змановский",
         position: "CTO, учредитель",
         description: "Архитектор IT-решений и консультант по информационным технологиям. В индустрии — больше 25 лет. Увлекается здоровым питанием и биохакингом."
     },
     {
-        photo: aleksandrZ,
+        photo: "/images/about-us/team/aleksandr-z.png",
         name: "Александр Зубков",
         position: "CEO, учредитель",
         description: "Больше 15 лет работает в инвестиционных фондах и сопровождает сделки M&A. Среди увлечений — бег и баскетбол."
     },
     {
-        photo: ekaterinaG,
+        photo: "/images/about-us/team/ekaterina-g.png",
         name: "Екатерина Градинар",
         position: "Генеральный директор",
         description: "Опыт в продажах и маркетинге — больше 10 лет. Увлекается йогой, психологией и бизнесом."
     },
     {
-        photo: aleksandrA,
+        photo: "/images/about-us/team/aleksandr-a.png",
         name: "Александр Афанасьев",
         position: "CLO, главный юрисконсульт",
         description: "Опыт в продажах и маркетинге — больше 10 лет. Увлекается йогой, психологией и бизнесом."
     },
     {
-        photo: olgaS,
+        photo: "/images/about-us/team/olga-s.png",
         name: "Ольга Слабодчикова",
         position: "Риск-аналитик",
         description: "15 лет работает риск-аналитиком в банковской сфере. Сейчас использует свой опыт, чтобы оценивать заёмщиков. Увлекается горными лыжами и дайвингом."
     },
     {
-        photo: mariaP,
+        photo: "/images/about-us/team/maria-p.png",
         name: "Мария Пинчук",
         position: "Поддержка",
         description: "Поддерживает наших заёмщиков и инвесторов и консультирует их в технических вопросах."
     },
     {
-        photo: dmitryK,
+        photo: "/images/about-us/team/dmitriy-k.png",
         name: "Дмитрий Карабаев",
         position: "Агентская сеть",
         description: "Специалист по работе с ипотечными займами."

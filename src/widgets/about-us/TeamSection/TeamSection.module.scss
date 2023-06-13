@@ -1,9 +1,12 @@
+@use "src/shared/styles/mixins" as m;
+
 .team_section {
   padding-block: 8.75rem;
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    isolation: isolate;
   }
   &__heading {
     grid-column: span 2;
