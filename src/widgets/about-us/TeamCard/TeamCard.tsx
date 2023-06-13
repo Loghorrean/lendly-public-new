@@ -1,7 +1,6 @@
 import {BlockProps, cn} from "@/src/shared/utils";
 import {StaticImageData} from "next/image";
 import styles from "./TeamCard.module.scss";
-import {ProjectImage} from "@/src/shared/ui/images";
 
 export type TeamMember = {
     photo: string | StaticImageData;
@@ -15,8 +14,7 @@ type Props = BlockProps & {
 }
 
 const TeamCard = ({ member, ...props }: Props) => {
-    return <div {...props} className={cn(styles.team_card, props.className)}>
-        <ProjectImage src={member.photo} alt="Team member image" width={324} height={460} className={styles.team_card__image} />
+    return <div {...props} className={cn(styles.team_card, props.className)} style={{ backgroundImage: `url("${member.photo}")` }}>
         <div className={styles.team_card__content}>
             <p className={styles.team_card__name}>{member.name}</p>
             <p className={styles.team_card__position}>{member.position}</p>

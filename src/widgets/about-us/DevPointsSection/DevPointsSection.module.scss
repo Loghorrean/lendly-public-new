@@ -1,16 +1,27 @@
+@use "src/shared/styles/mixins" as m;
+
 .dev_points_section {
-  padding-block: 6.5rem 8.75rem;
+  padding-top: 6.5rem;
+  @include m.media("tablet") {
+    padding-block: 4rem 0;
+  }
   position: relative;
   &__heading {
     margin-bottom: 2.5rem;
     position: sticky;
     top: 7rem;
+    @include m.media("tablet") {
+      top: 6rem;
+    }
   }
   &__list {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
+    @include m.media("tablet") {
+      margin-bottom: 2.5rem;
+    }
   }
   &__first_card, &__third_card, &__fifth_card {
     background-color: var(--bg-green-color);
@@ -37,7 +48,9 @@
     background-image: url("../../../../public/images/about-us/card-background-2022.png");
     &_content {
       grid-column: 3 / -1;
-      max-width: 26.25rem;
+      @include m.media("tablet", "min") {
+        max-width: 26.25rem;
+      }
     }
   }
   &__fifth_card {
@@ -49,5 +62,8 @@
     &_second_content {
       grid-column: 3 / 4;
     }
+  }
+  &__more {
+    @include m.hideOnBreakpoint("tablet", "min");
   }
 }

@@ -21,7 +21,8 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
             <Container>
                 <PrimaryHeading>
                     <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
-                        Сотни инвесторов уже <GreenText><span>зарабатывают</span></GreenText> вместе с Lendly
+                        <span>Сотни инвесторов уже</span>
+                        <span><GreenText><span>зарабатывают</span></GreenText> вместе с Lendly</span>
                     </Heading>
                 </PrimaryHeading>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow>
