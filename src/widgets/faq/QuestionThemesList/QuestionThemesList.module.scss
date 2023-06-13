@@ -1,0 +1,44 @@
+@use "src/shared/styles/typography" as typo;
+
+.question_themes_list {
+  position: sticky;
+  top: 6rem;
+  height: 46rem;
+  max-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__link {
+    @include typo.tertiaryHeading;
+    color: var(--font-medium-gray-color);
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding-block: 0.5rem 0.75rem;
+    & > div {
+      display: none;
+    }
+    &[aria-current="true"] {
+      color: var(--primary-green-color);
+      text-decoration: none;
+      & > div {
+        display: flex;
+      }
+    }
+  }
+  &__more {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: calc(min(100%, 22.5rem));
+  }
+  &__more_button {
+    @include typo.buttonBigText;
+  }
+}

@@ -1,0 +1,18 @@
+.all_questions {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  &_container {
+    position: relative;
+  }
+  &__heading {
+    margin-bottom: 2rem;
+  }
+  &__pixel {
+    position: absolute;
+    top: -7rem;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
+}

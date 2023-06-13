@@ -67,9 +67,9 @@ const Footer = () => {
                         <span>наб. Черной речки д. 47, стр. 2, помещ. 1-н, ч. 34</span>
                     </address>
                     <div className={styles.footer__bottom_right}>
-                        <ProjectLink href="#top" className={styles.footer__link_to_top}>
+                        <a href="#top" className={styles.footer__link_to_top}>
                             Наверх <ArrowRight className={styles.footer__top_arrow} fill="#ffffff" />
-                        </ProjectLink>
+                        </a>
                         <ExternalLink href="https://www.cedro.agency" className={styles.footer__cedro}>
                             Сделано в Cedro
                             <CedroIcon />

@@ -1,0 +1,12 @@
+@use "src/shared/styles/typography" as typo;
+
+.faq_search {
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &_text {
+    @include typo.tertiaryHeading;
+  }
+}

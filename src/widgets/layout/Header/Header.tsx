@@ -9,7 +9,7 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 import {Container} from "@/src/shared/ui/layout";
 import {usePathname} from "next/navigation";
 import LandingLogo from "@/src/widgets/landing/LandingLogo";
-import {cn, resultIf, useWindowSize} from "@/src/shared/utils";
+import {cn, resultIf} from "@/src/shared/utils";
 import {useLayoutEffect, useRef, useState} from "react";
 import MobileMenuButton from "@/src/widgets/layout/MobileMenuButton";
 

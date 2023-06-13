@@ -1,0 +1,91 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.question {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--stroke-on-white-color);
+  &:last-child {
+    border-bottom: 1px solid var(--stroke-on-white-color);
+  }
+  &___active {
+    & .question__icon {
+      &::before {
+        @include m.centerWithPositioning(rotate(90deg));
+        background-color: var(--font-dark-color);
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+    & .question__content {
+      max-height: none;
+      padding-top: 1.5rem;
+    }
+    & .question__content_inner {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__header {
+
+  }
+  &__button {
+    @include m.buttonToLink;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  &__title {
+    @include typo.tertiaryHeading;
+    max-width: 43.75rem;
+    text-align: left;
+  }
+  &__icon {
+    @include m.box(3rem);
+    border-radius: 50%;
+    border: 1px solid var(--stroke-on-white-color);
+    position: relative;
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--primary-green-color);
+      transition: opacity 0.25s ease-in, transform 0.25s ease-in, background-color 0.25s ease-in, top 0.25s ease-in, left 0.25s ease-in;
+    }
+    &::before {
+      height: 1rem;
+      width: 0.125rem;
+      opacity: 1;
+      @include m.centerWithPositioning(rotate(0));
+    }
+    &::after {
+      height: 0.125rem;
+      width: 1rem;
+      opacity: 1;
+      @include m.centerWithPositioning;
+    }
+  }
+  &__content {
+    @include typo.primaryText;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease, padding-top 0.25s ease-in;
+    padding-top: 0;
+    &_inner {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-1.5rem);
+      transform-origin: top;
+      transition: opacity 0.25s ease-in, transform 0.25s ease-in;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: calc(min(100%, 42.75rem));
+      & a {
+        color: var(--primary-green-color);
+      }
+    }
+  }
+}
