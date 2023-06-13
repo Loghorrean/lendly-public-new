@@ -16,4 +16,10 @@
       fill: var(--white-color);
     }
   }
+  &___gray {
+    background-color: var(--light-theme-gray-color);
+    & svg > path {
+      fill: var(--font-dark-color);
+    }
+  }
 }

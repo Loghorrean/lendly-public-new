@@ -1,0 +1,10 @@
+.questions_section {
+  padding-block: 5rem 8.75rem;
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(auto, 27.6875rem) 1fr;
+    grid-gap: 1.5rem;
+    align-items: start;
+    position: relative;
+  }
+}
