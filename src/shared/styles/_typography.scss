@@ -57,9 +57,13 @@
 @mixin secondaryHeading {
     font-weight: 500;
     font-size: 2.875rem;
-    line-height: calc(2.875rem - 1px);
+    line-height: 98%;
     letter-spacing: v.$letter-spacing-5;
     @include trimProperties;
+    @include m.media("mobile") {
+        font-size: 1.75rem;
+        line-height: 108%;
+    }
 }
 
 @mixin tertiaryHeading {
@@ -68,6 +72,9 @@
     line-height: 100%;
     letter-spacing: v.$letter-spacing-3;
     @include trimProperties;
+    @include m.media("tablet") {
+        font-size: 1.5rem;
+    }
 }
 
 @mixin quaternaryHeading {

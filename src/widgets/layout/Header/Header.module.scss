@@ -11,6 +11,9 @@
     max-height: 4.5rem;
     padding: 1rem 0.5rem;
     z-index: 50;
+    @include m.media("tablet") {
+        padding-inline: 0;
+    }
     &__container {
         display: flex;
         align-items: center;
@@ -66,5 +69,8 @@
         display: flex;
         align-items: center;
         gap: 0.75rem;
+    }
+    &__register {
+        @include m.hideOnBreakpoint("mobile");
     }
 }

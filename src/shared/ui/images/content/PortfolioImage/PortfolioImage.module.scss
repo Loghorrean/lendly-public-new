@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.portfolio_image {
+  max-width: 350px;
+  @include m.media("tablet") {
+    max-width: 250px;
+  }
+}

@@ -5,11 +5,17 @@
   @include m.media("tablet") {
     padding-top: 4rem;
   }
+  @include m.media("mobile") {
+    padding-top: 3rem;
+  }
   &__cards {
     margin-block: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    @include m.media("mobile") {
+      margin-block: 2rem;
+    }
   }
   &__first_card {
     background-color: var(--font-green-secondary-color);
@@ -28,7 +34,7 @@
     background-position: center, center bottom;
     background-size: cover, 90%;
     @include m.media("tablet") {
-      background-size: cover, 150%;
+      background-size: cover, 180%;
     }
   }
   &__more {

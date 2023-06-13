@@ -1,3 +1,5 @@
+@use "src/shared/styles/mixins" as m;
+
 .news_list {
   display: flex;
   align-items: stretch;
@@ -6,4 +8,5 @@
   max-width: 100%;
   overflow: auto;
   padding-inline: 1.5rem;
+  @include m.scrollbarWidth;
 }

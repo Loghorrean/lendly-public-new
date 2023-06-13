@@ -2,6 +2,9 @@
 
 .news_section {
   max-width: calc(100vw - 1rem);
+  @include m.media("tablet") {
+    max-width: 100vw;
+  }
   & > div {
     max-width: 100%;
   }

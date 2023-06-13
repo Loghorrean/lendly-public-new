@@ -6,9 +6,14 @@
     background-color: var(--white-color);
     padding-block: v.$base-block-padding;
     &___first {
-        padding-top: v.$base-block-padding-higher;
+        @include m.media("tablet", "min") {
+            padding-top: v.$base-block-padding-higher;
+        }
     }
     @include m.media("tablet") {
         padding-block: 6rem;
+    }
+    @include m.media("mobile") {
+        padding-block: 4rem;
     }
 }

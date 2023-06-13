@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.house_image {
+  max-width: 246px;
+  @include m.media("tablet") {
+    max-width: calc(min(223px, 100%));
+  }
+}
