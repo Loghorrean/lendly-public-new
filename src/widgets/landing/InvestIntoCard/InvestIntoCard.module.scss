@@ -12,6 +12,9 @@
   gap: 1.5rem;
   color: var(--white-color);
   background-repeat: no-repeat;
+  @include m.media("mobile") {
+    min-height: 21.75rem;
+  }
   &__header {
     flex-grow: 1;
     display: flex;
@@ -25,6 +28,9 @@
       background-color: rgba(var(--white-color-rgb), 0.2);
       height: 100%;
       width: 1px;
+      @include m.media("mobile") {
+        display: none;
+      }
     }
   }
   &__title {
@@ -38,6 +44,10 @@
     grid-template-columns: repeat(2, minmax(10px, 1fr));
     padding-top: 2rem;
     border-top: 1px solid rgba(var(--white-color-rgb), 0.2);
+    @include m.media("mobile") {
+      grid-template-columns: none;
+      border: none;
+    }
   }
   &__info {
     grid-column: 2 / 3;

@@ -51,6 +51,16 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
+                <address className={styles.footer__mobile_address}>
+                    <div>
+                        <span>ООО "Лендли"   ИНН: 7814733360</span>
+                        <span>&copy; 2020 - 2023 OOO "Лендли"</span>
+                    </div>
+                    <div>
+                        <span>197342, г. Санкт-Петербург,</span>
+                        <span>наб. Черной речки д. 47, стр. 2, помещ. 1-н, ч. 34</span>
+                    </div>
+                </address>
                 <footer className={styles.footer__bottom}>
                     <address className={styles.footer__bottom_address}>
                         <span>197342, г. Санкт-Петербург</span>

@@ -5,16 +5,14 @@ import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import {Container} from "@/src/shared/ui/layout";
 import InfoBlock from "@/src/shared/ui/blocks/InfoBlock";
-import {ProjectImage} from "@/src/shared/ui/images";
-import walletImage from "@/public/images/landing/wallet-image.png";
-import gearsImage from "@/public/images/landing/gears-image.png";
-import macbookImage from "@/public/images/landing/macbook-image.png";
+import telegramImage from "@/public/images/landing/contacts/telegram-image.png";
+import mailImage from "@/public/images/landing/contacts/email-image.png";
+import supportsImage from "@/public/images/landing/contacts/support-image.png";
 import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
 import GreenText from "@/src/shared/ui/typography/GreenText";
-import WalletImage from "@/src/shared/ui/images/info/WalletImage";
-import ComputerImage from "@/src/shared/ui/images/info/ComputerImage";
-import GearsImage from "@/src/shared/ui/images/info/GearsImage";
+import {ProjectImage} from "@/src/shared/ui/images";
+import {cn} from "@/src/shared/utils";
 
 const QuestionsSection = () => {
     return (
@@ -27,11 +25,14 @@ const QuestionsSection = () => {
                     </Heading>
                 </SecondaryHeading>
                 <div className={styles.questions_section__grid}>
-                    <InfoBlock className={styles.questions_section__main_block}>
+                    <InfoBlock className={cn(
+                        styles.questions_section__block,
+                        styles.questions_section__main_block
+                    )}>
                         <header className={styles.questions_section__block_header}>
                             Телеграм-канал для инвесторов
                         </header>
-                        <ComputerImage className={styles.questions_section__computer} />
+                        <ProjectImage src={telegramImage} alt="Telegram Image" className={styles.questions_section__telegram} />
                         <footer className={styles.questions_section__block_footer}>
                             <p className={styles.questions_section__multiline_text}>
                                 <span>Если хотите быть в курсе</span>
@@ -43,11 +44,11 @@ const QuestionsSection = () => {
                             </ExternalLink>
                         </footer>
                     </InfoBlock>
-                    <InfoBlock>
+                    <InfoBlock className={styles.questions_section__block}>
                         <header className={styles.questions_section__block_header}>
                             Почта для заёмщиков и управляющих проектами
                         </header>
-                        <WalletImage className={styles.questions_section__wallet} />
+                        <ProjectImage src={mailImage} alt="Email image" className={styles.questions_section__mail} />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если хотите обсудить условия</p>
                             <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>
@@ -56,11 +57,11 @@ const QuestionsSection = () => {
                             </ExternalLink>
                         </footer>
                     </InfoBlock>
-                    <InfoBlock>
+                    <InfoBlock className={styles.questions_section__block}>
                         <header className={styles.questions_section__block_header}>
                             Служба поддержки
                         </header>
-                        <GearsImage />
+                        <ProjectImage src={supportsImage} alt="Support Image" className={styles.questions_section__support} />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если у вас проблемы с личным кабинетом</p>
                             <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>

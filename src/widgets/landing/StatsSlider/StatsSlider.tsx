@@ -27,10 +27,6 @@ const defaultStats: Array<PlatformStat> = [
         value: "27%",
         text: "годовых для инвестиций в займы"
     },
-    {
-        value: <><span>10.000</span><RubleSvg /></>,
-        text: "минимальная сумма инвестиций"
-    },
 ]
 
 type Props = BlockProps<HTMLUListElement> & {

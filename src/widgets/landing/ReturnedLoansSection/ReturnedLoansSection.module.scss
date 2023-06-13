@@ -3,16 +3,20 @@
 
 .returned_loans_section {
   padding-block: 7.5rem 8.75rem;
+  max-width: calc(100vw - 1rem);
   @include m.media("tablet") {
     padding-block: 6rem;
+    max-width: 100vw;
   }
   overflow: hidden;
-  max-width: calc(100vw - 1rem);
   & > div {
     max-width: 100%;
   }
   &__heading {
     margin-bottom: 2.5rem;
+    @include m.media("mobile") {
+      margin-bottom: 2rem;
+    }
   }
   &__list {
     display: grid;
@@ -23,6 +27,10 @@
     max-width: 100%;
     padding-inline: 1.5rem;
     @include m.scrollbarWidth;
+    @include m.media("mobile") {
+      padding-inline: 1rem;
+      grid-template-columns: repeat(2, minmax(min-content, max-content));
+    }
   }
   &__disclaimer {
     margin-top: 1rem;

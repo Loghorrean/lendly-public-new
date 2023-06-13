@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.gears_image {
+  max-width: 201px;
+  @include m.media("tablet") {
+    max-width: calc(min(180px, 100%));
+  }
+}

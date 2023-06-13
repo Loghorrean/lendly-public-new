@@ -16,6 +16,9 @@
       grid-auto-rows: minmax(min-content, max-content);
       grid-gap: 3rem;
     }
+    @include m.media("mobile") {
+      grid-gap: 1.5rem;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -52,6 +55,10 @@
     @include m.media("tablet") {
       width: 50%;
       align-self: flex-end;
+    }
+    @include m.media("mobile") {
+      width: 100%;
+      align-self: flex-start;
     }
   }
   &__crest {}

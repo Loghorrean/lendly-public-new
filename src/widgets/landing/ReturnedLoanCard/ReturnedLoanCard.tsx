@@ -30,58 +30,54 @@ const ReturnedLoanCard = ({ image, investedPercent, id, amount, left, rating, ra
                         ID {id}
                     </div>
                 </div>
-                <div>
-                    <div className={styles.returned_loan_card__info}>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Стоимость залога
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                <Money money={amount} />
-                            </div>
+                <div className={styles.returned_loan_card__grid}>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Стоимость залога
                         </div>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Осталось привлечь
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                <Money money={left} />
-                            </div>
+                        <div className={styles.returned_loan_card__value}>
+                            <Money money={amount} />
                         </div>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Рейтинг
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                {rating}
-                            </div>
+                    </div>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Осталось привлечь
+                        </div>
+                        <div className={styles.returned_loan_card__value}>
+                            <Money money={left} />
+                        </div>
+                    </div>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Рейтинг
+                        </div>
+                        <div className={styles.returned_loan_card__value}>
+                            {rating}
                         </div>
                     </div>
                     <ProgressBar amount={investedPercent} className={styles.returned_loan_card__progress} />
-                    <div className={styles.returned_loan_card__info}>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Ставка
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                {rate} %
-                            </div>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Ставка
                         </div>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Срок
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                {term} мес.
-                            </div>
+                        <div className={styles.returned_loan_card__value}>
+                            {rate} %
                         </div>
-                        <div className={styles.returned_loan_card__info_block}>
-                            <div className={styles.returned_loan_card__label}>
-                                Цель
-                            </div>
-                            <div className={styles.returned_loan_card__value}>
-                                <Money money={target} />
-                            </div>
+                    </div>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Срок
+                        </div>
+                        <div className={styles.returned_loan_card__value}>
+                            {term} мес.
+                        </div>
+                    </div>
+                    <div className={styles.returned_loan_card__info_block}>
+                        <div className={styles.returned_loan_card__label}>
+                            Цель
+                        </div>
+                        <div className={styles.returned_loan_card__value}>
+                            <Money money={target} />
                         </div>
                     </div>
                 </div>

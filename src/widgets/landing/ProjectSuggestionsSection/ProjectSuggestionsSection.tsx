@@ -4,11 +4,7 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import InfoBlock from "@/src/shared/ui/blocks/InfoBlock";
-import {ProjectImage} from "@/src/shared/ui/images";
-import walletImage from "@/public/images/landing/wallet-image.png";
 import RubleSvg from "@/src/shared/ui/svg/currency/RubleSvg";
-import gearsImage from "@/public/images/landing/gears-image.png";
-import macbookImage from "@/public/images/landing/macbook-image.png";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
 import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
 import {ProjectLink} from "@/src/shared/ui/links";
@@ -18,6 +14,12 @@ import {
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import {Container} from "@/src/shared/ui/layout";
 import GreenText from "@/src/shared/ui/typography/GreenText";
+import HouseImage from "@/src/shared/ui/images/content/HouseImage";
+import MoneyImage from "@/src/shared/ui/images/content/MoneyImage";
+import PortfolioImage from "@/src/shared/ui/images/content/PortfolioImage";
+import ClockImage from "@/src/shared/ui/images/content/ClockImage";
+import GearsImage from "@/src/shared/ui/images/content/GearsImage";
+import {cn} from "@/src/shared/utils";
 
 const ProjectSuggestionsSection = () => {
     return (
@@ -29,53 +31,60 @@ const ProjectSuggestionsSection = () => {
                         <p>Какие требования?</p>
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <div className={styles.project_suggestions_section__grid}>
-                    <InfoBlock>
+                    <InfoBlock className={styles.project_suggestions_section__block}>
                         <header className={styles.project_suggestions_section__block_header}>
                             Проект
                         </header>
-                        <ProjectImage src={walletImage} alt="Wallet image" />
+                        <HouseImage />
                         <footer className={styles.project_suggestions_section__block_footer}>
                             Строительство или реконструкция недвижимости
                         </footer>
                     </InfoBlock>
-                    <InfoBlock>
+                    <InfoBlock className={styles.project_suggestions_section__block}>
                         <header className={styles.project_suggestions_section__block_header}>
                             Стоимость проекта
                         </header>
-                        <ProjectImage src={gearsImage} alt="Gears image" />
+                        <MoneyImage />
                         <footer className={styles.project_suggestions_section__block_footer}>
                             20-300 млн.<RubleSvg />
                         </footer>
                     </InfoBlock>
-                    <InfoBlock className={styles.project_suggestions_section__main_block}>
+                    <InfoBlock className={cn(
+                        styles.project_suggestions_section__main_block,
+                        styles.project_suggestions_section__block
+                    )}>
                         <header className={styles.project_suggestions_section__block_header}>
                             Количество завершенных проектов
                         </header>
-                        <ProjectImage src={macbookImage} alt="Computer image" />
+                        <PortfolioImage />
                         <footer className={styles.project_suggestions_section__block_footer}>
                             Не меньше трех
                         </footer>
                     </InfoBlock>
-                    <InfoBlock>
+                    <InfoBlock className={styles.project_suggestions_section__block}>
                         <header className={styles.project_suggestions_section__block_header}>
                             Сроки реализации
                         </header>
-                        <ProjectImage src={walletImage} alt="Wallet image" />
+                        <ClockImage />
                         <footer className={styles.project_suggestions_section__block_footer}>
                             До 2 лет
                         </footer>
                     </InfoBlock>
-                    <InfoBlock>
+                    <InfoBlock className={styles.project_suggestions_section__block}>
                         <header className={styles.project_suggestions_section__block_header}>
                             Опыт реализации аналогичных проектов
                         </header>
-                        <ProjectImage src={gearsImage} alt="Gears image" />
+                        <GearsImage />
                         <footer className={styles.project_suggestions_section__block_footer}>
                             От 3 лет
                         </footer>
                     </InfoBlock>
                 </div>
+            </Container>
+            <Container>
                 <PrimaryButton arrow wide color={PRIMARY_BUTTON_COLOR.GREEN}>
                     <ProjectLink href="/auth/register">
                         Предложить проект

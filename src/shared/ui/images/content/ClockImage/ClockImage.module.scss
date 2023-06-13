@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.clock_image {
+  max-width: 327px;
+  @include m.media("tablet") {
+    max-width: calc(min(260px, 100%));
+  }
+}

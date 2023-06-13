@@ -77,7 +77,7 @@ const Header = () => {
                         </ul>
                         <div className={styles.header__auth}>
                             <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE}>
-                                <ProjectLink href="/auth/register">
+                                <ProjectLink href="/auth/register" className={styles.header__register}>
                                     Регистрация
                                 </ProjectLink>
                             </PrimaryButton>

@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.money_image {
+  max-width: 302px;
+  @include m.media("tablet") {
+    max-width: calc(min(269px, 100%));
+  }
+}

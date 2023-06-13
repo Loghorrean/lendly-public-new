@@ -14,6 +14,7 @@
   }
   @include m.media("tablet") {
     min-height: 28.125rem;
+    padding: 1.5rem;
   }
   @include m.media("mobile") {
     min-height: 18.1875rem;
