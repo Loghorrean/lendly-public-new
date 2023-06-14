@@ -2,6 +2,7 @@ import styles from "./NewsList.module.scss";
 import NewsCard, {NewsArticle} from "@/src/widgets/landing/NewsCard/NewsCard";
 import newsImage1 from "@/public/images/landing/news/news-image-1.png";
 import newsImage2 from "@/public/images/landing/news/news-image-2.png";
+import {BlockProps, cn} from "@/src/shared/utils";
 
 const mockNews: Array<NewsArticle> = [
     {
@@ -31,12 +32,12 @@ const mockNews: Array<NewsArticle> = [
     }
 ];
 
-const NewsList = () => {
+const NewsList = ({ ...props }: BlockProps<HTMLUListElement>) => {
     const renderNews = () => {
         return mockNews.map(post => <NewsCard key={post.uuid} article={post} className={styles.news_list__card} />)
     }
     return (
-        <ul className={styles.news_list}>
+        <ul {...props} className={cn(styles.news_list, props.className)}>
             {renderNews()}
         </ul>
     )
