@@ -1,0 +1,36 @@
+@use "src/shared/styles/typography" as typo;
+
+.auth_header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-height: 4.5rem;
+  padding: 1rem 0.5rem;
+  z-index: 50;
+  border-radius: 0 0 1rem 1rem;
+  background-image: linear-gradient(180deg, #F4F3F4 -37.5%, rgba(247, 246, 247, 0) 92.54%);
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    &::after {
+      content: "";
+      background-color: var(--dark-background-color);
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      bottom: -1rem;
+      left: 0;
+      opacity: 0.25;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    @include typo.secondaryTextAccent;
+  }
+}

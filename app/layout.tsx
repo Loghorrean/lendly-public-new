@@ -1,23 +1,15 @@
-import "@/src/main/index.scss";
 import {PropsWithChildren} from "react";
-import MainContent from "@/src/widgets/layout/MainContent";
+import "@/src/main/index.scss";
 
 export const metadata = {
-  title: 'Lendly',
-  description: 'Lendly',
+    title: 'Lendly',
+    description: 'Lendly',
 }
 
-export default function RootLayout({
-  children,
-}: PropsWithChildren) {
-  return (
-    <html lang="ru">
-      <body>
-        <div id="top"></div>
-        <MainContent>
-          {children}
-        </MainContent>
-      </body>
-    </html>
-  )
+export default function MainLayout({ children }: PropsWithChildren) {
+    return (
+        <html lang="ru">
+            { children }
+        </html>
+    );
 }
