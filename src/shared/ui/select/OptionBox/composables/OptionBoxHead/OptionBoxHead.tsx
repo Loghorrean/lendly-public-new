@@ -1,7 +1,7 @@
 import React, { AllHTMLAttributes, PropsWithChildren, ReactNode, SyntheticEvent, useEffect, useRef } from "react";
 import styles from "./OptionBoxHead.module.scss";
 import { OptionBoxContextType, useOptionBoxContext } from "@/src/shared/ui/select/OptionBox/context/OptionBoxContext";
-import { cn } from "@/src/shared/utils";
+import {cn, isValueEmpty, resultIf} from "@/src/shared/utils";
 import { DropdownArrowButton } from "@/src/shared/ui/utils";
 import { SvgProps } from "@/src/shared/ui/svg/SvgProps";
 
@@ -55,7 +55,14 @@ const OptionBoxHead = <T,>({ placeholder, children, ArrowElement, ...props }: Pr
             tabIndex={0}
             aria-expanded={active}
         >
-            <span className={styles.option_box__selected}>{renderSelectedOption()}</span>
+            <span
+                className={cn(
+                    styles.option_box__selected,
+                    resultIf(isValueEmpty(selectedOption), styles.option_box__placeholder)
+                )}
+            >
+                {renderSelectedOption()}
+            </span>
             <DropdownArrowButton active={active} ArrowElement={ArrowElement} />
         </header>
     );

@@ -25,6 +25,10 @@
     text-decoration: underline;
     @include typo.secondaryHeading;
     color: var(--font-medium-gray-color);
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: var(--primary-green-color);
+    }
     &[aria-current="page"] {
       text-decoration: none;
       color: var(--font-dark-color);

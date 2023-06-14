@@ -1,19 +1,20 @@
 @use "src/shared/styles/variables" as v;
 @use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
 
 .option_box {
     &__content {
         position: absolute;
-        top: calc(100% + 0.625rem);
+        top: calc(100% + 0.25rem);
         left: 0;
         overflow: hidden;
         @include m.scrollbarWidth;
         max-height: 0;
         z-index: 5;
         background-color: var(--white-color);
-        border-radius: 0.375rem;
-        box-shadow: var(--common-box-shadow);
-        width: max-content;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 32px rgba(0, 0, 0, 0.08);
+        width: 100%;
         &___enter {
             overflow: hidden;
             max-height: 0;
@@ -57,16 +58,14 @@
     }
     &__item {
         cursor: pointer;
-        @include m.font-size(0.875rem);
-        font-weight: 400;
+        @include typo.primaryText;
         max-width: 100%;
         overflow-x: scroll;
         @include m.scrollbarWidth;
         display: flex;
         align-items: center;
-        padding: calc(0.5rem + 1px) 1.5rem;
+        padding: 0.875rem 0 0.875rem 1.25rem;
         transition: background-color 0.5s ease-in-out;
-        border-radius: inherit;
         &[data-current="true"] {
             outline: 2px solid var(--primary-purple-color);
             outline-offset: -2px;
