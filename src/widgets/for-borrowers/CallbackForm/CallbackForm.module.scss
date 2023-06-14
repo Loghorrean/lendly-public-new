@@ -25,5 +25,10 @@
   &__rules_link {
     text-decoration: underline;
     color: var(--font-secondary-color) !important;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      text-decoration: none;
+      color: var(--primary-green-color);
+    }
   }
 }

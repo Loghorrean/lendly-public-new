@@ -10,16 +10,34 @@ import AuthLink from "@/src/widgets/auth/AuthLink";
 import CommonLabel from "@/src/shared/ui/typography/CommonLabel";
 import CommonInput from "@/src/shared/ui/inputs/CommonInput";
 import {OptionBox} from "@/src/shared/ui/select";
+import PasswordInput from "@/src/shared/ui/inputs/PasswordInput";
+import {Checkbox} from "@/src/shared/ui/form";
+import {cn, resultIf, sleep, useToggle} from "@/src/shared/utils";
+import ExternalLink from "@/src/shared/ui/links/ExternalLink";
+import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
+import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
+import {Button} from "@/src/shared/ui/buttons";
+import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow";
+import {
+    PRIMARY_BUTTON_ARROW_COLOR
+} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import Loader from "@/src/shared/ui/loaders/Loader";
 
-const loanOptions = ["Квартира", "Дом", "Подъезд"];
+const loanOptions = ["Квартира", "Коммерческое помещение", "Промышленный объект", "Земельный участок", "Дом", "Другое"];
 
 const BorrowerForm = () => {
+    const [loading, setLoading] = useState(false);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
-    const handleSubmit = (event: SyntheticEvent) => {
+    const [infoAgreed, toggleInfo] = useToggle();
+    const [rulesAccepted, toggleRules] = useToggle();
+    const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
+        setLoading(true);
+        await sleep(3000);
+        setLoading(false);
     }
     return (
-        <CommonAuthBlock>
+        <CommonAuthBlock className={styles.borrower_form_block}>
             <form onSubmit={handleSubmit} className={styles.borrower_form}>
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.borrower_form__heading}>
@@ -82,14 +100,57 @@ const BorrowerForm = () => {
                     </div>
                     <div className={styles.borrower_form__group}>
                         <CommonLabel htmlFor="type">
-                            Сумма займа
+                            Вид залога
                         </CommonLabel>
-                        <OptionBox options={loanOptions} selectedOption={selectedOption}>
+                        <OptionBox options={loanOptions} selectedOption={selectedOption} id="type">
                             <OptionBox.Head placeholder="Местонахождение объекта" />
                             <OptionBox.Content onSelected={setSelectedOption} />
                         </OptionBox>
                     </div>
+                    <div className={styles.borrower_form__group}>
+                        <CommonLabel htmlFor="place">
+                            Местонахождение объекта
+                        </CommonLabel>
+                        <CommonInput id="place">
+                            <CommonInput.Container>
+                                <CommonInput.Input placeholder="Местонахождение объекта" />
+                            </CommonInput.Container>
+                        </CommonInput>
+                    </div>
+                    <div className={styles.borrower_form__group}>
+                        <CommonLabel htmlFor="password">
+                            Пароль
+                        </CommonLabel>
+                        <PasswordInput id="password">
+                            <PasswordInput.Container>
+                                <PasswordInput.Input placeholder="Пароль" />
+                            </PasswordInput.Container>
+                        </PasswordInput>
+                    </div>
                 </div>
+                <div className={styles.borrower_form__checkboxes}>
+                    <Checkbox checked={infoAgreed} onChange={toggleInfo}>
+                        Согласен на <ExternalLink href="https://youtube.com" className={styles.borrower_form__external}>
+                            информационное взаимодействие
+                        </ExternalLink>
+                    </Checkbox>
+                    <Checkbox checked={rulesAccepted} onChange={toggleRules}>
+                        Согласен с <ExternalLink href="https://youtube.com" className={styles.borrower_form__external}>
+                        правилами пользования платформой
+                    </ExternalLink>
+                    </Checkbox>
+                </div>
+                <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} wide arrow>
+                    <Button type="submit" className={cn(
+                        styles.borrower_form__submit,
+                        resultIf(loading, styles.borrower_form__submit___loading)
+                    )}>
+                        { loading ? <Loader /> : <>
+                            Регистрация
+                            <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
+                        </> }
+                    </Button>
+                </PrimaryButton>
             </form>
         </CommonAuthBlock>
     );
