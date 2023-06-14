@@ -33,13 +33,14 @@
     gap: 0.25rem;
     @include typo.secondaryTextAccent;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    &:hover {
+    &:hover, &:active {
       color: var(--white-color);
-      background-color: var(--primary-green-color);
+    }
+    &:hover {
+      background-color: var(--primary-green-color) !important;
     }
     &:active {
-      color: var(--white-color);
-      background-color: var(--primary-green-color-active);
+      background-color: var(--primary-green-color-active) !important;
     }
   }
 }
