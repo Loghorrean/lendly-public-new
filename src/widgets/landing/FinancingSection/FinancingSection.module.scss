@@ -41,6 +41,10 @@
         @include m.centerColumnWithPositioning;
       }
     }
+    &:hover {
+      color: var(--primary-green-color);
+      text-decoration: none;
+    }
     &[aria-current="true"] {
       color: var(--font-dark-color);
     }

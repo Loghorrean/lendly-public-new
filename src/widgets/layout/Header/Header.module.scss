@@ -86,5 +86,11 @@
     }
     &__register {
         @include m.hideOnBreakpoint("mobile");
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        &:hover {
+            border-color: var(--primary-green-color);
+            background-color: var(--primary-green-color) !important;
+            color: var(--white-color);
+        }
     }
 }

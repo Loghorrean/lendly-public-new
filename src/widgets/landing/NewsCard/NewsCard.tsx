@@ -32,6 +32,7 @@ const NewsCard = ({ article, ...props }: Props) => {
                 styles.news_card,
                 resultIf(article.large, styles.news_card___large),
                 resultIf(isWhite(), styles.news_card___white),
+                resultIf(!isWhite(), styles.news_card___hoverable),
                 props.className
             )}
             style={{ backgroundImage: resultIf(isWhite(), `url("${article.photo}")`) }}

@@ -32,5 +32,14 @@
     align-items: center;
     gap: 0.25rem;
     @include typo.secondaryTextAccent;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    &:hover {
+      color: var(--white-color);
+      background-color: var(--primary-green-color);
+    }
+    &:active {
+      color: var(--white-color);
+      background-color: var(--primary-green-color-active);
+    }
   }
 }

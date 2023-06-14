@@ -27,11 +27,11 @@
     @include m.centerWithFlex;
     border-radius: 0.75rem;
     background-color: transparent;
-    transition: background-color 0.35s;
+    transition: color 0.35s ease-in-out;
     color: var(--font-dark-color);
     @include typo.quaternaryHeading;
     &:hover {
-      background-color: var(--stroke-on-white-color);
+      color: var(--primary-green-color);
     }
     &[aria-current="true"] {
       color: var(--white-color);

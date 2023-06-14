@@ -22,7 +22,9 @@
     background-color: var(--white-color);
     transition: background-color 0.35s ease-in-out;
     &:hover {
-      background-color: var(--gray-background-color);
+      & svg > path {
+        fill: var(--primary-green-color);
+      }
     }
     &___disabled {
       cursor: initial;

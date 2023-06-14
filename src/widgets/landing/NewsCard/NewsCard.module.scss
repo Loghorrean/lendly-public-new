@@ -12,6 +12,11 @@
   border: 1px solid var(--stroke-on-white-color);
   background-repeat: no-repeat;
   background-size: cover;
+  &:hover {
+    & .news_card__footer {
+      border-color: var(--primary-green-color);
+    }
+  }
   &___large {
     max-width: 56.8125rem;
     grid-column: 1 / -1;
@@ -20,6 +25,11 @@
     background-color: var(--font-medium-gray-color);
     background-blend-mode: multiply;
     color: var(--white-color);
+    &:hover {
+      & .news_card__footer {
+        border-color: var(--white-color);
+      }
+    }
   }
   &__photo {
     border-radius: 0.5rem 0.5rem 1rem 1rem;
