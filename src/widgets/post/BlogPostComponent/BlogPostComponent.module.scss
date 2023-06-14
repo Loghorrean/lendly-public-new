@@ -1,0 +1,162 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.blog_post {
+  padding-top: 3.5rem;
+  position: relative;
+  min-height: 100vh;
+  &__back {
+    position: sticky;
+    left: 0;
+    top: 6.5rem;
+    border-radius: 50%;
+    @include m.box(3rem);
+    @include m.centerWithFlex;
+    border: 1px solid var(--stroke-on-white-color);
+  }
+  &__inner {
+    margin-inline: auto;
+    width: calc(min(calc(100% - 8rem), 56.875rem));
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  &__date {
+    @include typo.secondaryText;
+    color: var(--font-secondary-color);
+  }
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &__tag {
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    @include typo.trimProperties;
+    line-height: 94%;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--light-theme-gray-color);
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+  }
+  &__title {
+    @include typo.primaryHeading;
+    margin-bottom: 2rem;
+  }
+  &__author {
+    width: fit-content;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 3rem;
+    &_name {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      @include typo.secondaryText;
+    }
+    &_title {
+      color: var(--font-secondary-color);
+    }
+  }
+  &__content {
+    margin-bottom: 4.5rem;
+    & > header {
+      margin-bottom: 4.5rem;
+      border-bottom: 1px solid var(--stroke-on-white-color);
+      & img {
+        margin-bottom: 3rem;
+      }
+    }
+    & img {
+      @include m.useResizableImage;
+    }
+    & p {
+      @include typo.trimProperties;
+      letter-spacing: var(--letter-spacing-2);
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 132%;
+      width: calc(min(100%, 47.5rem));
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    & h2 {
+      @include typo.tertiaryHeading;
+      margin-bottom: 2.5rem;
+      max-width: 47.5rem;
+    }
+    & h3 {
+      @include typo.secondaryHeading;
+      margin-bottom: 3rem;
+      max-width: 42.25rem;
+    }
+    & h4 {
+      @include typo.tertiaryHeading;
+      max-width: 42.25rem;
+    }
+    & section {
+      &:nth-child(2) {
+        margin-top: 4.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4.5rem;
+      }
+      & > div > p:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    & ol {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      & > li {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+    }
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style-type: disc;
+    }
+    & li {
+      max-width: 47.5rem;
+    }
+    & span {
+      display: block;
+      width: calc(min(100%, 29.5rem));
+      margin-inline: auto;
+      @include typo.tertiaryText;
+      text-align: center;
+      margin-top: 0.5rem;
+      color: var(--font-secondary-color);
+    }
+  }
+  &__conclusion {
+    border-radius: 1rem;
+    background-color: var(--primary-green-color);
+    padding: 2rem;
+    color: var(--white-color);
+    &_heading {
+      @include typo.tertiaryHeading;
+      margin-bottom: 2rem;
+    }
+    &_text {
+      @include typo.primaryText;
+      margin-bottom: 3rem;
+    }
+    &_link {
+      max-width: 20.375rem;
+    }
+  }
+}
