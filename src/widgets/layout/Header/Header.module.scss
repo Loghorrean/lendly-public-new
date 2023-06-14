@@ -13,6 +13,7 @@
     z-index: 50;
     @include m.media("tablet") {
         padding-inline: 0;
+        max-height: 4rem;
     }
     &__container {
         display: flex;
@@ -29,6 +30,7 @@
             bottom: -1rem;
             left: 0;
             opacity: 0.25;
+            z-index: 58;
         }
         @include m.media("tablet") {
             &::after {

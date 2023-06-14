@@ -10,6 +10,7 @@ import QuestionIcon from "@/src/shared/ui/svg/QuestionIcon";
 import TooltipContent from "@/src/shared/ui/utils/Tooltip/composables/TooltipContent";
 import headerLogo from "@/public/images/logo/header-logo.png";
 import {ProjectLink} from "@/src/shared/ui/links";
+import HomeLink from "@/src/shared/ui/links/HomeLink";
 
 const minWidth = 120;
 const minHeight = 40;
@@ -54,9 +55,7 @@ const LandingLogo = () => {
                 <span>Инвестиционная платформа. Лицензия ЦБ №34</span>
                 <Tooltip tooltipContent={<TooltipContent>Какой-то текст</TooltipContent>}><QuestionIcon /></Tooltip>
             </div>
-            <ProjectLink href="/" className={styles.landing_logo__link}>
-                <ProjectImage src={headerLogo} alt="Header logo" />
-            </ProjectLink>
+            <HomeLink className={styles.landing_logo__link} />
         </div>
     );
 }
