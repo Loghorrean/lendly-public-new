@@ -4,13 +4,28 @@
 
 .hero_section {
   position: fixed;
-  background: url("../../../../public/images/landing/landing-background.png") center 25% no-repeat;
+  //background: url("../../../../public/images/landing/landing-background.png") center 25% no-repeat;
   padding-bottom: 3rem;
-  @include m.media("tablet") {
-    background-size: 120%;
-  }
+  //@include m.media("tablet") {
+  //  background-size: 120%;
+  //}
   & > div {
     height: 100%;
+  }
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &_container {
+      position: fixed;
+      @include m.centerWithPositioning;
+      max-width: 80rem;
+      width: 100%;
+      z-index: -2;
+      &___unfixed {
+        display: none;
+      }
+    }
   }
   &__heading {
     @include m.hideOnBreakpoint("tablet", "min");

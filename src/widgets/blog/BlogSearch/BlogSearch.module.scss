@@ -9,4 +9,9 @@
   &_text {
     @include typo.tertiaryHeading;
   }
+  &__input {
+    &::placeholder {
+      @include typo.primaryText;
+    }
+  }
 }

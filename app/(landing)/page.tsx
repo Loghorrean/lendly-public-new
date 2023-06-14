@@ -6,7 +6,7 @@ import WhatIsSection from "@/src/widgets/landing/WhatIsSection";
 import InvestIntoSection from "@/src/widgets/landing/InvestIntoSection";
 import FinancingSection from "@/src/widgets/landing/FinancingSection";
 import ReturnedLoansSection from "@/src/widgets/landing/ReturnedLoansSection";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 import LoanTermsSection from "@/src/widgets/landing/LoanTermsSection";
 import ProjectSuggestionsSection from "@/src/widgets/landing/ProjectSuggestionsSection";
 import NewsSection from "@/src/widgets/landing/NewsSection";
@@ -17,10 +17,10 @@ import {useParallax} from "@/src/widgets/useParallax";
 export default function Home() {
     const heroRef = useRef<HTMLDivElement | null>(null);
     const parallaxRef = useRef<HTMLDivElement | null>(null);
-    useParallax(heroRef, parallaxRef);
+    const isFixed = useParallax(heroRef, parallaxRef);
     return (
       <>
-        <HeroSection ref={heroRef} />
+        <HeroSection isFixed={isFixed} ref={heroRef} />
         <ParallaxBlock ref={parallaxRef}>
             <CommonBlock first>
                 <WhatIsSection />

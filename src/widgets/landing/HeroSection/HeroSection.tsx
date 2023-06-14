@@ -15,12 +15,30 @@ import {Container} from "@/src/shared/ui/layout";
 import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
 import React, {ForwardedRef} from "react";
-import {BlockProps, cn} from "@/src/shared/utils";
+import {BlockProps, cn, resultIf} from "@/src/shared/utils";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 
-const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
+type Props = BlockProps & {
+    isFixed: boolean;
+}
+
+const HeroSection = ({ isFixed, ...props }: Props, ref: ForwardedRef<HTMLDivElement>) => {
     return (
         <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
+            <div className={cn(
+                styles.hero_section__video_container,
+                resultIf(!isFixed, styles.hero_section__video_container___unfixed)
+            )}>
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    className={styles.hero_section__video}
+                    poster="/images/landing/landing-background.png"
+                >
+                    <source src="/images/landing/lendly.mp4" type="video/mp4" />
+                </video>
+            </div>
             <Container>
                 <div className={styles.hero_section__container}>
                     <SecondaryHeading>

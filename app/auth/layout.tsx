@@ -6,6 +6,7 @@ import {CONTENT_TYPE} from "@/src/shared/ui/layout/Content/Content";
 import AuthHeader from "@/src/widgets/auth/AuthHeader";
 import Main from "@/src/shared/ui/layout/Main";
 import styles from "./styles.module.scss";
+import AuthLinks from "@/src/widgets/auth/AuthLinks";
 
 export default function AuthLayout({ children }: PropsWithChildren) {
     return (
@@ -14,6 +15,7 @@ export default function AuthLayout({ children }: PropsWithChildren) {
             <AuthHeader />
             <Main>
                 <div className={styles.auth_container}>
+                    <AuthLinks />
                     { children }
                 </div>
             </Main>
