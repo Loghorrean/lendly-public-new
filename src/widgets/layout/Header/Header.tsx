@@ -1,7 +1,5 @@
 "use client";
 
-import {ProjectImage} from "@/src/shared/ui/images";
-import headerLogo from "@/public/images/logo/header-logo.png";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
 import {ProjectLink} from "@/src/shared/ui/links";
 import styles from "./Header.module.scss";
@@ -9,11 +7,14 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 import {Container} from "@/src/shared/ui/layout";
 import {usePathname} from "next/navigation";
 import LandingLogo from "@/src/widgets/landing/LandingLogo";
-import {cn, resultIf} from "@/src/shared/utils";
+import {cn, resultIf, useToggle} from "@/src/shared/utils";
 import {useLayoutEffect, useRef, useState} from "react";
 import MobileMenuButton from "@/src/widgets/layout/MobileMenuButton";
+import MobileMenu from "@/src/widgets/layout/MobileMenu";
+import HomeLink from "@/src/shared/ui/links/HomeLink";
 
 const Header = () => {
+    const [active, toggle, setActive] = useToggle(false);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [isScrolled, setIsScrolled] = useState<boolean | null>(null);
     useLayoutEffect(() => {
@@ -33,6 +34,7 @@ const Header = () => {
     }
     return (
         <header className={styles.header}>
+            <MobileMenu active={active} setActive={setActive} />
             <Container>
                 <div
                     ref={containerRef}
@@ -42,11 +44,7 @@ const Header = () => {
                         resultIf(isScrolled === true, styles.header__container___full)
                     )}
                 >
-                    { isLanding() ? ( isScrolled ? <ProjectLink href="/">
-                        <ProjectImage src={headerLogo} alt="Header logo" />
-                    </ProjectLink> : <LandingLogo /> ) : <ProjectLink href="/">
-                        <ProjectImage src={headerLogo} alt="Header logo" />
-                    </ProjectLink> }
+                    { isLanding() ? ( isScrolled ? <HomeLink /> : <LandingLogo /> ) : <HomeLink /> }
                     <nav className={styles.header__navigation}>
                         <ul className={styles.header__links}>
                             <li>
@@ -86,7 +84,7 @@ const Header = () => {
                                     Вход
                                 </ProjectLink>
                             </PrimaryButton>
-                            <MobileMenuButton />
+                            <MobileMenuButton onClick={toggle} />
                         </div>
                     </nav>
                 </div>

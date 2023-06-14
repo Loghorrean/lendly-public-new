@@ -1,0 +1,53 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.mobile_menu {
+  z-index: 55;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--gray-background-color);
+  transition: max-height 0.35s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  &___active {
+    max-height: 100vh;
+  }
+  & > div {
+    padding-block: 5.875rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__element {
+    width: fit-content;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  &__link {
+    @include m.centerWithFlex;
+    padding: 0.625rem 1rem 0.625rem 0;
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 108%;
+    letter-spacing: var(--letter-spacing-3);
+    transition: color 0.25s ease-in-out;
+    color: var(--font-dark-color);
+    &:hover {
+      color: var(--primary-green-color);
+    }
+  }
+  &__auth_links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    & > a {
+      @include typo.buttonBigText;
+    }
+  }
+}
