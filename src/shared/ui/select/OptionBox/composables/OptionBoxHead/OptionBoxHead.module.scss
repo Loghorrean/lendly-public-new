@@ -1,8 +1,11 @@
+@use "src/shared/styles/typography" as typo;
+
 .option_box__head {
+    height: 100%;
     cursor: pointer;
     background-color: var(--white-color);
     padding: 1rem 1rem 1rem 1.25rem;
-    border-radius: 0.75rem;
+    border-radius: 1.125rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -15,5 +18,11 @@
 
 .option_box__selected {
     flex-grow: 1;
-    font-weight: 400;
+    @include typo.primaryText;
+    color: var(--font-dark-color);
+}
+
+.option_box__placeholder {
+    @include typo.primaryText;
+    color: var(--font-secondary-color);
 }

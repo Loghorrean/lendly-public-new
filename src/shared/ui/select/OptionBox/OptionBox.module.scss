@@ -1,4 +1,7 @@
 .option_box {
+    min-height: 4rem;
+    height: 1px;
     position: relative;
-    border-radius: 0.25rem;
+    border-radius: 1.125rem;
+    border: 1px solid var(--stroke-on-white-color);
 }
