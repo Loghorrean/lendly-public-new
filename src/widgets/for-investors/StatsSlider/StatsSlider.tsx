@@ -78,9 +78,9 @@ const StatsSlider = () => {
                 <div className={styles.stats_slider__cell}>
                     <ForInvestorsSecondIcon />
                     <div className={styles.stats_slider__item}>
-                        <p className={styles.stats_slider__value}>
+                        <div className={styles.stats_slider__value}>
                             10 000<RubleSvg />
-                        </p>
+                        </div>
                         <p className={styles.stats_slider__text}>
                             Минимальная инвестиция
                         </p>

@@ -1,0 +1,35 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.choose_register_type {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-gap: 0.5rem;
+  width: 100%;
+  &__option {
+    min-height: 16.25rem;
+    @include m.centerWithFlex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    border-radius: 1rem;
+    @include typo.buttonBigText;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: var(--stroke-on-white-color);
+    }
+  }
+  &__login {
+    text-align: center;
+    border-radius: 1.125rem;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    @include typo.buttonBigText;
+    padding-block: 1.5rem;
+    grid-column: 1 / -1;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: var(--stroke-on-white-color);
+    }
+  }
+}
