@@ -1,0 +1,10 @@
+@use "src/shared/styles/mixins" as m;
+
+.common_auth_block {
+  max-width: 29.75rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: var(--white-color);
+  @include m.centerWithFlex;
+  flex-direction: column;
+}

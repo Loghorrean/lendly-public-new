@@ -1,0 +1,33 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.auth_links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+  &__element {
+    position: relative;
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        @include m.centerColumnWithPositioning();
+        right: -1.5rem;
+        background-color: var(--font-secondary-color);
+        height: 1.5rem;
+        width: 1px;
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    text-decoration: underline;
+    @include typo.secondaryHeading;
+    color: var(--font-medium-gray-color);
+    &[aria-current="page"] {
+      text-decoration: none;
+      color: var(--font-dark-color);
+    }
+  }
+}

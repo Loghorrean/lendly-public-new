@@ -5,6 +5,7 @@ import {Container} from "@/src/shared/ui/layout";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import PrimaryHeading from "@/src/shared/ui/typography/Heading/decorators/PrimaryHeading";
+import BlogSearch from "@/src/widgets/blog/BlogSearch";
 
 const MainSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
@@ -15,6 +16,7 @@ const MainSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                         Блог Lendly
                     </Heading>
                 </PrimaryHeading>
+                <BlogSearch />
             </Container>
         </section>
     );
