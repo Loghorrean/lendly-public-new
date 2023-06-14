@@ -19,6 +19,7 @@ const Container: FC<PropsWithChildren<Props>> = ({ children, needsDisabling }) =
                 }
                 if (window.innerWidth < requiredWidth && !isDisabled.current) {
                     containerRef.current!.style.paddingInline = "0";
+                    isDisabled.current = true;
                 }
             }
         }
