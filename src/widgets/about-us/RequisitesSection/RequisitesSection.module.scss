@@ -16,6 +16,10 @@
     text-decoration: underline;
     color: var(--font-medium-gray-color);
     transition: color 0.4s;
+    &:hover {
+      color: var(--primary-green-color);
+      text-decoration: none;
+    }
     &[aria-current="true"] {
       color: var(--font-dark-color);
       text-decoration: none;

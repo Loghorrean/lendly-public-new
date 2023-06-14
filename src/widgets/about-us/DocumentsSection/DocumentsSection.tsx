@@ -23,7 +23,7 @@ const DocumentsSection = () => {
     return (
         <section className={styles.documents_section}>
             <Container>
-                <ul className={styles.documents_section__tabs}>
+                <ul className={styles.documents_section__tabs} role="tablist">
                     <SecondaryHeading>
                         <li
                             className={styles.documents_section__tab}

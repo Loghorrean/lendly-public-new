@@ -5,13 +5,13 @@ import {usePathname} from "next/navigation";
 const AuthLinks = () => {
     const pathname = usePathname();
     return (
-        <ul className={styles.auth_links}>
-            <li className={styles.auth_links__element}>
+        <ul className={styles.auth_links} role="tablist">
+            <li className={styles.auth_links__element} role="tab">
                 <ProjectLink href="/auth/login" className={styles.auth_links__link}>
                     Вход
                 </ProjectLink>
             </li>
-            <li className={styles.auth_links__element}>
+            <li className={styles.auth_links__element} role="tab">
                 <ProjectLink
                     href="/auth/register"
                     className={styles.auth_links__link}

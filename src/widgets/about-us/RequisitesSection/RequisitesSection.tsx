@@ -24,7 +24,7 @@ const RequisitesSection = () => {
         <section className={styles.requisites_section}>
             <Container>
                 <div className={styles.requisites_section__container}>
-                    <ul className={styles.requisites_section__sections}>
+                    <ul className={styles.requisites_section__sections} role="tablist">
                         <SecondaryHeading>
                             <li
                                 className={styles.requisites_section__tab}

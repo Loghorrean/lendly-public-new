@@ -22,7 +22,7 @@ const FinancingSection = ({ ...props }: BlockProps) => {
     return (
         <section {...props} className={cn(styles.financing_section, props.className)}>
             <Container>
-                <ul className={styles.financing_section__tabs}>
+                <ul className={styles.financing_section__tabs} role="tablist">
                     <li
                         role="tab"
                         className={styles.financing_section__tab}

@@ -25,7 +25,9 @@
     margin-bottom: 1.5rem;
     overflow: auto;
     max-width: 100%;
-    padding-inline: 1.5rem;
+    @include m.media(90em) {
+      padding-inline: 1rem;
+    }
     @include m.scrollbarWidth;
     @include m.media("mobile") {
       padding-inline: 1rem;

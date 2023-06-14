@@ -12,6 +12,11 @@
     cursor: pointer;
     color: var(--font-medium-gray-color);
     text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: var(--primary-green-color);
+      text-decoration: none;
+    }
     &[aria-current="true"] {
       color: var(--font-dark-color);
       text-decoration: none;
