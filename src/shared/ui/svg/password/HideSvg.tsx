@@ -1,25 +1,13 @@
 import React from "react";
 import SvgContainer from "../SvgContainer";
+import {SvgProps} from "@/src/shared/ui/svg/SvgProps";
+import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
 
-const HideSvg = () => {
+const HideSvg = ({ size = SVG_CONTAINER_SIZE.SIZE_16, ...props }: SvgProps) => {
     return (
-        <SvgContainer>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4L20 20" stroke="#AFAFAF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path
-                    d="M16.5 16.756C15.1474 17.4846 13.6186 18 12 18C6.47715 18 2 12 2 12C2 12 4.08842 9.20123 7.17205 7.4267M19.5 14.6337C21.0559 13.2652 22 12 22 12C22 12 17.5228 6 12 6C11.6625 6 11.3289 6.02241 11 6.06448"
-                    stroke="#AFAFAF"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M13.3229 13.5002C12.9703 13.8114 12.5072 14.0002 12 14.0002C10.8954 14.0002 10 13.1048 10 12.0002C10 11.4607 10.2136 10.9711 10.5609 10.6113"
-                    stroke="#AFAFAF"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
+        <SvgContainer size={size}>
+            <svg {...props} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.50818 5C2.50818 5 3.03427 5.92206 4.01895 6.81965M13.4916 5C13.4916 5 12.9655 5.92206 11.9808 6.81965M7.99987 8.5C9.70085 8.5 11.047 7.67083 11.9808 6.81965M7.99987 8.5V11M7.99987 8.5C6.29888 8.5 4.95272 7.67083 4.01895 6.81965M11.9808 6.81965L14 8.75M4.01895 6.81965L2 8.75" stroke="#404043" strokeWidth="2.09208" strokeLinecap="square" strokeLinejoin="round"/>
             </svg>
         </SvgContainer>
     );

@@ -1,0 +1,9 @@
+@use "src/shared/styles/typography" as typo;
+
+.auth_link {
+  text-decoration: underline;
+  display: block;
+  padding-block: 0.5rem 0.25rem;
+  color: var(--font-secondary-color);
+  @include typo.primaryText;
+}

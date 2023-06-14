@@ -1,3 +1,24 @@
-.login_form {
+@use "src/shared/styles/typography" as typo;
 
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__inputs {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__submit {
+    margin-bottom: 1rem;
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__submit {
+    @include typo.buttonBigText;
+  }
 }
