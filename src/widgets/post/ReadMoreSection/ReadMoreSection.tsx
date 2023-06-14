@@ -15,13 +15,17 @@ import {
 const ReadMoreSection = () => {
     return (
         <section className={styles.read_more_section}>
-            <Container needsDisabling>
+            <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.read_more_section__heading}>
                         Читайте также
                     </Heading>
                 </SecondaryHeading>
-                <NewsList style={{ paddingInline: "0" }} />
+            </Container>
+            <Container needsDisabling>
+                <NewsList />
+            </Container>
+            <Container>
                 <PrimaryButton arrow wide color={PRIMARY_BUTTON_COLOR.WHITE}>
                     <ProjectLink href="/blog">
                         Все новости

@@ -7,7 +7,9 @@
   margin-bottom: 1.5rem;
   max-width: 100%;
   overflow: auto;
-  padding-inline: 1.5rem;
+  @include m.media(90em) {
+    padding-inline: 1rem;
+  }
   @include m.scrollbarWidth;
   &__card {
     min-width: 26.25rem;
