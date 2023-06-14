@@ -19,11 +19,22 @@
     &_container {
       position: fixed;
       @include m.centerWithPositioning;
-      max-width: 80rem;
       width: 100%;
       z-index: -2;
+      @include m.centerWithFlex;
+      max-width: 80rem;
       &___unfixed {
         display: none;
+      }
+      @include m.media("tablet") {
+        top: 22rem;
+        max-width: 40rem;
+        max-height: 30rem;
+      }
+      @include m.media("mobile") {
+        top: 25rem;
+        max-width: 23.375rem;
+        max-height: 23.375rem;
       }
     }
   }
