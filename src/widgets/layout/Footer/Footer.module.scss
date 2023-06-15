@@ -2,7 +2,7 @@
 @use "src/shared/styles/mixins" as m;
 
 .footer {
-  background: url("../../../../public/images/footer-background.png") no-repeat center bottom, var(--bg-green-color);
+  background: url("/images/footer-background.png") no-repeat center bottom, var(--bg-green-color);
   padding: 2.25rem 1.5rem 2.625rem;
   border-radius: 1.25rem;
   color: var(--white-color);
@@ -129,6 +129,7 @@
     gap: 0.5rem;
   }
   &__mobile_address {
+    @include m.hideOnBreakpoint("mobile", "min");
     color: var(--white-color);
     font-style: normal;
     @include typo.secondaryText;
