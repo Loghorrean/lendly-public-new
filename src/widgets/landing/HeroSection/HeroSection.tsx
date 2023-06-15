@@ -23,8 +23,10 @@ type Props = BlockProps & {
 }
 
 const HeroSection = ({ isFixed, ...props }: Props, ref: ForwardedRef<HTMLDivElement>) => {
-    const videoRef = useCallback((node: HTMLVideoElement) => {
-        node.play().catch(() => console.error("Could not play the video"));
+    const videoRef = useCallback((node: HTMLVideoElement | null | undefined) => {
+        if (isNotEmpty(node)) {
+            node.play().catch(() => console.error("Could not play the video"));
+        }
     }, []);
     return (
         <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
