@@ -1,5 +1,6 @@
 @use "src/shared/styles/mixins" as m;
 @use "src/shared/styles/variables" as v;
+@use "src/shared/styles/typography" as typo;
 
 .radio_button {
     position: relative;
@@ -22,6 +23,7 @@
     &__label {
         position: relative;
         margin-bottom: 0;
+        @include typo.secondaryText;
         &___disabled {
             color: var(--pale-color);
             &::after,
@@ -39,24 +41,27 @@
             border-radius: 50%;
         }
         &::before {
-            border: 2px solid var(--gray-color);
+            border: 2px solid var(--stroke-on-white-color);
             pointer-events: none;
             transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
             border-radius: 50%;
-            @include m.box(1rem);
+            @include m.box(1.5rem);
             background-color: var(--white-color);
-            top: -0.1rem;
+            @include m.centerColumnWithPositioning;
         }
         &::after {
-            @include m.box(0.625rem);
+            @include m.box(0.875rem);
             background-color: var(--white-color);
-            top: 0.2rem;
-            left: -2.2rem;
+            top: 0.125rem;
+            left: calc(-2.125rem + 1px);
             transition: background-color 0.15s ease-in-out;
         }
     }
     &__input:hover ~ &__label::before {
         border-color: var(--black-color);
+    }
+    &__input:checked ~ &__label::before {
+        border-color: var(--primary-green-color);
     }
     &__input:checked ~ &__label::after {
         background-color: var(--primary-green-color);
