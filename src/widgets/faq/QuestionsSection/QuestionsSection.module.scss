@@ -1,10 +1,19 @@
+@use "src/shared/styles/mixins" as m;
+
 .questions_section {
   padding-block: 5rem 8.75rem;
+  @include m.media("tablet") {
+    padding-block: 4rem 3rem;
+  }
   &__container {
     display: grid;
     grid-template-columns: minmax(auto, 27.6875rem) 1fr;
     grid-gap: 1.5rem;
     align-items: start;
     position: relative;
+    @include m.media("tablet") {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
   }
 }
