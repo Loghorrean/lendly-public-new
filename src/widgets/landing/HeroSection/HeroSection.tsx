@@ -14,8 +14,8 @@ import {
 import {Container} from "@/src/shared/ui/layout";
 import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
-import React, {ForwardedRef} from "react";
-import {BlockProps, cn, resultIf} from "@/src/shared/utils";
+import React, {ForwardedRef, useCallback, useEffect, useRef} from "react";
+import {BlockProps, cn, isNotEmpty, resultIf} from "@/src/shared/utils";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 
 type Props = BlockProps & {
@@ -23,6 +23,9 @@ type Props = BlockProps & {
 }
 
 const HeroSection = ({ isFixed, ...props }: Props, ref: ForwardedRef<HTMLDivElement>) => {
+    const videoRef = useCallback((node: HTMLVideoElement) => {
+        node.play().catch(() => console.error("Could not play the video"));
+    }, []);
     return (
         <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
             <div className={cn(
@@ -30,8 +33,9 @@ const HeroSection = ({ isFixed, ...props }: Props, ref: ForwardedRef<HTMLDivElem
                 resultIf(!isFixed, styles.hero_section__video_container___unfixed)
             )}>
                 <video
-                    autoPlay
+                    ref={videoRef}
                     muted
+                    playsInline
                     loop
                     className={styles.hero_section__video}
                     poster="/images/landing/landing-background.png"

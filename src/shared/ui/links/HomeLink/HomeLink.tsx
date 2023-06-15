@@ -9,7 +9,7 @@ type Props = Omit<ProjectLinkProps, "href">;
 
 const HomeLink = ({ ...props }: Props) => {
     return (
-        <ProjectLink {...props} href="/" className={cn(styles.home_link, props.className)}>
+        <ProjectLink {...props} aria-label="Main page" href="/" className={cn(styles.home_link, props.className)}>
             <ProjectImage src={headerLogo} alt="Header logo" className={styles.home_link__image} />
         </ProjectLink>
     );
