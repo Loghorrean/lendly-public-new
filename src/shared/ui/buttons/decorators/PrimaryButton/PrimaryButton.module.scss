@@ -12,7 +12,6 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.25s ease-in-out;
-    min-height: 4rem;
     &___black {
         background-color: var(--dark-background-color);
         color: var(--white-color);

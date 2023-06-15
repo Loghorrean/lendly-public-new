@@ -16,9 +16,9 @@ type Props = {
 
 const PrimaryButtonArrow = ({ color }: Props) => {
     return (
-        <div className={cn(styles.primary_button_arrow, color)}>
+        <span className={cn(styles.primary_button_arrow, color)}>
             <ArrowRight />
-        </div>
+        </span>
     );
 }
 

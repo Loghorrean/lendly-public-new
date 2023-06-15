@@ -21,13 +21,18 @@
     align-items: center;
     gap: 0.25rem;
     padding-block: 0.5rem 0.75rem;
-    & > div {
+    transition: color 0.3s ease-in-out;
+    & > span {
       display: none;
+    }
+    &:hover {
+      text-decoration: none;
+      color: var(--primary-green-color);
     }
     &[aria-current="true"] {
       color: var(--primary-green-color);
       text-decoration: none;
-      & > div {
+      & > span {
         display: flex;
       }
     }
