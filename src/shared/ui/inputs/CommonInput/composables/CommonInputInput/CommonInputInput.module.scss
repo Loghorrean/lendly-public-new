@@ -7,9 +7,12 @@
     flex-grow: 1;
     min-width: 0;
     max-width: 100%;
+    width: 100%;
     @include typo.primaryText;
     color: var(--font-dark-color);
-    min-height: 1.875rem;
+    @include m.media("tablet", "min") {
+        min-height: 1.875rem;
+    }
     &___numeric {
         @include m.hideNumericArrows;
     }

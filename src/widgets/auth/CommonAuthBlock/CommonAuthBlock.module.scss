@@ -1,10 +1,16 @@
 @use "src/shared/styles/mixins" as m;
 
 .common_auth_block {
-  min-width: 29.75rem;
+  width: calc(min(29.75rem, 100%));
   padding: 3rem;
   border-radius: 1rem;
   background-color: var(--white-color);
   @include m.centerWithFlex;
   flex-direction: column;
+  @include m.media("tablet") {
+    padding: 2rem;
+  }
+  @include m.media("mobile") {
+    padding: 1.5rem;
+  }
 }
