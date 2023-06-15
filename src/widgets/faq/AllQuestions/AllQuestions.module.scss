@@ -1,12 +1,36 @@
+@use "src/shared/styles/mixins" as m;
+
 .all_questions {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  position: relative;
+  @include m.media("tablet") {
+    padding-top: 4rem;
+  }
+  @include m.media("mobile") {
+    padding-top: 3rem;
+  }
   &_container {
     position: relative;
   }
+  &__list {
+
+  }
   &__heading {
     margin-bottom: 2rem;
+    @include m.media("tablet") {
+      position: sticky;
+      top: 8rem;
+      padding-top: 1rem;
+      background-color: var(--white-color);
+      margin-bottom: 1.5rem;
+      z-index: 4;
+    }
+    @include m.media("mobile") {
+      font-size: 2.875rem;
+      line-height: 98%;
+    }
   }
   &__pixel {
     position: absolute;
@@ -14,5 +38,8 @@
     left: 0;
     width: 0;
     height: 0;
+    @include m.media("tablet") {
+      top: -8.5rem;
+    }
   }
 }

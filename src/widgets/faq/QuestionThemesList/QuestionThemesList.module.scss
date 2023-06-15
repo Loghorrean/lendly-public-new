@@ -1,17 +1,35 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .question_themes_list {
   position: sticky;
   top: 6rem;
-  height: 46rem;
-  max-height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include m.media("tablet", "min") {
+    height: 46rem;
+    max-height: calc(100vh - 8rem);
+  }
+  @include m.media("tablet") {
+    max-width: 100%;
+    overflow: auto;
+    @include m.scrollbarWidth;
+    z-index: 5;
+    background-color: var(--white-color);
+  }
+  @include m.media("mobile") {
+    max-height: 2.5rem;
+  }
   &__list {
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
+    @include m.media("tablet", "min") {
+      flex-direction: column;
+    }
+    @include m.media("tablet") {
+      gap: 1rem;
+    }
   }
   &__link {
     @include typo.tertiaryHeading;
@@ -22,6 +40,7 @@
     gap: 0.25rem;
     padding-block: 0.5rem 0.75rem;
     transition: color 0.3s ease-in-out;
+    white-space: nowrap;
     & > span {
       display: none;
     }
@@ -32,8 +51,10 @@
     &[aria-current="true"] {
       color: var(--primary-green-color);
       text-decoration: none;
-      & > span {
-        display: flex;
+      @include m.media("tablet", "min") {
+        & > span {
+          display: flex;
+        }
       }
     }
   }
@@ -42,6 +63,7 @@
     flex-direction: column;
     gap: 1rem;
     width: calc(min(100%, 22.5rem));
+    @include m.hideOnBreakpoint("tablet");
   }
   &__more_button {
     @include typo.buttonBigText;

@@ -37,14 +37,24 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    @include m.media("mobile") {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
   }
   &__title {
     @include typo.tertiaryHeading;
     max-width: 43.75rem;
     text-align: left;
+    @include m.media("tablet") {
+      font-size: 1.75rem;
+      line-height: 108%;
+      max-width: 37.5rem;
+    }
   }
   &__icon {
     @include m.box(3rem);
+    min-width: 3rem;
     border-radius: 50%;
     border: 1px solid var(--stroke-on-white-color);
     position: relative;
