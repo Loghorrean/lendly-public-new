@@ -1,24 +1,42 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .where_to_invest_section {
   margin-bottom: 8.75rem;
+  @include m.media("tablet") {
+    margin-bottom: 6rem;
+  }
   &__heading {
     margin-bottom: 1rem;
     grid-column: 1 / -1;
   }
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+    @include m.media("tablet") {
+      grid-template-rows: repeat(2, minmax(min-content, max-content));
+    }
   }
   &__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
     border-radius: 1rem;
     color: var(--white-color);
     min-height: 40rem;
     padding: 2rem;
+    @include m.media("tablet") {
+      background-size: 100%;
+      background-position: bottom right;
+    }
+    @include m.media("mobile") {
+      min-height: 21.75rem;
+      padding: 1.5rem;
+    }
     &___first {
       background-image: url("../../../../public/images/for-investors/for-investors-card-1.png");
       background-repeat: no-repeat;
