@@ -3,11 +3,11 @@
 
 .dev_point_card {
   top: 11rem;
+  max-height: calc(100vh - 12rem);
   position: sticky;
   border-radius: 1rem;
   padding: 2rem;
-  min-height: 42.5rem;
-  height: 1px;
+  height: 42.5rem;
   display: grid;
   grid-template-rows: 1fr auto;
   grid-gap: 1.5rem;
