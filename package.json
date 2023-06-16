@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && yarn run replaceFontPaths",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "replaceFontPaths": "node replacer.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "dayjs": "^1.11.7",
