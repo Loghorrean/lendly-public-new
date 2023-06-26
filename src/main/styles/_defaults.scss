@@ -21,6 +21,7 @@ body {
     background-color: var(--gray-background-color);
     font-weight: 400;
     @include m.useCoFoSansFont;
+    overflow-x: hidden;
 }
 
 ::selection {

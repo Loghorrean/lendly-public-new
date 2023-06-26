@@ -1,0 +1,33 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.mobile_team_card {
+  width: 20.375rem;
+  height: 31.625rem;
+  border-radius: 1rem;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  &__image {
+    border-radius: 1rem;
+    overflow: hidden;
+    filter: grayscale(100%);
+  }
+  &__content {
+    padding: 1.5rem;
+  }
+  &__name {
+    @include typo.quaternaryHeading;
+    margin-bottom: 0.5rem;
+  }
+  &__position {
+    @include typo.secondaryTextAccent;
+    color: var(--dark-background-color);
+    margin-bottom: 1rem;
+  }
+  &__description {
+    @include typo.primaryText;
+    @include m.lineClamp(3);
+  }
+}

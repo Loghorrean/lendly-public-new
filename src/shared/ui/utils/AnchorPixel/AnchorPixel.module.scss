@@ -1,0 +1,8 @@
+@use "src/shared/styles/mixins" as m;
+
+.anchor_pixel {
+  position: absolute;
+  top: -7rem;
+  left: 0;
+  @include m.box(0);
+}

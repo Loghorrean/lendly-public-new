@@ -1,15 +1,24 @@
+@use "src/shared/styles/mixins" as m;
+
 .requisites_section {
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    align-items: flex-start;
     padding-bottom: 7.5rem;
     border-bottom: 1px solid var(--stroke-on-white-color);
+    position: relative;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
   }
   &__sections {
+    position: sticky;
+    top: 6rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    @include m.hideOnBreakpoint("tablet");
   }
   &__tab {
     cursor: pointer;
