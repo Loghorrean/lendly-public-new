@@ -3,11 +3,13 @@ import TertiaryHeading from "@/src/shared/ui/typography/Heading/decorators/Terti
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import RoundProgressBar from "@/src/shared/ui/utils/RoundProgressBar";
+import AnchorPixel from "@/src/shared/ui/utils/AnchorPixel";
 
 const CompanyRequisites = () => {
     return (
         <div className={styles.company_requisites}>
             <div className={styles.company_requisites__block}>
+                <AnchorPixel id="requisites" />
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
                         Раскрытие информации
@@ -76,6 +78,7 @@ const CompanyRequisites = () => {
                 </div>
             </div>
             <div className={styles.company_requisites__block}>
+                <AnchorPixel id="founders" />
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
                         Сведения о составе учредителей

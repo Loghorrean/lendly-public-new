@@ -1,10 +1,12 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .company_requisites {
   display: flex;
   flex-direction: column;
   &__block {
     padding-block: 4rem;
+    position: relative;
     &:first-child {
       padding-top: 0;
     }

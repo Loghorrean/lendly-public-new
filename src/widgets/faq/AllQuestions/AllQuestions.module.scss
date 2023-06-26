@@ -33,11 +33,7 @@
     }
   }
   &__pixel {
-    position: absolute;
     top: -7rem;
-    left: 0;
-    width: 0;
-    height: 0;
     @include m.media("tablet") {
       top: -8.5rem;
     }

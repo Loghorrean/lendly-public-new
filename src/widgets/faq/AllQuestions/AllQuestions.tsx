@@ -5,6 +5,7 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import { Question as QuestionModel } from "@/src/widgets/faq/Question/Question";
+import AnchorPixel from "@/src/shared/ui/utils/AnchorPixel";
 
 
 const generalQuestions: Array<QuestionModel> = [
@@ -104,7 +105,7 @@ const AllQuestions = () => {
     return (
         <div className={styles.all_questions}>
             <div className={styles.all_questions_container}>
-                <div className={styles.all_questions__pixel} id="general"></div>
+                <AnchorPixel className={styles.all_questions__pixel} id="general" />
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
                         Общие вопросы
@@ -115,7 +116,7 @@ const AllQuestions = () => {
                 </ul>
             </div>
             <div className={styles.all_questions_container}>
-                <div className={styles.all_questions__pixel} id="projects"></div>
+                <AnchorPixel className={styles.all_questions__pixel} id="projects" />
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
                         Проектное финансирование
@@ -126,7 +127,7 @@ const AllQuestions = () => {
                 </ul>
             </div>
             <div className={styles.all_questions_container}>
-                <div className={styles.all_questions__pixel} id="loans"></div>
+                <AnchorPixel className={styles.all_questions__pixel} id="loans" />
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
                         Заём с фиксированной ставкой
@@ -137,7 +138,7 @@ const AllQuestions = () => {
                 </ul>
             </div>
             <div className={styles.all_questions_container}>
-                <div className={styles.all_questions__pixel} id="investors"></div>
+                <AnchorPixel className={styles.all_questions__pixel} id="investors" />
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
                         Инвесторам
@@ -148,7 +149,7 @@ const AllQuestions = () => {
                 </ul>
             </div>
             <div className={styles.all_questions_container}>
-                <div className={styles.all_questions__pixel} id="borrowers"></div>
+                <AnchorPixel className={styles.all_questions__pixel} id="borrowers" />
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
                         Заёмщикам
