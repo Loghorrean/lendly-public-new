@@ -31,21 +31,24 @@
   }
   &__first_card {
     z-index: 11;
-    background-image: url("../../../../public/images/about-us/card-background-2019.png");
+    background-image: url("/images/noise.png"), url("/images/about-us/card-background-2019.png");
+    background-size: cover;
   }
   &__second_card {
     z-index: 12;
-    background-image: url("../../../../public/images/about-us/card-background-2020.png");
-    background-position: center bottom;
+    background-image: url("/images/noise.png"), url("/images/about-us/card-background-2020.png");
+    background-position: center, center bottom;
+    background-size: cover;
   }
   &__third_card {
     z-index: 13;
-    background-image: url("../../../../public/images/about-us/card-background-2021.png");
+    background-image: url("/images/noise.png"), url("/images/about-us/card-background-2021.png");
     background-position: right bottom;
   }
   &__fourth_card {
     z-index: 14;
-    background-image: url("../../../../public/images/about-us/card-background-2022.png");
+    background-image: url("/images/noise.png"), url("/images/about-us/card-background-2022.png");
+    background-size: cover;
     &_content {
       grid-column: 3 / -1;
       @include m.media("tablet", "min") {
@@ -55,7 +58,8 @@
   }
   &__fifth_card {
     z-index: 15;
-    background-image: url("../../../../public/images/about-us/card-background-2023.png");
+    background-image: url("/images/noise.png"), url("/images/about-us/card-background-2023.png");
+    background-size: cover;
     &_first_content {
       grid-column: 1 / 2;
     }

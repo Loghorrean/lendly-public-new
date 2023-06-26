@@ -4,6 +4,9 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import TeamCard, {TeamMember} from "@/src/widgets/about-us/TeamCard/TeamCard";
+import {useWindowSize} from "@/src/shared/utils";
+import {useMemo} from "react";
+import MobileTeamCard from "@/src/widgets/about-us/MobileTeamCard";
 
 const mockTeamMembers: Array<TeamMember> = [
     {
@@ -57,21 +60,38 @@ const mockTeamMembers: Array<TeamMember> = [
 ]
 
 const TeamSection = () => {
-    const renderCards = () => {
-        return mockTeamMembers.map(member => <TeamCard key={member.name} member={member} />)
-    }
-    return (
-        <section className={styles.team_section}>
-            <Container>
-                <div className={styles.team_section__grid}>
+    const [width, height] = useWindowSize();
+    const renderCards = useMemo(() => {
+        if (width < 768) {
+            return <>
+                <Container>
                     <SecondaryHeading>
                         <Heading headingType={HEADING_TYPE.H2} className={styles.team_section__heading}>
                             Наша команда
                         </Heading>
                     </SecondaryHeading>
-                    { renderCards() }
-                </div>
-            </Container>
+                </Container>
+                <Container needsDisabling>
+                    <div className={styles.team_section__list}>
+                        { mockTeamMembers.map(member => <MobileTeamCard key={member.name} member={member} />) }
+                    </div>
+                </Container>
+            </>
+        }
+        return <Container>
+            <div className={styles.team_section__grid}>
+                <SecondaryHeading>
+                    <Heading headingType={HEADING_TYPE.H2} className={styles.team_section__heading}>
+                        Наша команда
+                    </Heading>
+                </SecondaryHeading>
+                {mockTeamMembers.map(member => <TeamCard key={member.name} member={member} />)}
+            </div>
+        </Container>
+    }, [width]);
+    return (
+        <section className={styles.team_section}>
+            { renderCards }
         </section>
     );
 }

@@ -2,10 +2,8 @@ import styles from "./RequisitesSection.module.scss";
 import {Container} from "@/src/shared/ui/layout";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 import {ObjectValues} from "@/src/shared/utils";
-import {ReactElement, ReactNode, useState} from "react";
+import {useState} from "react";
 import CompanyRequisites from "@/src/widgets/about-us/CompanyRequisites";
-import CompanyFounders from "@/src/widgets/about-us/CompanyFounders";
-import {ProjectLink} from "@/src/shared/ui/links";
 
 const REQUISITES_TAB = {
     REQUISITES: "REQUISITES",

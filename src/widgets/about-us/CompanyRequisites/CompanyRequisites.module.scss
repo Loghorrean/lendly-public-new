@@ -18,7 +18,15 @@
     }
   }
   &__heading {
-    max-width: 23.75rem;
+    max-width: 22.5rem;
+    margin-bottom: 2.5rem;
+    @include m.media("tablet") {
+      margin-bottom: 2rem;
+    }
+  }
+  &__mobile_heading {
+    @include m.hideOnBreakpoint("tablet", "min");
+    @include typo.secondaryHeading;
     margin-bottom: 2.5rem;
   }
   &__table {

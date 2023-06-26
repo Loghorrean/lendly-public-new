@@ -9,6 +9,9 @@ const CompanyRequisites = () => {
     return (
         <div className={styles.company_requisites}>
             <div className={styles.company_requisites__block}>
+                <Heading headingType={HEADING_TYPE.H2} className={styles.company_requisites__mobile_heading}>
+                    Реквизиты компании
+                </Heading>
                 <AnchorPixel id="requisites" />
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
@@ -61,6 +64,10 @@ const CompanyRequisites = () => {
                 </div>
             </div>
             <div className={styles.company_requisites__block}>
+                <Heading headingType={HEADING_TYPE.H2} className={styles.company_requisites__mobile_heading}>
+                    Состав учредителей
+                </Heading>
+                <AnchorPixel id="founders" />
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
                         Сведения о составе органов управления
@@ -78,7 +85,6 @@ const CompanyRequisites = () => {
                 </div>
             </div>
             <div className={styles.company_requisites__block}>
-                <AnchorPixel id="founders" />
                 <TertiaryHeading>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
                         Сведения о составе учредителей

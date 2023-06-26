@@ -7,8 +7,20 @@
     grid-template-columns: repeat(4, minmax(10px, 1fr));
     grid-gap: 1.5rem;
     isolation: isolate;
+    @include m.media("tablet") {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__list {
+    padding-inline: 1rem;
+    max-width: calc(100vw - 1rem);
+    overflow: auto hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   &__heading {
     grid-column: span 2;
+    margin-bottom: 2.5rem;
   }
 }
