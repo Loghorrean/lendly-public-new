@@ -1,18 +1,29 @@
 @use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
 
 .documents_section {
   padding-top: 7.5rem;
+  @include m.media("tablet") {
+    padding-top: 4rem;
+  }
   &__tabs {
     display: flex;
     align-items: center;
     gap: 5rem;
     margin-bottom: 2.5rem;
+    @include m.media("tablet") {
+      margin-bottom: 2rem;
+    }
   }
   &__tab {
     cursor: pointer;
     color: var(--font-medium-gray-color);
     text-decoration: underline;
     transition: color 0.3s ease-in-out;
+    @include typo.secondaryHeading;
+    @include m.media("tablet") {
+      @include typo.tertiaryHeading;
+    }
     &:hover {
       color: var(--primary-green-color);
       text-decoration: none;

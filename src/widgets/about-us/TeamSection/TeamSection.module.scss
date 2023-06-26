@@ -2,6 +2,9 @@
 
 .team_section {
   padding-block: 8.75rem;
+  @include m.media("tablet") {
+    padding-block: 4rem;
+  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(10px, 1fr));
@@ -12,7 +15,7 @@
     }
   }
   &__list {
-    padding-inline: 1rem;
+    padding-left: 1rem;
     max-width: calc(100vw - 1rem);
     overflow: auto hidden;
     display: flex;

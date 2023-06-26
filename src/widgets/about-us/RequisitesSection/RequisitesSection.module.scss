@@ -5,11 +5,14 @@
     display: grid;
     grid-gap: 1.5rem;
     align-items: flex-start;
-    padding-bottom: 7.5rem;
-    border-bottom: 1px solid var(--stroke-on-white-color);
     position: relative;
+    padding-bottom: 7.5rem;
     @include m.media("tablet", "min") {
+      border-bottom: 1px solid var(--stroke-on-white-color);
       grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+    @include m.media("tablet") {
+      padding-bottom: 0.25rem;
     }
   }
   &__sections {

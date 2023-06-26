@@ -35,8 +35,8 @@ const CommonDocument = ({ document }: Props) => {
                     <div className={styles.common_document__file}>
                         <PdfIcon fill={hovered ? "#05B768" : "#212226"} />
                         <span className={styles.common_document__mimetype}>
-                        {document.mimetype}, {document.size}
-                    </span>
+                            {document.mimetype}, {document.size}
+                        </span>
                     </div>
                     <div className={styles.common_document__link}>
                         Открыть
