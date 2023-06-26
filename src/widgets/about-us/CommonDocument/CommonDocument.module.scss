@@ -1,20 +1,37 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .common_document {
-  padding: 2rem;
-  min-height: 20rem;
   border: 1px solid var(--stroke-on-white-color);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 2rem transparent;
-  transition: box-shadow 0.5s border-color 0.5s;
+  transition: box-shadow 0.5s, border-color 0.5s;
+  container-type: inline-size;
+  @include m.media("tablet", "min") {
+    min-height: 20rem;
+  }
+  @container (max-width: 240px)  {
+    .common_document__content {
+      grid-template-columns: 1fr;
+    }
+  }
   &__content {
-    height: 100%;
+    padding: 2rem;
     display: grid;
     grid-template-rows: 1fr auto;
     grid-gap: 2.25rem;
+    @include m.media("tablet") {
+      padding: 1.5rem;
+      grid-template-rows: 1fr;
+      grid-template-columns: auto 1fr;
+      grid-gap: 1rem;
+    }
   }
   &__title {
     @include typo.primaryText;
+    @include m.media("tablet") {
+      order: 2;
+    }
   }
   &__link {
     @include typo.secondaryTextAccent;
@@ -23,22 +40,28 @@
     align-items: center;
     gap: 0.25rem;
     min-height: 1.5rem;
+    @include m.hideOnBreakpoint("tablet");
   }
   &__file {
     display: flex;
-    align-items: flex-end;
     gap: 0.5rem;
+    @include m.media("tablet", "min") {
+      align-items: flex-end;
+    }
   }
   &__mimetype {
     @include typo.secondaryText;
+    @include m.hideOnBreakpoint("tablet");
     min-height: 2rem;
     display: flex;
     align-items: center;
   }
   &__footer {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
+    @include m.media("tablet", "min") {
+      align-items: flex-end;
+    }
   }
   &:hover {
     border-color: transparent;

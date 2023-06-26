@@ -64,7 +64,9 @@
       grid-column: 1 / 2;
     }
     &_second_content {
-      grid-column: 3 / 4;
+      @include m.media("tablet", "min") {
+        grid-column: 3 / 4;
+      }
     }
   }
   &__more {

@@ -1,5 +1,9 @@
+"use client";
+
 import styles from "./ActualDocuments.module.scss";
 import CommonDocument, {ProjectDocument} from "@/src/widgets/about-us/CommonDocument/CommonDocument";
+import {useWindowSize} from "@/src/shared/utils";
+import {useMemo} from "react";
 
 const actualDocuments: Array<ProjectDocument> = [
     {
@@ -10,34 +14,34 @@ const actualDocuments: Array<ProjectDocument> = [
         link: "https://youtube.com"
     },
     {
-        title: "Срок восстановления работы платформы, в случае нарушения ее функционирования",
+        title: "Срок восстановления работы платформы, в случае нарушения ее функционирования",
         slug: "document-2",
         mimetype: "Pdf",
         size: "968 КБ",
         link: "https://youtube.com"
     },
     {
-        title: "Порядок действий, необходимых для присоединения к договору об оказании " +
-            "услуг по привлечению инвестиций, к договору об оказании услуг по содействию " +
-            "в инвестировании, и порядок действий, необходимых для инвестирования " +
-            "с использованием инвестиционной платформы",
+        title: "Порядок действий, необходимых для присоединения к договору об оказании " +
+            "услуг по привлечению инвестиций, к договору об оказании услуг по содействию " +
+            "в инвестировании, и порядок действий, необходимых для инвестирования " +
+            "с использованием инвестиционной платформы",
         slug: "document-3",
         mimetype: "Pdf",
         size: "968 КБ",
         link: "https://youtube.com"
     },
     {
-        title: "Информация о том, является ли признание оператором инвестиционной платформы гражданина " +
+        title: "Информация о том, является ли признание оператором инвестиционной платформы гражданина " +
             "квалифицированным инвестором необходимым условием для оказания ему " +
-            "услуг по содействию в инвестировании",
+            "услуг по содействию в инвестировании",
         slug: "document-4",
         mimetype: "Pdf",
         size: "968 КБ",
         link: "https://youtube.com"
     },
     {
-        title: "Информация о прекращении действия инвестиционного предложения в связи " +
-            "с достижением указанного в нем максимального объема денежных средств",
+        title: "Информация о прекращении действия инвестиционного предложения в связи " +
+            "с достижением указанного в нем максимального объема денежных средств",
         slug: "document-5",
         mimetype: "Pdf",
         size: "968 КБ",
@@ -66,8 +70,8 @@ const actualDocuments: Array<ProjectDocument> = [
         link: "https://youtube.com"
     },
     {
-        title: "Годовой отчет оператора инвестиционной платформы Lendly о результатах " +
-            "деятельности по организации привлечения инвестиций",
+        title: "Годовой отчет оператора инвестиционной платформы Lendly о результатах " +
+            "деятельности по организации привлечения инвестиций",
         slug: "document-9",
         mimetype: "Pdf",
         size: "968 КБ",
@@ -90,13 +94,26 @@ const actualDocuments: Array<ProjectDocument> = [
 ]
 
 const ActualDocuments = () => {
-    const renderDocuments = () => {
-        return actualDocuments.map(document => <CommonDocument document={document} key={document.title} />);
-    }
-    return (
-        <ul className={styles.actual_documents}>
-            { renderDocuments() }
+    const [width, height] = useWindowSize();
+    const renderDocuments = useMemo(() => {
+        if (width < 768) {
+            return <div className={styles.actual_documents__columns}>
+                <ul className={styles.actual_documents__column}>
+                    { actualDocuments.slice(0, 6).map(document => <CommonDocument document={document} key={document.title} />) }
+                </ul>
+                <ul className={styles.actual_documents__column}>
+                    { actualDocuments.slice(6).map(document => <CommonDocument document={document} key={document.title} />) }
+                </ul>
+            </div>
+        }
+        return <ul className={styles.actual_documents}>
+            { actualDocuments.map(document => <CommonDocument document={document} key={document.title} />) }
         </ul>
+    }, [width]);
+    return (
+        <>
+            {renderDocuments}
+        </>
     );
 }
 

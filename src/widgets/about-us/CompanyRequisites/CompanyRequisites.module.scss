@@ -16,6 +16,14 @@
     &:not(:last-child) {
       border-bottom: 1px solid var(--stroke-on-white-color);
     }
+    @include m.media("tablet") {
+      &:nth-child(2) {
+        padding-bottom: 2rem;
+      }
+      &:last-child {
+        padding-top: 2rem;
+      }
+    }
   }
   &__heading {
     max-width: 22.5rem;
