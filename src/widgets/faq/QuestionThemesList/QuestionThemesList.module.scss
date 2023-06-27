@@ -2,12 +2,12 @@
 @use "src/shared/styles/mixins" as m;
 
 .question_themes_list {
-  position: sticky;
-  top: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @include m.media("tablet", "min") {
+    position: sticky;
+    top: 6rem;
     height: 46rem;
     max-height: calc(100vh - 8rem);
   }

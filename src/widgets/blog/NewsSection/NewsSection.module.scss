@@ -1,10 +1,19 @@
+@use "src/shared/styles/mixins" as m;
+
 .news_section {
-  padding-top: 5rem;
+  padding-top: 5rem !important;
+  @include m.media("tablet") {
+    padding-top: 2.5rem !important;
+  }
   &__container {
     display: grid;
-    grid-template-columns: minmax(auto, 27.6875rem) 1fr;
+    grid-template-columns: clamp(20rem, 30vw, 27.6875rem) 1fr;
     grid-gap: 1.5rem;
     align-items: start;
     position: relative;
+    @include m.media("tablet") {
+      grid-template-columns: 1fr;
+      grid-gap: 1.5rem;
+    }
   }
 }
