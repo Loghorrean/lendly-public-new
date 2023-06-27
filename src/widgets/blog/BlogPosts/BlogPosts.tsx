@@ -42,7 +42,7 @@ const mockArticles: Array<NewsArticle> = [
         large: true,
         photo: "/images/blog/blog-image-3.png",
         description: "Some description",
-        uuid: "cb7beaea-3801-485e-8089-7668c90c4654"
+        uuid: "cb7beaea-3801-485e-8089-7668c90c4634"
     }
 ];
 
