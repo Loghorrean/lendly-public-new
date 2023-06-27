@@ -16,6 +16,7 @@
     }
   }
   &__content {
+    height: 100%;
     padding: 2rem;
     display: grid;
     grid-template-rows: 1fr auto;
@@ -25,6 +26,9 @@
       grid-template-rows: 1fr;
       grid-template-columns: auto 1fr;
       grid-gap: 1rem;
+    }
+    @include m.media("mobile") {
+      padding: 1rem;
     }
   }
   &__title {
@@ -47,6 +51,9 @@
     gap: 0.5rem;
     @include m.media("tablet", "min") {
       align-items: flex-end;
+    }
+    @include m.media("tablet") {
+      padding-top: 0.25rem;
     }
   }
   &__mimetype {

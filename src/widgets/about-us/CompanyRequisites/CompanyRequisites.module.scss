@@ -24,16 +24,25 @@
         padding-top: 2rem;
       }
     }
+    @include m.media("mobile") {
+      padding-block: 2rem;
+    }
   }
   &__heading {
     max-width: 22.5rem;
     margin-bottom: 2.5rem;
+    @include typo.tertiaryHeading;
     @include m.media("tablet") {
       margin-bottom: 2rem;
+    }
+    @include m.media("mobile") {
+      max-width: calc(14rem + 1px);
+      @include typo.heading5;
     }
   }
   &__mobile_heading {
     @include m.hideOnBreakpoint("tablet", "min");
+    @include m.hideOnBreakpoint("mobile");
     @include typo.secondaryHeading;
     margin-bottom: 2.5rem;
   }
@@ -41,12 +50,21 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @include m.media("mobile") {
+      gap: 1.5rem;
+    }
   }
   &__cell {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     grid-gap: 1.5rem;
     @include typo.primaryText;
+    @include m.media("mobile", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+    @include m.media("mobile") {
+      padding-block: 0.25rem;
+      grid-gap: 0.5rem;
+    }
   }
   &__label {
     color: var(--font-medium-gray-color);

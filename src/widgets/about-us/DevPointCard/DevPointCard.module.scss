@@ -16,18 +16,25 @@
   @include m.media("tablet") {
     top: 10rem;
   }
+  @include m.media("mobile") {
+    max-height: 28.75rem;
+    padding: 1.5rem;
+    background-position: top center;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
     position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: rgba(var(--white-color-rgb), 0.2);
-      height: 100%;
-      width: 1px;
-      @include m.centerLineWithPositioning;
-      top: 0;
+    @include m.media("mobile", "min") {
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: rgba(var(--white-color-rgb), 0.2);
+        height: 100%;
+        width: 1px;
+        @include m.centerLineWithPositioning;
+        top: 0;
+      }
     }
   }
   &__year {
@@ -38,6 +45,9 @@
     letter-spacing: -0.06em;
     @include m.media("tablet") {
       font-size: 7rem;
+    }
+    @include m.media("mobile") {
+      font-size: 4rem;
     }
   }
   &__index {

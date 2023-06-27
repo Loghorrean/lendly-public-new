@@ -9,6 +9,7 @@ export const SVG_CONTAINER_SIZE = {
     SIZE_18: styles.svg_container___18,
     SIZE_20: styles.svg_container___20,
     SIZE_24: styles.svg_container___24,
+    SIZE_32: styles.svg_container___32,
     SIZE_40: styles.svg_container___40,
     SIZE_48: styles.svg_container___48,
 } as const;

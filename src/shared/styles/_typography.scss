@@ -95,3 +95,10 @@
     letter-spacing: v.$letter-spacing-4;
     @include trimProperties;
 }
+
+@mixin heading5 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 108%;
+    letter-spacing: -0.8px;
+}

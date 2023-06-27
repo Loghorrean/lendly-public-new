@@ -1,4 +1,5 @@
 @use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
 
 .requisites_section {
   &__container {
@@ -14,20 +15,49 @@
     @include m.media("tablet") {
       padding-bottom: 0.25rem;
     }
+    @include m.media("mobile") {
+      grid-gap: 2rem;
+    }
   }
   &__sections {
-    position: sticky;
-    top: 6rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     @include m.hideOnBreakpoint("tablet");
+    @include m.media("tablet", "min") {
+      position: sticky;
+      top: 6rem;
+    }
+    @include m.media("mobile") {
+      display: flex !important;
+      flex-direction: row;
+      gap: 2rem;
+      white-space: nowrap;
+      max-width: calc(100vw - 1rem);
+      overflow: auto hidden;
+      @include m.scrollbarWidth;
+      & > li {
+        position: relative;
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1.5rem;
+            background-color: var(--stroke-on-white-color);
+            right: -1rem;
+            @include m.centerColumnWithPositioning;
+          }
+        }
+      }
+    }
   }
   &__tab {
     cursor: pointer;
     text-decoration: underline;
     color: var(--font-medium-gray-color);
     transition: color 0.4s;
+    @include typo.secondaryHeading;
     &:hover {
       color: var(--primary-green-color);
       text-decoration: none;
@@ -35,6 +65,9 @@
     &[aria-current="true"] {
       color: var(--font-dark-color);
       text-decoration: none;
+    }
+    @include m.media("mobile") {
+      @include typo.quaternaryHeading;
     }
   }
 }
