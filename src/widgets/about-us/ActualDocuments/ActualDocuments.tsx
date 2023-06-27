@@ -94,7 +94,7 @@ const actualDocuments: Array<ProjectDocument> = [
 ]
 
 const ActualDocuments = () => {
-    const [width, height] = useWindowSize();
+    const [width] = useWindowSize();
     const renderDocuments = useMemo(() => {
         if (width < 768) {
             return <div className={styles.actual_documents__columns}>

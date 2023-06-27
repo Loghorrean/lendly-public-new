@@ -60,7 +60,7 @@ const mockTeamMembers: Array<TeamMember> = [
 ]
 
 const TeamSection = () => {
-    const [width, height] = useWindowSize();
+    const [width] = useWindowSize();
     const renderCards = useMemo(() => {
         if (width < 768) {
             return <>

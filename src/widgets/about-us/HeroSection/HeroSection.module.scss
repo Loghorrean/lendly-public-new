@@ -3,25 +3,43 @@
 
 .hero_section {
   position: fixed;
-  background: url("../../../../public/images/about-us/hero-pic-about.png") right center no-repeat;
+  background: url("/images/about-us/hero-pic-about.png") right center no-repeat;
   padding-bottom: 1.5rem;
   @include m.media("tablet") {
     background-size: 175%;
     background-position: 50% 25%;
   }
+  @include m.media("mobile") {
+    background-size: 250%;
+  }
   & > div {
     height: 100%;
   }
+  @include m.media("mobile") {
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
   &__heading {
+    @include typo.primaryHeading;
     max-width: 40rem;
-    margin-bottom: 2rem;
     @include m.media("mobile", "min") {
+      margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
     }
+    @include m.media("mobile") {
+      font-size: 1.75rem;
+      line-height: 102%;
+      letter-spacing: -1.12px;
+      font-weight: 500;
+    }
   }
   &__link {
-    max-width: 20rem;
-    @include m.hideOnBreakpoint("tablet");
+    @include m.media("mobile", "min") {
+      max-width: 20rem;
+    }
   }
 }

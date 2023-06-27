@@ -5,6 +5,9 @@
   @include m.media("tablet") {
     padding-block: 4rem 0;
   }
+  @include m.media("tablet") {
+    padding-top: 3rem;
+  }
   position: relative;
   &__heading {
     margin-bottom: 2.5rem;

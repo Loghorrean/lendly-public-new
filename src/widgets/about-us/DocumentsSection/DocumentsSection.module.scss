@@ -14,6 +14,9 @@
     @include m.media("tablet") {
       margin-bottom: 2rem;
     }
+    @include m.media("mobile") {
+      gap: 2rem;
+    }
   }
   &__tab {
     cursor: pointer;
@@ -23,6 +26,10 @@
     @include typo.secondaryHeading;
     @include m.media("tablet") {
       @include typo.tertiaryHeading;
+    }
+    @include m.media("mobile") {
+      @include typo.quaternaryHeading;
+      white-space: nowrap;
     }
     &:hover {
       color: var(--primary-green-color);
@@ -38,10 +45,15 @@
         content: "";
         position: absolute;
         @include m.centerColumnWithPositioning;
-        background-color: var(--font-secondary-color);
+        background-color: var(--stroke-on-white-color);
         height: 1.5rem;
         width: 1px;
         right: -2.5rem;
+      }
+      @include m.media("mobile") {
+        &::after {
+          right: -1rem;
+        }
       }
     }
   }

@@ -13,11 +13,9 @@ const CompanyRequisites = () => {
                     Реквизиты компании
                 </Heading>
                 <AnchorPixel id="requisites" />
-                <TertiaryHeading>
-                    <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
-                        Раскрытие информации
-                    </Heading>
-                </TertiaryHeading>
+                <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
+                    Раскрытие информации
+                </Heading>
                 <div className={styles.company_requisites__table}>
                     <div className={styles.company_requisites__cell}>
                         <div className={styles.company_requisites__label}>
@@ -68,11 +66,9 @@ const CompanyRequisites = () => {
                     Состав учредителей
                 </Heading>
                 <AnchorPixel id="founders" />
-                <TertiaryHeading>
-                    <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
-                        Сведения о составе органов управления
-                    </Heading>
-                </TertiaryHeading>
+                <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
+                    Сведения о составе органов управления
+                </Heading>
                 <div className={styles.company_requisites__table}>
                     <div className={styles.company_requisites__cell}>
                         <div className={styles.company_requisites__label}>
@@ -85,11 +81,9 @@ const CompanyRequisites = () => {
                 </div>
             </div>
             <div className={styles.company_requisites__block}>
-                <TertiaryHeading>
-                    <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
-                        Сведения о составе учредителей
-                    </Heading>
-                </TertiaryHeading>
+                <Heading headingType={HEADING_TYPE.H3} className={styles.company_requisites__heading}>
+                    Сведения о составе учредителей
+                </Heading>
                 <div className={styles.company_requisites__progress_table}>
                     <div className={styles.company_requisites__progress_cell}>
                         <div className={styles.company_requisites__label}>

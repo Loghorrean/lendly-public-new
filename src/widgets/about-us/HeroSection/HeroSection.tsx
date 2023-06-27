@@ -19,12 +19,10 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
     return (
         <MainSection {...props} className={cn(styles.hero_section, props.className)} ref={ref}>
             <Container>
-                <PrimaryHeading>
-                    <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
-                        <span>Сотни инвесторов уже</span>
-                        <span><GreenText><span>зарабатывают</span></GreenText> вместе с Lendly</span>
-                    </Heading>
-                </PrimaryHeading>
+                <Heading headingType={HEADING_TYPE.H1} className={styles.hero_section__heading}>
+                    <span>Сотни инвесторов уже</span>
+                    <span><GreenText><span> зарабатывают</span></GreenText> вместе с Lendly</span>
+                </Heading>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow>
                     <ProjectLink href="/auth/register" className={styles.hero_section__link}>
                         Подробнее <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />

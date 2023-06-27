@@ -18,6 +18,7 @@
     padding-left: 1rem;
     max-width: calc(100vw - 1rem);
     overflow: auto hidden;
+    @include m.scrollbarWidth;
     display: flex;
     align-items: center;
     gap: 0.5rem;

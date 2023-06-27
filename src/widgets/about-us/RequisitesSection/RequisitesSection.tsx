@@ -19,19 +19,16 @@ const RequisitesSection = () => {
             <Container>
                 <div className={styles.requisites_section__container}>
                     <ul className={styles.requisites_section__sections}>
-                        <SecondaryHeading>
-                            <li>
-                                <a
-                                    href="#requisites"
-                                    className={styles.requisites_section__tab}
-                                    aria-current={currentTab === REQUISITES_TAB.REQUISITES}
-                                    onClick={() => setCurrentTab(REQUISITES_TAB.REQUISITES)}
-                                >
-                                    Реквизиты компании
-                                </a>
-                            </li>
-                        </SecondaryHeading>
-                        <SecondaryHeading>
+                        <li>
+                            <a
+                                href="#requisites"
+                                className={styles.requisites_section__tab}
+                                aria-current={currentTab === REQUISITES_TAB.REQUISITES}
+                                onClick={() => setCurrentTab(REQUISITES_TAB.REQUISITES)}
+                            >
+                                Реквизиты компании
+                            </a>
+                        </li>
                             <li>
                                 <a
                                     href="#founders"
@@ -42,7 +39,6 @@ const RequisitesSection = () => {
                                     Состав учредителей
                                 </a>
                             </li>
-                        </SecondaryHeading>
                     </ul>
                     <CompanyRequisites />
                 </div>
