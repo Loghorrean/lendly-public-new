@@ -38,12 +38,12 @@
       padding: 1.5rem;
     }
     &___first {
-      background-image: url("../../../../public/images/for-investors/for-investors-card-1.png");
+      background-image: url("/images/noise.png"), url("/images/for-investors/for-investors-card-1.png");
       background-repeat: no-repeat;
       background-color: var(--bg-green-color);
     }
     &___second {
-      background-image: url("../../../../public/images/for-investors/for-investors-card-2.png");
+      background-image: url("/images/noise.png"), url("/images/for-investors/for-investors-card-2.png");
       background-repeat: no-repeat;
       background-color: var(--dark-background-color);
     }

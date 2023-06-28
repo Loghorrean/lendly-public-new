@@ -7,6 +7,7 @@ import TeamCard, {TeamMember} from "@/src/widgets/about-us/TeamCard/TeamCard";
 import {useWindowSize} from "@/src/shared/utils";
 import {useMemo} from "react";
 import MobileTeamCard from "@/src/widgets/about-us/MobileTeamCard";
+import Loader from "@/src/shared/ui/loaders/Loader";
 
 const mockTeamMembers: Array<TeamMember> = [
     {
@@ -62,6 +63,16 @@ const mockTeamMembers: Array<TeamMember> = [
 const TeamSection = () => {
     const [width] = useWindowSize();
     const renderCards = useMemo(() => {
+        if (width === 0) {
+            return <Container>
+                <SecondaryHeading>
+                    <Heading headingType={HEADING_TYPE.H2} className={styles.team_section__heading}>
+                        Наша команда
+                    </Heading>
+                </SecondaryHeading>
+                <Loader dark />
+            </Container>;
+        }
         if (width < 768) {
             return <>
                 <Container>

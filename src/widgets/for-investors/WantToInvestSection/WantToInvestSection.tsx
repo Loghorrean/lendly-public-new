@@ -17,6 +17,8 @@ const WantToInvestSection = () => {
                         Хочу стать инвестором Lendly. Как?
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <ul className={styles.want_to_invest_section__list}>
                     <li className={styles.want_to_invest_section__element}>
                         <ForInvestorsFirstIcon />

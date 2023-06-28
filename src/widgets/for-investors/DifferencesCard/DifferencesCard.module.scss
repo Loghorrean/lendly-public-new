@@ -1,6 +1,8 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .differences_card {
+  @include m.hideOnBreakpoint("tablet");
   border-radius: 1rem;
   padding: 2.625rem 2rem;
   border: 1px solid var(--stroke-on-white-color);

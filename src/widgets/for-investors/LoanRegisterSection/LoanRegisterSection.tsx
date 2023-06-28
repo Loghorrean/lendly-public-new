@@ -9,7 +9,7 @@ import {ProjectImage} from "@/src/shared/ui/images";
 
 const LoanRegisterSection = () => {
     return (
-        <CommonBlock as="section" className={styles.loan_register_section}>
+        <CommonBlock as="section" className={styles.loan_register_section} smaller>
             <Container>
                 <div className={styles.loan_register_section__container}>
                     <SecondaryHeading>
@@ -21,7 +21,7 @@ const LoanRegisterSection = () => {
                         <p className={styles.loan_register_section__text}>
                             Нет, управлять залогом будет Lendly.  Мы сами оформим нужные документы.
                         </p>
-                        <ProjectImage src={registerLoanImage} alt="Register loan presentational image" />
+                        <ProjectImage src={registerLoanImage} alt="Register loan presentational image" className={styles.loan_register_section__image} />
                     </div>
                 </div>
             </Container>
