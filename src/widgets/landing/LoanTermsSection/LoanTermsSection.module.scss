@@ -2,7 +2,6 @@
 @use "src/shared/styles/mixins" as m;
 
 .loan_terms_section {
-  margin-bottom: 0.5rem;
   @include m.media("mobile") {
     max-width: 100vw;
   }

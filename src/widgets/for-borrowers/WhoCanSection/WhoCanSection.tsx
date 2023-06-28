@@ -16,6 +16,8 @@ const WhoCanSection = () => {
                         Кто может быть залогодателем?
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <div className={styles.who_can_section__cards}>
                     <div className={styles.who_can_section__card}>
                         <CaseIcon black />

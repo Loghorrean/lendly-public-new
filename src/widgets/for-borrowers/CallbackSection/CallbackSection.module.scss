@@ -1,3 +1,5 @@
+@use "src/shared/styles/mixins" as m;
+
 .callback_section {
   padding-block: 8.75rem;
   background-color: var(--dark-background-color);
@@ -6,11 +8,16 @@
   background-image: url("../../../../public/images/for-borrowers/callback-section-background.png");
   background-position: center left;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  @include m.media("tablet") {
+    padding-block: 4rem;
+  }
   &__container {
     display: grid;
-    grid-template-columns: minmax(28.1875rem, 1fr) minmax(10px, 1fr);
     grid-gap: 1.5rem;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
   }
   &__heading {
     color: var(--white-color);

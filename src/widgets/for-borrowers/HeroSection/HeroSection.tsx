@@ -37,6 +37,12 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                     <footer className={styles.hero_section__footer}>
                         <StatsSlider />
                     </footer>
+                    <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow wide>
+                        <ProjectLink href="/auth/register" className={styles.hero_section__footer_link}>
+                            Получить заём
+                            <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
+                        </ProjectLink>
+                    </PrimaryButton>
                 </div>
             </Container>
         </MainSection>

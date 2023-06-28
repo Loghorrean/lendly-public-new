@@ -18,6 +18,8 @@ const BorrowerRequirementsSection = () => {
                         Какие есть <GreenText><span>требования</span></GreenText> к заёмщику?
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <div className={styles.borrower_requirements_section__cards}>
                     <div className={styles.borrower_requirements_section__block}>
                         <CaseIcon />

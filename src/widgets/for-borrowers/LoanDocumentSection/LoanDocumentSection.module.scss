@@ -3,7 +3,9 @@
 
 .loan_document_section {
   padding-bottom: 8.75rem;
-  margin-bottom: 0.5rem;
+  @include m.media("tablet") {
+    padding: 4rem 0;
+  }
   &__heading {
     max-width: 60rem;
     margin-bottom: 2.5rem;
@@ -19,6 +21,12 @@
     border-radius: 1.125rem;
     border: 1px solid var(--medium-dark-background-color);
     margin-bottom: 1.5rem;
+    @include m.media("tablet") {
+      max-width: calc(100vw - 2rem);
+      overflow: auto;
+      white-space: nowrap;
+      @include m.scrollbarWidth;
+    }
   }
   &__tab {
     min-height: 4rem;
@@ -30,6 +38,8 @@
     transition: color 0.35s ease-in-out;
     color: var(--font-dark-color);
     @include typo.quaternaryHeading;
+    padding-inline: 1rem;
+    text-align: center;
     &:hover {
       color: var(--primary-green-color);
     }

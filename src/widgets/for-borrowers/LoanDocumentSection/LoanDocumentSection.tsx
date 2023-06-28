@@ -16,9 +16,9 @@ const DOCUMENTS_TAB = {
 type DocumentsTab = ObjectValues<typeof DOCUMENTS_TAB>;
 
 const documentTabsMap: Record<DocumentsTab, ReactElement> = {
-    [DOCUMENTS_TAB.LEGAL]: <LegalDocumentsList />,
-    [DOCUMENTS_TAB.LOAN_REGISTRATION]: <LegalDocumentsList />,
-    [DOCUMENTS_TAB.INDIVIDUAL]: <LegalDocumentsList />
+    [DOCUMENTS_TAB.LEGAL]: <LegalDocumentsList key="legal" />,
+    [DOCUMENTS_TAB.LOAN_REGISTRATION]: <LegalDocumentsList key="loan" />,
+    [DOCUMENTS_TAB.INDIVIDUAL]: <LegalDocumentsList key="individual" />
 }
 
 const LoanDocumentSection = () => {
@@ -28,8 +28,7 @@ const LoanDocumentSection = () => {
             <Container>
                 <SecondaryHeading>
                     <Heading headingType={HEADING_TYPE.H2} className={styles.loan_document_section__heading}>
-                        <span>Какие нужны документы</span>
-                        <span>для оформления займа?</span>
+                        Какие нужны документы для оформления займа?
                     </Heading>
                 </SecondaryHeading>
                 <ul className={styles.loan_document_section__tabs} role="tablist">
@@ -58,6 +57,8 @@ const LoanDocumentSection = () => {
                         Индивидуальным предпринимателям
                     </li>
                 </ul>
+            </Container>
+            <Container needsDisabling>
                 { documentTabsMap[currentTab] }
             </Container>
         </section>

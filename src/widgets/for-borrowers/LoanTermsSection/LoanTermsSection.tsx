@@ -39,12 +39,14 @@ const settings = {
         {
             breakpoint: 976,
             settings: {
+                arrows: false,
                 slidesToShow: 2
             }
         },
         {
             breakpoint: 636,
             settings: {
+                arrows: false,
                 slidesToShow: 1
             }
         }
