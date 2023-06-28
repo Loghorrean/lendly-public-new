@@ -17,7 +17,7 @@ import ClockImage from "@/src/shared/ui/images/content/ClockImage";
 const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: <div>
         <Button className={cn(styles.loan_terms_section__button, styles.loan_terms_section__button__left)}>
@@ -28,7 +28,27 @@ const settings = {
         <Button className={cn(styles.loan_terms_section__button, styles.loan_terms_section__button__right)}>
             <ArrowRight />
         </Button>
-    </div>
+    </div>,
+    responsive: [
+        {
+            breakpoint: 1440,
+            settings: {
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 976,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 636,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ]
 };
 
 const LoanTermsSection = () => {
@@ -37,13 +57,22 @@ const LoanTermsSection = () => {
             <Container>
                 <header className={styles.loan_terms_section__header}>
                     <SecondaryHeading>
-                        <Heading headingType={HEADING_TYPE.H2}>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.loan_terms_section__heading}>
                             Какие условия для займа?
                         </Heading>
                     </SecondaryHeading>
                 </header>
                 <div className={styles.loan_terms_section__slider}>
                     <Slider {...settings}>
+                        <TermsBlock title="Сумма" value={<><p>50 000 000</p><RubleSvg /></>}>
+                            <MoneyImage />
+                        </TermsBlock>
+                        <TermsBlock title="Процентная ставка" value="18 - 33%">
+                            <ChartImage />
+                        </TermsBlock>
+                        <TermsBlock title="Срок погашения" value="До 12 месяцев">
+                            <ClockImage />
+                        </TermsBlock>
                         <TermsBlock title="Сумма" value={<><p>50 000 000</p><RubleSvg /></>}>
                             <MoneyImage />
                         </TermsBlock>

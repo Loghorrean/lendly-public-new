@@ -8,13 +8,27 @@
   border: 1px solid var(--stroke-on-white-color);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: space-between;
+  @include m.media(61em, "min") {
+    gap: 2rem;
+  }
+  @include m.media(61em) {
+    padding: 1.5rem;
+    min-height: 20rem;
+  }
+  & img {
+    @include m.useResizableImage;
+    @include m.media(61em) {
+      max-width: 50%;
+    }
+  }
   &__title {
     @include typo.primaryText;
   }
-  & > img {
+  &__content {
     flex-grow: 1;
     align-self: center;
+    @include m.centerWithFlex;
   }
   &__value {
     @include typo.tertiaryHeading;

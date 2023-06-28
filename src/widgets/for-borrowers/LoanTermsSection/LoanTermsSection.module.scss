@@ -8,6 +8,11 @@
     justify-content: space-between;
     margin-bottom: 2.5rem;
   }
+  &__heading {
+    @include m.media("tablet") {
+      max-width: 22.5rem;
+    }
+  }
   &__button {
     position: absolute;
     @include m.box(3rem);
@@ -35,6 +40,9 @@
   }
   &__slider {
     max-width: calc(100vw - 4rem);
+    @include m.media("tablet") {
+      max-width: calc(100vw - 2rem);
+    }
     & > div {
       position: relative;
       & > div:nth-child(2) {
