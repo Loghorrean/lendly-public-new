@@ -14,7 +14,7 @@ import {
 import {Container} from "@/src/shared/ui/layout";
 import {ProjectLink} from "@/src/shared/ui/links";
 import StatsSlider from "@/src/widgets/landing/StatsSlider";
-import React, {ForwardedRef, useCallback, useEffect, useRef} from "react";
+import React, {ForwardedRef, useCallback} from "react";
 import {BlockProps, cn, isNotEmpty, resultIf} from "@/src/shared/utils";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 

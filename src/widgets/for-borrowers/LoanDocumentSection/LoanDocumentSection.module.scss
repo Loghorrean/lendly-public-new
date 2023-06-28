@@ -13,7 +13,6 @@
     flex-direction: column;
   }
   &__tabs {
-    padding: 0.5rem;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -27,9 +26,16 @@
       white-space: nowrap;
       @include m.scrollbarWidth;
     }
+    @include m.media("mobile") {
+      border: none;
+      padding: 0;
+      gap: 2rem;
+    }
+    @include m.media("mobile", "min") {
+      padding: 0.5rem;
+    }
   }
   &__tab {
-    min-height: 4rem;
     cursor: pointer;
     flex: 1;
     @include m.centerWithFlex;
@@ -38,7 +44,6 @@
     transition: color 0.35s ease-in-out;
     color: var(--font-dark-color);
     @include typo.quaternaryHeading;
-    padding-inline: 1rem;
     text-align: center;
     &:hover {
       color: var(--primary-green-color);
@@ -46,6 +51,29 @@
     &[aria-current="true"] {
       color: var(--white-color);
       background-color: var(--primary-green-color);
+    }
+    @include m.media("mobile", "min") {
+      min-height: 4rem;
+      padding-inline: 1rem;
+    }
+    @include m.media("mobile") {
+      color: var(--font-medium-gray-color);
+      &:not(:last-child) {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          @include m.centerColumnWithPositioning;
+          right: -1rem;
+          width: 1px;
+          height: 1.5rem;
+          background-color: var(--stroke-on-white-color);
+        }
+      }
+      &[aria-current="true"] {
+        color: var(--font-dark-color);
+        background-color: inherit;
+      }
     }
   }
 }

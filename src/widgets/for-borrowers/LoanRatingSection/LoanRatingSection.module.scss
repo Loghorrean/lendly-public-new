@@ -5,7 +5,7 @@
 .loan_rating_section {
   padding-block: 8.75rem;
   @include m.media("tablet") {
-    padding: 4rem 0;
+    padding: 4rem 0 0;
   }
   &__heading {
     max-width: 60.5rem;
@@ -34,6 +34,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+    @include m.media("mobile") {
+      border: 1px solid var(--stroke-on-white-color);
+      min-height: 22.5rem;
+    }
     &___first {
       background-image: url("../../../../public/images/for-borrowers/portfolio-image.png");
     }

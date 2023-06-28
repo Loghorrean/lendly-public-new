@@ -14,4 +14,8 @@
     overflow: auto;
     @include m.scrollbarWidth;
   }
+  @include m.media("mobile") {
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+  }
 }
