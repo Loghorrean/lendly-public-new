@@ -29,6 +29,7 @@
     }
   }
   &__image {
+    @include m.useResizableImage;
     @include m.media("tablet") {
       align-self: center;
     }

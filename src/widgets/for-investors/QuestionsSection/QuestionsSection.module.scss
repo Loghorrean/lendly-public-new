@@ -32,6 +32,11 @@
     @include m.media("tablet") {
       background-size: calc(max(50%, 10rem));
     }
+    @include m.media("mobile") {
+      padding: 1.5rem;
+      min-height: 22.5rem;
+      background-size: 7rem;
+    }
     &_heading {
       @include typo.tertiaryHeading;
     }

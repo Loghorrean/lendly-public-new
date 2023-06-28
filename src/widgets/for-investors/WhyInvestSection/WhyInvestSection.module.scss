@@ -29,6 +29,9 @@
     }
     &:not(:last-child) {
       padding-bottom: 2.5rem;
+      @include m.media("tablet") {
+        padding-bottom: 2rem;
+      }
       border-bottom: 1px solid var(--stroke-on-white-color);
     }
     &:not(:first-child) {

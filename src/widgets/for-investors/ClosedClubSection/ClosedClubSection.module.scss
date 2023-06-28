@@ -12,6 +12,9 @@
   @include m.media("tablet") {
     padding-block: 4rem;
   }
+  @include m.media("mobile") {
+    background-size: cover, 200%;
+  }
   &__heading {
     margin-bottom: 2.5rem;
     max-width: 35rem;
@@ -34,6 +37,9 @@
       padding-inline: 1rem;
       @include m.scrollbarWidth;
     }
+    @include m.media("mobile") {
+      grid-template-columns: 1fr;
+    }
   }
   &__card {
     padding: 2rem;
@@ -46,6 +52,9 @@
     border-radius: 0.75rem;
     backdrop-filter: blur(0.875rem);
     color: var(--white-color);
+    @include m.media("mobile") {
+      min-height: 22.5rem;
+    }
     &_footer {
       max-width: 28.75rem;
       display: flex;

@@ -2,8 +2,11 @@
 
 .hero_section {
   position: fixed;
-  background: url("/images/for-investors/for-investors-hero.png") center right no-repeat;
+  background: url("/images/noise.png"), url("/images/for-investors/for-investors-hero.png") center right no-repeat;
   padding-bottom: 2.5rem;
+  @include m.media("mobile") {
+    background-size: cover, 200%;
+  }
   & > div {
     height: 100%;
   }
@@ -15,6 +18,9 @@
   &__heading {
     margin-bottom: 2rem;
     max-width: 56rem;
+    @include m.media("mobile") {
+      font-size: 1.75rem;
+    }
   }
   &__link {
     max-width: 20rem;
