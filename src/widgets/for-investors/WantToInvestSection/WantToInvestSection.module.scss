@@ -23,6 +23,9 @@
       overflow: auto;
       padding-inline: 1rem;
     }
+    @include m.media("mobile") {
+      grid-template-columns: 1fr;
+    }
   }
   &__element {
     padding: clamp(1rem, 8%, 2rem);
@@ -33,6 +36,9 @@
     flex-direction: column;
     justify-content: space-between;
     backdrop-filter: blur(1.875rem);
+    @include m.media("mobile") {
+      min-height: 22.5rem;
+    }
     &_footer {
       @include typo.tertiaryHeading;
 
