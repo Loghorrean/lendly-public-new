@@ -5,6 +5,7 @@
 .who_can_section {
   border-radius: 1.25rem;
   background-color: var(--bg-green-color);
+  background-image: url("/images/noise.png");
   padding: 8.75rem;
   color: var(--white-color);
   @include m.media("tablet") {
@@ -27,6 +28,9 @@
       overflow: auto;
       @include m.scrollbarWidth;
     }
+    @include m.media("mobile") {
+      grid-template-columns: 1fr;
+    }
   }
   &__card {
     padding: 2rem;
@@ -39,5 +43,11 @@
     flex-direction: column;
     justify-content: space-between;
     @include typo.tertiaryHeading;
+    @include m.media("tablet") {
+      padding: 1.5rem;
+    }
+    @include m.media("mobile") {
+      min-height: 22.5rem;
+    }
   }
 }

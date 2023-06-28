@@ -6,6 +6,7 @@ import styles from "./StatsSlider.module.scss";
 import {CSSTransition} from "react-transition-group";
 import ForBorrowersFirstIcon from "@/src/shared/ui/svg/for-borrowers/ForBorrowersFirstIcon";
 import ForBorrowersSecondIcon from "@/src/shared/ui/svg/for-borrowers/ForBorrowersSecondIcon";
+import {BlockProps} from "@/src/shared/utils";
 
 const StatsSlider = () => {
     const [activeSlide, setActiveSlide] = useState(0);

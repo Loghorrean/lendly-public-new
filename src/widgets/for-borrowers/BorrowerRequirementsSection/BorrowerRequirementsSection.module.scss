@@ -8,7 +8,8 @@
     padding: 4rem 0;
   }
   background:
-          url("../../../../public/images/for-borrowers/borrower-requirements-background.png") no-repeat left bottom,
+          url("/images/noise.png"),
+          url("/images/for-borrowers/borrower-requirements-background.png") no-repeat left bottom,
           var(--dark-background-color);
   border-radius: 1.25rem;
   color: var(--white-color);
@@ -30,6 +31,10 @@
       padding-left: 1rem;
       @include m.scrollbarWidth;
     }
+    @include m.media("mobile") {
+      padding-inline: 1rem;
+      grid-template-columns: 1fr;
+    }
   }
   &__block {
     min-height: v.$base-block-height;
@@ -41,6 +46,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include m.media("tablet") {
+      padding: 1.5rem;
+    }
+    @include m.media("mobile") {
+      min-height: 22.5rem;
+    }
   }
   &__text {
     @include typo.tertiaryHeading;

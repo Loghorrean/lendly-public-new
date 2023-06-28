@@ -9,6 +9,9 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 27.625rem;
+  @include m.media("mobile") {
+    min-height: 22.5rem;
+  }
   @include typo.tertiaryHeading;
   @include m.media("tablet", "min") {
     &:nth-child(-n+3) {
