@@ -15,7 +15,7 @@ const QuestionsSection = () => {
             <Container>
                 <div className={styles.questions_section__container}>
                     <SecondaryHeading>
-                        <Heading headingType={HEADING_TYPE.H2}>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.questions_section__heading}>
                             У меня <GreenText><span>есть вопрос.</span></GreenText> Как с вами связаться?
                         </Heading>
                     </SecondaryHeading>

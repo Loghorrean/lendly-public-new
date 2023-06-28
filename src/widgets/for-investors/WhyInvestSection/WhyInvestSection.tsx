@@ -12,7 +12,7 @@ import ForInvestorsThirdIcon from "@/src/shared/ui/svg/for-investors/ForInvestor
 
 const WhyInvestSection = () => {
     return (
-        <CommonBlock as="section" className={styles.why_invest_section}>
+        <CommonBlock as="section" className={styles.why_invest_section} smaller>
             <Container>
                 <div className={styles.why_invest_section__container}>
                     <div className={styles.why_invest_section__heading_container}>

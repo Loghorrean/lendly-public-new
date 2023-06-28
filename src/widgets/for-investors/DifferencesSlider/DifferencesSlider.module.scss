@@ -1,0 +1,38 @@
+@use "src/shared/styles/typography" as typo;
+
+.differences_slider {
+  display: grid;
+  grid-template-columns: repeat(3, 24.375rem);
+  grid-gap: 1rem;
+  max-width: 100vw;
+  overflow: auto;
+  align-items: flex-start;
+  margin-bottom: 1.875rem;
+  padding-inline: 1rem;
+  &__card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--light-theme-gray-color);
+    &_row {
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--stroke-on-white-color);
+        padding-bottom: 1rem;
+      }
+      &:not(:first-child) {
+        padding-top: 1rem;
+      }
+    }
+    &_heading {
+      max-width: 14.6875rem;
+      margin-bottom: 1.5rem;
+    }
+    &_label {
+      margin-bottom: 0.5rem;
+      @include typo.secondaryText;
+      color: var(--font-secondary-color);
+    }
+    &_text {
+      @include typo.primaryText;
+    }
+  }
+}

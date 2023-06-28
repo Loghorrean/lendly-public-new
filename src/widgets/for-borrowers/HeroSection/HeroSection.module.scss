@@ -12,7 +12,6 @@
     background-position: center right;
   }
   @include m.media("mobile") {
-    //background-size: cover;
     background-position: 75% center;
   }
   & > div {

@@ -1,19 +1,32 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .personal_cabinet_section {
   min-height: 73.5rem;
   border-radius: 1.25rem;
   background:
-          url("../../../../public/images/for-investors/personal-cabinet-back-1.png") no-repeat right bottom,
-          url("../../../../public/images/for-investors/personal-cabinet-back-2.png") no-repeat right top,
+          url("/images/noise.png"),
+          url("/images/for-investors/personal-cabinet-back-1.png") no-repeat right bottom,
+          url("/images/for-investors/personal-cabinet-back-2.png") no-repeat right top,
           radial-gradient(183.9% 151.54% at 74.09% -15.28%, #171717 0%, #585858 100%),
           #282828;
+  background-size: cover, calc(max(50%, 75rem)), 50%;
   padding-block: 8.75rem;
+  @include m.media("tablet") {
+    padding-block: 4rem;
+    min-height: 48rem;
+    background-size: cover, calc(max(50%, 40rem)), 50%;
+  }
   &__header {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
     color: var(--white-color);
+  }
+  &__heading {
+    max-width: 38rem;
   }
   &__text {
     max-width: 25rem;

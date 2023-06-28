@@ -16,6 +16,8 @@ const ClosedClubSection = () => {
                         Для крупных инвесторов есть <GreenText><span>закрытый клуб</span></GreenText>
                     </Heading>
                 </SecondaryHeading>
+            </Container>
+            <Container needsDisabling>
                 <div className={styles.closed_club_section__cards}>
                     <div className={styles.closed_club_section__card}>
                         <ChartIcon />

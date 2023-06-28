@@ -11,7 +11,7 @@ const PersonalCabinetSection = () => {
             <Container>
                 <header className={styles.personal_cabinet_section__header}>
                     <SecondaryHeading>
-                        <Heading headingType={HEADING_TYPE.H2}>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.personal_cabinet_section__heading}>
                             У каждого инвестора - <GreenText><span>свой личный кабинет.</span></GreenText> Как он выглядит?
                         </Heading>
                     </SecondaryHeading>

@@ -1,27 +1,41 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .why_invest_section {
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
-    grid-gap: 1.5rem;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+      grid-gap: 1.5rem;
+    }
+    @include m.media("tablet") {
+      grid-gap: 2.5rem;
+    }
   }
   &__heading {
-    position: sticky;
-    top: 7rem;
     display: flex;
     flex-direction: column;
+    @include m.media("tablet", "min") {
+      position: sticky;
+      top: 7rem;
+    }
     &_container {
       position: relative;
     }
   }
   &__block {
+    @include m.media("tablet") {
+      max-width: 35.5rem;
+    }
     &:not(:last-child) {
       padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--stroke-on-white-color);
     }
     &:not(:first-child) {
       padding-top: 2.5rem;
+      @include m.media("tablet") {
+        padding-top: 2rem;
+      }
     }
     &_icon {
       margin-bottom: 2rem;

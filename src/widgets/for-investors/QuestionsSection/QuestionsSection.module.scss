@@ -1,14 +1,24 @@
 @use "src/shared/styles/typography" as typo;
 @use "src/shared/styles/variables" as v;
+@use "src/shared/styles/mixins" as m;
 
 .questions_section {
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    @include m.media("mobile", "min") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+  }
+  &__heading {
+    @include m.media("tablet") {
+      grid-column: 1 / -1;
+    }
   }
   &__card {
-    grid-row: 2 / 3;
+    @include m.media("mobile", "min") {
+      grid-row: 2 / 3;
+    }
     padding: 2rem;
     border-radius: 1rem;
     border: 1px solid var(--stroke-on-white-color);
@@ -18,6 +28,10 @@
     justify-content: space-between;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 15rem;
+    @include m.media("tablet") {
+      background-size: calc(max(50%, 10rem));
+    }
     &_heading {
       @include typo.tertiaryHeading;
     }
@@ -29,7 +43,9 @@
       flex-direction: column;
       gap: 0.25rem;
       &___small {
-        width: calc(min(50%, 21.125rem));
+        @include m.media("tablet", "min") {
+          width: calc(min(50%, 21.125rem));
+        }
       }
     }
     &_link {
@@ -40,10 +56,10 @@
       color: var(--primary-green-color) !important;
     }
     &___first {
-      background-image: url("../../../../public/images/for-investors/questions-card-back-1.png");
+      background-image: url("/images/landing/contacts/telegram-image.png");
     }
     &___second {
-      background-image: url("../../../../public/images/for-investors/questions-card-back-2.png");
+      background-image: url("/images/landing/contacts/support-image.png");
     }
   }
 }

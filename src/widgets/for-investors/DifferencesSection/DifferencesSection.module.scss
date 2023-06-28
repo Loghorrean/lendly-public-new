@@ -1,28 +1,14 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .differences_section {
-  &__header {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(10px, 1fr));
-    grid-gap: 1.5rem;
-    padding: 2.5rem 2rem;
-    &_cell {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+  &__container {
+    @include m.media("tablet", "min") {
+      border-top: 1px solid var(--stroke-on-white-color);
     }
   }
-  &__container {
-    border-top: 1px solid var(--stroke-on-white-color);
-  }
-  &__title {
-    @include typo.quaternaryHeading;
-  }
-  &__heading {
-    transform: translateX(-2rem);
-  }
-  &__info {
-    @include typo.secondaryText;
-    color: var(--font-secondary-color);
+  &__tablet_heading {
+    @include m.hideOnBreakpoint("tablet", "min");
+    margin-bottom: 2.5rem;
   }
 }
