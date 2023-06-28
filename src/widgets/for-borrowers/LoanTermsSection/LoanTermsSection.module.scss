@@ -2,11 +2,19 @@
 
 .loan_terms_section {
   padding-top: 6.5rem;
+  @include m.media("tablet") {
+    padding-top: 3rem;
+  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2.5rem;
+  }
+  &__heading {
+    @include m.media("tablet") {
+      max-width: 22.5rem;
+    }
   }
   &__button {
     position: absolute;
@@ -35,11 +43,23 @@
   }
   &__slider {
     max-width: calc(100vw - 4rem);
+    @include m.media("tablet") {
+      max-width: calc(100vw - 2rem);
+    }
     & > div {
       position: relative;
-      & > div:nth-child(2) {
-        & > div > div {
-          padding-inline: 0.75rem;
+      @include m.media(61em, "min") {
+        & > div:nth-child(2) {
+          & > div > div {
+            padding-inline: 0.75rem;
+          }
+        }
+      }
+      @include m.media(61em) {
+        & > div:nth-child(1) {
+          & > div > div {
+            padding-inline: 0.75rem;
+          }
         }
       }
     }

@@ -5,8 +5,6 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import CommonListIconElement from "@/src/shared/ui/blocks/CommonListIconElement";
-import HouseIcon from "@/src/shared/ui/svg/for-borrowers/HouseIcon";
-import PictureIcon from "@/src/shared/ui/svg/for-borrowers/PictureIcon";
 import SafeIcon from "@/src/shared/ui/svg/for-borrowers/SafeIcon";
 import EncumbranceIcon from "@/src/shared/ui/svg/for-borrowers/EncumbranceIcon";
 import RisksIcon from "@/src/shared/ui/svg/for-borrowers/RisksIcon";
@@ -14,7 +12,7 @@ import StateIcon from "@/src/shared/ui/svg/for-borrowers/StateIcon";
 
 const UnavailableEstateSection = () => {
     return (
-        <CommonBlock as="section" className={styles.unavailable_estate_section}>
+        <CommonBlock as="section" smaller className={styles.unavailable_estate_section}>
             <Container>
                 <div className={styles.unavailable_estate_section__container}>
                     <div className={styles.unavailable_estate_section__heading_container}>

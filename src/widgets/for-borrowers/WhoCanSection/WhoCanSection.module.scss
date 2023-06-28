@@ -1,19 +1,32 @@
 @use "src/shared/styles/variables" as v;
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .who_can_section {
-  margin-top: 0.5rem;
   border-radius: 1.25rem;
   background-color: var(--bg-green-color);
   padding: 8.75rem;
   color: var(--white-color);
+  @include m.media("tablet") {
+    padding: 4rem 0;
+  }
   &__heading {
     margin-bottom: 1.5rem;
   }
   &__cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(10px, 1fr));
     grid-gap: 1.5rem;
+    @include m.media("tablet", "min") {
+      grid-template-columns: repeat(3, minmax(10px, 1fr));
+    }
+    @include m.media("tablet") {
+      padding-inline: 1.5rem;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(3, 30.375rem);
+      max-width: 100vw;
+      overflow: auto;
+      @include m.scrollbarWidth;
+    }
   }
   &__card {
     padding: 2rem;

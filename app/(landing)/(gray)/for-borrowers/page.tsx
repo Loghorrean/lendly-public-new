@@ -23,7 +23,7 @@ export default function ForBorrowers() {
         <>
             <HeroSection ref={heroRef} />
             <ParallaxBlock ref={parallaxRef}>
-                <CommonBlock first>
+                <CommonBlock first smaller>
                     <LoanForSection />
                     <LoanTermsSection />
                 </CommonBlock>

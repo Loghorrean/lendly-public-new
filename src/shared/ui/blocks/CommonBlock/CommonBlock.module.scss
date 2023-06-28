@@ -16,4 +16,9 @@
     @include m.media("mobile") {
         padding-block: 4rem;
     }
+    &__smaller {
+        @include m.media("tablet") {
+            padding-block: 4rem;
+        }
+    }
 }

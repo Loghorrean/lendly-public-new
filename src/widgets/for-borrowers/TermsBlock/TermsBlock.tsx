@@ -12,7 +12,9 @@ const TermsBlock = ({ title, value, children }: PropsWithChildren<Props>) => {
             <header className={styles.terms_block__title}>
                 { title }
             </header>
-            {children}
+            <div className={styles.terms_block__content}>
+                {children}
+            </div>
             <footer className={styles.terms_block__value}>
                 {value}
             </footer>

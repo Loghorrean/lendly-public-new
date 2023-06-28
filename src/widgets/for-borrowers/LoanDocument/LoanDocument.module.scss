@@ -1,4 +1,5 @@
 @use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
 
 .loan_document {
   padding: 2rem;
@@ -9,11 +10,13 @@
   justify-content: space-between;
   min-height: 27.625rem;
   @include typo.tertiaryHeading;
-  &:nth-child(-n+3) {
-    grid-column: span 2;
-  }
-  &:nth-last-child(-n+2) {
-    grid-column: span 3;
+  @include m.media("tablet", "min") {
+    &:nth-child(-n+3) {
+      grid-column: span 2;
+    }
+    &:nth-last-child(-n+2) {
+      grid-column: span 3;
+    }
   }
   &__header {
     color: var(--primary-green-color);
