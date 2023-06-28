@@ -1,7 +1,15 @@
+@use "src/shared/styles/mixins" as m;
+
 .main_section {
   padding-top: 7rem;
   margin-bottom: 1.5rem;
+  @include m.media("mobile") {
+    padding-top: 6rem;
+  }
   &__heading {
     margin-bottom: 9.5rem;
+    @include m.media("tablet") {
+      margin-bottom: 4rem;
+    }
   }
 }

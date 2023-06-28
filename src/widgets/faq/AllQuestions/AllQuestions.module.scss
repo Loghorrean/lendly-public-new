@@ -20,8 +20,6 @@
   &__heading {
     margin-bottom: 2rem;
     @include m.media("tablet") {
-      position: sticky;
-      top: 8rem;
       padding-top: 1rem;
       background-color: var(--white-color);
       margin-bottom: 1.5rem;

@@ -1,7 +1,15 @@
+@use "src/shared/styles/mixins" as m;
+
 .read_more_section {
   padding-block: 8.75rem;
+  @include m.media("tablet") {
+    padding-block: 4rem;
+  }
   max-width: calc(100vw - 1rem);
   &__heading {
     margin-bottom: 2.5rem;
+    @include m.media("tablet") {
+      margin-bottom: 2rem;
+    }
   }
 }

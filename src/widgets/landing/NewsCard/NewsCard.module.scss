@@ -3,7 +3,6 @@
 @use "src/shared/styles/typography" as typo;
 
 .news_card {
-  min-height: 32.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -12,6 +11,10 @@
   border: 1px solid var(--stroke-on-white-color);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 32.5rem;
+  @include m.media("tablet") {
+    min-height: 24.5rem;
+  }
   &:hover {
     & .news_card__footer {
       border-color: var(--primary-green-color);
@@ -33,18 +36,26 @@
   }
   &__photo {
     border-radius: 0.5rem 0.5rem 1rem 1rem;
-    flex-grow: 1;
     max-height: 50%;
+    aspect-ratio: 360 / 260;
     width: 100%;
     position: relative;
     & > img {
       border-radius: inherit;
+      aspect-ratio: 360 / 260;
+    }
+    @include m.media("tablet", "min") {
+      flex-grow: 1;
     }
   }
   &__tag {
     position: absolute;
     top: 2rem;
     left: 2rem;
+    @include m.media("tablet") {
+      top: 1.5rem;
+      left: 1.5rem;
+    }
     z-index: 15;
     background-color: var(--light-theme-gray-color);
     color: var(--font-dark-color);
@@ -59,7 +70,9 @@
   }
   &__content {
     padding: 2rem 2rem 1.5rem;
-    max-height: 50%;
+    @include m.media("tablet") {
+      padding: 1.5rem;
+    }
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -67,14 +80,22 @@
     &___no_photo {
       margin-top: 6rem;
       max-height: 100%;
+      @include m.media("tablet") {
+        margin-top: 4rem;
+      }
     }
   }
   &__main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    @include m.media("tablet") {
+      margin-bottom: 1rem;
+    }
     &___with_desciption {
-      max-width: calc(min(70%, 37rem));
+      @include m.media("tablet", "min") {
+        max-width: calc(min(70%, 37rem));
+      }
     }
   }
   &__title {

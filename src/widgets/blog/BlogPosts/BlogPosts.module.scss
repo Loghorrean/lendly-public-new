@@ -12,5 +12,11 @@
     @include m.media(75.25rem) {
       grid-template-columns: minmax(10px, 1fr);
     }
+    @include m.media("tablet") {
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+    }
+    @include m.media("mobile") {
+      grid-template-columns: 1fr;
+    }
   }
 }

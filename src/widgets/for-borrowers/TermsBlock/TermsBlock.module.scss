@@ -1,0 +1,25 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.terms_block {
+  min-height: 32.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--stroke-on-white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  &__title {
+    @include typo.primaryText;
+  }
+  & > img {
+    flex-grow: 1;
+    align-self: center;
+  }
+  &__value {
+    @include typo.tertiaryHeading;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+  }
+}
