@@ -8,21 +8,40 @@
     justify-content: space-between;
     margin-bottom: 2.5rem;
   }
-  &__buttons {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
   &__button {
+    position: absolute;
     @include m.box(3rem);
     @include m.centerWithFlex;
     border-radius: 50%;
     background-color: var(--white-color);
     border: 1px solid var(--stroke-on-white-color);
     cursor: pointer;
-    transition: background-color 0.35s;
+    top: -21rem;
+    @include m.hideOnBreakpoint("tablet");
     &:hover {
-      background-color: var(--stroke-on-white-color);
+      & svg {
+        fill: var(--primary-green-color);
+      }
+    }
+    &__left {
+      left: calc(min(81rem, 85vw));
+      @include m.media(66em) {
+        left: calc(min(56rem, 80vw));
+      }
+    }
+    &__right {
+      right: 2rem;
+    }
+  }
+  &__slider {
+    max-width: calc(100vw - 4rem);
+    & > div {
+      position: relative;
+      & > div:nth-child(2) {
+        & > div > div {
+          padding-inline: 0.75rem;
+        }
+      }
     }
   }
 }
