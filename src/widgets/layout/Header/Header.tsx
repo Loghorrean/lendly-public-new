@@ -7,8 +7,8 @@ import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryBu
 import {Container} from "@/src/shared/ui/layout";
 import {usePathname} from "next/navigation";
 import LandingLogo from "@/src/widgets/landing/LandingLogo";
-import {cn, resultIf, useToggle} from "@/src/shared/utils";
-import {useLayoutEffect, useRef, useState} from "react";
+import {cn, resultIf, useEffectOnUpdate, useToggle} from "@/src/shared/utils";
+import {SyntheticEvent, useEffect, useLayoutEffect, useRef, useState} from "react";
 import MobileMenuButton from "@/src/widgets/layout/MobileMenuButton";
 import MobileMenu from "@/src/widgets/layout/MobileMenu";
 import HomeLink from "@/src/shared/ui/links/HomeLink";
@@ -29,8 +29,14 @@ const Header = () => {
         }
     }, []);
     const location = usePathname();
+    useEffectOnUpdate(() => {
+        setActive(false);
+    }, [location]);
     const isLanding = () => {
         return location === "/";
+    }
+    const handleLogoClick = async () => {
+        await setActive(false);
     }
     return (
         <header className={styles.header}>
