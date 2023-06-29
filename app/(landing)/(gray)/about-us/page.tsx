@@ -19,7 +19,7 @@ export default function AboutUs() {
         <>
             <HeroSection ref={heroRef} />
             <ParallaxBlock ref={parallaxRef}>
-                <CommonBlock first>
+                <CommonBlock first id="bottom">
                     <WhatIsSection />
                     <DevPointsSection />
                 </CommonBlock>

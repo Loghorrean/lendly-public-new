@@ -14,6 +14,8 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import GreenText from "@/src/shared/ui/typography/GreenText";
+import {Button} from "@/src/shared/ui/buttons";
+import ArrowBottom from "@/src/shared/ui/svg/arrows/ArrowBottom";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
     return (
@@ -29,6 +31,9 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                     </ProjectLink>
                 </PrimaryButton>
             </Container>
+            <a href="#bottom" className={styles.hero_section__bottom_btn}>
+                <ArrowBottom />
+            </a>
         </MainSection>
     );
 }
