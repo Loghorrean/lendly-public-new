@@ -23,6 +23,7 @@
     }
   }
   &__bottom_btn {
+    @include m.hideOnBreakpoint("tablet");
     position: absolute;
     left: 2rem;
     bottom: 2rem;
