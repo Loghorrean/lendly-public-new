@@ -8,8 +8,6 @@ import {cn, resultIf} from "@/src/shared/utils";
 import {Tooltip} from "@/src/shared/ui/utils";
 import QuestionIcon from "@/src/shared/ui/svg/QuestionIcon";
 import TooltipContent from "@/src/shared/ui/utils/Tooltip/composables/TooltipContent";
-import headerLogo from "@/public/images/logo/header-logo.png";
-import {ProjectLink} from "@/src/shared/ui/links";
 import HomeLink from "@/src/shared/ui/links/HomeLink";
 
 const minWidth = 120;
