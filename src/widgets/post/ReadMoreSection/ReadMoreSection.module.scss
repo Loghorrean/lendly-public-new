@@ -5,7 +5,7 @@
   @include m.media("tablet") {
     padding-block: 4rem;
   }
-  max-width: calc(100vw - 1rem);
+  max-width: 100vw;
   &__heading {
     margin-bottom: 2.5rem;
     @include m.media("tablet") {
