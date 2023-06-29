@@ -3,9 +3,9 @@
 .hero_section {
   position: fixed;
   background-color: #EDEDED;
-  background-image: url("/images/for-borrowers/for-borrowers-hero.png");
-  background-position: bottom right;
-  background-repeat: no-repeat;
+  background-image: url("/images/noise.png"), url("/images/for-borrowers/for-borrowers-hero.png");
+  background-position: center, bottom right;
+  background-repeat: repeat, no-repeat;
   padding-bottom: 2.5rem;
   @include m.media("tablet") {
     background-size: 200%;

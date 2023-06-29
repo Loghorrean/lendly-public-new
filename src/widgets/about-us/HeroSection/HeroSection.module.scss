@@ -3,14 +3,14 @@
 
 .hero_section {
   position: fixed;
-  background: url("/images/about-us/hero-pic-about.png") right center no-repeat;
+  background: url("/images/noise.png"), url("/images/about-us/hero-pic-about.png") right center no-repeat;
   padding-bottom: 1.5rem;
   @include m.media("tablet") {
-    background-size: 175%;
-    background-position: 50% 25%;
+    background-size: cover, 175%;
+    background-position: center, 50% 25%;
   }
   @include m.media("mobile") {
-    background-size: 250%;
+    background-size: cover, 250%;
   }
   & > div {
     height: 100%;
