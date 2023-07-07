@@ -17,64 +17,62 @@ const FinancingProjectCard = () => {
                         Первичный рынок
                     </div>
                 </div>
-                <div className={styles.financing_project_card__content}>
-                    <div className={styles.financing_project_card__logo}>
-                        <Image src={mockLogo} alt="Project logo" />
-                    </div>
-                    <div className={styles.financing_project_card__info}>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                Размер предложения
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                <Money money={{ amount: 12294488200, currencyCode: "RUB" }} />
-                            </div>
-                        </div>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                Цена предложения
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                <Money money={{ amount: 194488200, currencyCode: "RUB" }} />
-                            </div>
-                        </div>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                Ставка по договору
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                18%
-                            </div>
-                        </div>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                Оставшийся срок
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                20 месяцев
-                            </div>
-                        </div>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                LTV
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                50%
-                            </div>
-                        </div>
-                        <div className={styles.financing_project_card__block}>
-                            <div className={styles.financing_project_card__heading}>
-                                ROI
-                            </div>
-                            <div className={styles.financing_project_card__value}>
-                                18%
-                            </div>
-                        </div>
-                    </div>
-                    <Button className={styles.financing_project_card__invest}>
-                        Инвестировать
-                    </Button>
+                <div className={styles.financing_project_card__logo}>
+                    <Image src={mockLogo} alt="Project logo" />
                 </div>
+                <div className={styles.financing_project_card__info}>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            Размер предложения
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            <Money money={{ amount: 12294488200, currencyCode: "RUB" }} />
+                        </div>
+                    </div>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            Цена предложения
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            <Money money={{ amount: 194488200, currencyCode: "RUB" }} />
+                        </div>
+                    </div>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            Ставка по договору
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            18%
+                        </div>
+                    </div>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            Оставшийся срок
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            20 месяцев
+                        </div>
+                    </div>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            LTV
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            50%
+                        </div>
+                    </div>
+                    <div className={styles.financing_project_card__block}>
+                        <div className={styles.financing_project_card__heading}>
+                            ROI
+                        </div>
+                        <div className={styles.financing_project_card__value}>
+                            18%
+                        </div>
+                    </div>
+                </div>
+                <Button className={styles.financing_project_card__invest}>
+                    Инвестировать
+                </Button>
             </div>
         </li>
     );
