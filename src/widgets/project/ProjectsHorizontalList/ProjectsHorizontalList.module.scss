@@ -6,4 +6,9 @@
   @include m.media("tablet") {
     padding-inline: 1rem;
   }
+  @include m.media("mobile") {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
 }

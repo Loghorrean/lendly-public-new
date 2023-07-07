@@ -7,19 +7,46 @@
   padding: 2rem;
   border-radius: 1rem;
   width: fit-content;
-  &:not(:last-child) {
-    margin-bottom: 1rem;
+  @include m.media("tablet") {
+    padding: 1rem;
+  }
+  @include m.media("mobile") {
+    padding: 1.5rem;
+    min-width: 18rem;
+  }
+  @include m.media("mobile", "min") {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
   &__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min-content, max-content));
+    grid-template-areas: "ids logo info invest";
     align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    grid-gap: 1.5rem;
+    @include m.media("tablet") {
+      grid-template-areas:
+        "logo info invest"
+        "ids info invest";
+      grid-gap: 0.5rem;
+    }
+    @include m.media("mobile") {
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      grid-template-areas:
+        "logo"
+        "ids"
+        "info"
+        "invest";
+      grid-gap: 1.5rem;
+    }
   }
   &__ids {
     display: flex;
     flex-direction: column;
-    width: max-content;
+    width: 12rem;
+    grid-area: ids;
   }
   &__id {
     flex-grow: 1;
@@ -36,27 +63,33 @@
       color: var(--primary-green-color);
     }
   }
-  &__content {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
   &__logo {
     @include m.box(4rem);
     border: 1px solid var(--stroke-on-white-color);
     border-radius: 4rem;
     @include m.centerWithFlex;
     background-color: var(--white-color);
+    grid-area: logo;
   }
   &__info {
     display: grid;
-    grid-template-columns: 10.75rem 10.25rem 9.75rem 9.25rem 5rem 5rem auto;
-    grid-column-gap: 0.5rem;
+    grid-area: info;
+    @include m.media("mobile", "min") {
+      grid-template-columns: 10.75rem 10.25rem 9.75rem 9.25rem 5rem 4rem auto;
+      grid-column-gap: 0.5rem;
+    }
+    @include m.media("mobile") {
+      grid-template-rows: repeat(6, minmax(min-content, max-content));
+      grid-row-gap: 1rem;
+    }
   }
   &__block {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    @include m.media("mobile") {
+      gap: 0.25rem;
+    }
   }
   &__heading {
     @include typo.secondaryText;
@@ -64,6 +97,9 @@
   }
   &__value {
     @include typo.quaternaryHeading;
+    @include m.media("mobile") {
+      @include typo.secondaryTextAccent;
+    }
   }
   &__invest {
     background-color: var(--white-color);
@@ -71,5 +107,6 @@
     border-radius: 0.75rem;
     padding: 1rem 1.5rem;
     @include typo.secondaryTextAccent;
+    grid-area: invest;
   }
 }
