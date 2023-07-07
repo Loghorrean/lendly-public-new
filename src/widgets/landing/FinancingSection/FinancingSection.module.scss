@@ -3,7 +3,7 @@
 
 .financing_section {
   margin-top: 6.5rem;
-  max-width: calc(100vw - 1rem);
+  max-width: 100vw;
   @include m.media("tablet", "min") {
     padding-top: 2.25rem;
   }
@@ -52,5 +52,10 @@
       @include typo.tertiaryHeading;
       font-size: 1.625rem;
     }
+  }
+  &__inner {
+    max-width: 100vw;
+    overflow: auto;
+    @include m.scrollbarWidth;
   }
 }
