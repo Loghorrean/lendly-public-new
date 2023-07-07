@@ -1,6 +1,6 @@
 import styles from "./FinancingSection.module.scss";
 import {BlockProps, cn, ObjectValues} from "@/src/shared/utils";
-import {useState} from "react";
+import {ReactNode, useRef, useState} from "react";
 import {Container} from "@/src/shared/ui/layout";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
 import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
@@ -9,6 +9,8 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
+import LoansHorizontalList from "@/src/widgets/project/LoansHorizontalList";
+import ProjectsHorizontalList from "@/src/widgets/project/ProjectsHorizontalList";
 
 const LIST_TYPE = {
     PROJECTS: "PROJECTS",
@@ -19,6 +21,10 @@ type ListType = ObjectValues<typeof LIST_TYPE>;
 
 const FinancingSection = ({ ...props }: BlockProps) => {
     const [currentList, setCurrentList] = useState<ListType>(LIST_TYPE.PROJECTS);
+    const availableLists = useRef<Record<ListType, ReactNode>>({
+        [LIST_TYPE.LOANS]: <LoansHorizontalList />,
+        [LIST_TYPE.PROJECTS]: <ProjectsHorizontalList />
+    });
     return (
         <section {...props} className={cn(styles.financing_section, props.className)}>
             <Container>
@@ -40,9 +46,13 @@ const FinancingSection = ({ ...props }: BlockProps) => {
                         Займы
                     </li>
                 </ul>
-                <div>
-                    Add List Later
+            </Container>
+            <Container needsDisabling>
+                <div className={styles.financing_section__inner}>
+                    { availableLists.current[currentList] }
                 </div>
+            </Container>
+            <Container>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN}>
                     <ProjectLink href="/auth/register">
                         Стать инвестором

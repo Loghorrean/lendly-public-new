@@ -1,0 +1,75 @@
+@use "src/shared/styles/typography" as typo;
+@use "src/shared/styles/mixins" as m;
+
+.financing_project_card {
+  border: 1px solid var(--stroke-on-white-color);
+  background-color: var(--light-theme-gray-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: fit-content;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  &__ids {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+  }
+  &__id {
+    flex-grow: 1;
+    border: 1px solid var(--stroke-on-white-color);
+    background-color: var(--white-color);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    width: max-content;
+    @include typo.secondaryTextAccent;
+    &___dark {
+      color: var(--font-dark-color);
+    }
+    &___green {
+      color: var(--primary-green-color);
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__logo {
+    @include m.box(4rem);
+    border: 1px solid var(--stroke-on-white-color);
+    border-radius: 4rem;
+    @include m.centerWithFlex;
+    background-color: var(--white-color);
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: 10.75rem 10.25rem 9.75rem 9.25rem 5rem 5rem auto;
+    grid-column-gap: 0.5rem;
+  }
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  &__heading {
+    @include typo.secondaryText;
+    color: var(--font-secondary-color);
+  }
+  &__value {
+    @include typo.quaternaryHeading;
+  }
+  &__invest {
+    background-color: var(--white-color);
+    border: 1px solid var(--stroke-on-white-color);
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    @include typo.secondaryTextAccent;
+  }
+}

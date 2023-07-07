@@ -1,0 +1,9 @@
+@use "src/shared/styles/mixins" as m;
+
+.projects_horizontal_list {
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  @include m.media("tablet") {
+    padding-inline: 1rem;
+  }
+}
