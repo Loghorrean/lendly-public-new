@@ -18,7 +18,7 @@ html, body {
 body {
     line-height: 1;
     color: var(--font-dark-color);
-    background-color: var(--gray-background-color);
+    background-color: #F4F4F4;
     font-weight: 400;
     @include m.useCoFoSansFont;
     overflow-x: hidden;
