@@ -2,6 +2,7 @@
 
 .loans_horizontal_list {
   width: fit-content;
+  min-width: 100%;
   margin-bottom: 1.5rem;
   @include m.media("tablet") {
     padding-inline: 1rem;

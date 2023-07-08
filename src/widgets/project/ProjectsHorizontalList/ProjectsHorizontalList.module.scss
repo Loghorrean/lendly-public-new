@@ -3,6 +3,7 @@
 .projects_horizontal_list {
   width: fit-content;
   margin-bottom: 1.5rem;
+  min-width: 100%;
   @include m.media("tablet") {
     padding-inline: 1rem;
   }
