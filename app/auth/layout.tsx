@@ -15,7 +15,9 @@ export default function AuthLayout({ children }: PropsWithChildren) {
             <AuthHeader />
             <Main>
                 <div className={styles.auth_container}>
-                    <AuthLinks />
+                    <div className={styles.auth_container__links}>
+                        <AuthLinks />
+                    </div>
                     { children }
                 </div>
             </Main>
