@@ -49,7 +49,7 @@ const LenderForm = () => {
                         Регистрация инвестора
                     </Heading>
                 </TertiaryHeading>
-                <AuthLink href="/auth/login">
+                <AuthLink href="/auth/login" className={styles.lender_form__auth_link}>
                     Я уже являюсь пользователем
                 </AuthLink>
                 <div className={styles.lender_form__inputs}>
@@ -127,6 +127,9 @@ const LenderForm = () => {
                         </> }
                     </Button>
                 </PrimaryButton>
+                <AuthLink href="/auth/login" className={styles.lender_form__auth_link_second}>
+                    Я уже являюсь пользователем
+                </AuthLink>
             </form>
         </CommonAuthBlock>
     );
