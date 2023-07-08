@@ -6,6 +6,9 @@
   align-items: center;
   gap: 3rem;
   margin-bottom: 2.5rem;
+  @include m.media("mobile") {
+    margin-bottom: 1rem;
+  }
   &__element {
     position: relative;
     &:not(:last-child) {
@@ -33,6 +36,9 @@
     &[aria-current="page"] {
       text-decoration: none;
       color: var(--font-dark-color);
+    }
+    @include m.media("tablet") {
+      @include typo.tertiaryHeading;
     }
   }
 }

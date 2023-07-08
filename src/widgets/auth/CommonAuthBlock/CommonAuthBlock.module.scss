@@ -12,5 +12,10 @@
   }
   @include m.media("mobile") {
     padding: 1.5rem;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  &__links {
+    @include m.hideOnBreakpoint("mobile", "min");
   }
 }

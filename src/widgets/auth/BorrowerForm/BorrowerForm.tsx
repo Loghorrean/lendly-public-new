@@ -44,7 +44,7 @@ const BorrowerForm = () => {
                         Регистрация заёмщика
                     </Heading>
                 </TertiaryHeading>
-                <AuthLink href="/auth/login">
+                <AuthLink href="/auth/login" className={styles.borrower_form__auth_link}>
                     Я уже являюсь пользователем
                 </AuthLink>
                 <div className={styles.borrower_form__inputs}>
@@ -151,6 +151,9 @@ const BorrowerForm = () => {
                         </> }
                     </Button>
                 </PrimaryButton>
+                <AuthLink href="/auth/login" className={styles.borrower_form__auth_link_second}>
+                    Я уже являюсь пользователем
+                </AuthLink>
             </form>
         </CommonAuthBlock>
     );

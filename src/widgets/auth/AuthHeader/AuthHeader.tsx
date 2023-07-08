@@ -18,7 +18,7 @@ const AuthHeader = () => {
                     <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE}>
                         <ProjectLink href="/" className={styles.auth_header__link} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                             { isHovered ? <ArrowTopLeft /> : <ArrowLeft /> }
-                            <span>Вернуться на главную</span>
+                            <span>Вернуться назад</span>
                         </ProjectLink>
                     </PrimaryButton>
                 </div>

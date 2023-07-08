@@ -1,3 +1,5 @@
+@use "src/shared/styles/mixins" as m;
+
 .auth_container {
   margin-top: 4rem;
   margin-inline: auto;
@@ -5,4 +7,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  &__links {
+    @include m.hideOnBreakpoint("mobile");
+  }
+  @include m.media("mobile") {
+    margin-top: 0.25rem;
+    flex-grow: 1;
+  }
 }

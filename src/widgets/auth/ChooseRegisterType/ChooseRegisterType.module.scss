@@ -6,6 +6,11 @@
   grid-template-columns: repeat(2, minmax(10px, 1fr));
   grid-gap: 0.5rem;
   width: 100%;
+  @include m.media("mobile") {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding: 0 0.5rem 4rem;
+  }
   &__option {
     min-height: 16.25rem;
     @include m.centerWithFlex;
