@@ -6,19 +6,12 @@ import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import {ObjectValues} from "@/src/shared/utils";
 import {ReactElement, useState} from "react";
 import LegalDocumentsList from "@/src/widgets/for-borrowers/LegalDocumentsList";
-
-const DOCUMENTS_TAB = {
-    LEGAL: "LEGAL",
-    LOAN_REGISTRATION: "LOAN_REGISTRATION",
-    INDIVIDUAL: "INDIVIDUAL"
-} as const;
-
-type DocumentsTab = ObjectValues<typeof DOCUMENTS_TAB>;
+import {DOCUMENTS_TAB, DocumentsTab} from "@/src/widgets/for-borrowers/LegalDocumentsList/DocumentsTab";
 
 const documentTabsMap: Record<DocumentsTab, ReactElement> = {
-    [DOCUMENTS_TAB.LEGAL]: <LegalDocumentsList key="legal" />,
-    [DOCUMENTS_TAB.LOAN_REGISTRATION]: <LegalDocumentsList key="loan" />,
-    [DOCUMENTS_TAB.INDIVIDUAL]: <LegalDocumentsList key="individual" />
+    [DOCUMENTS_TAB.LEGAL]: <LegalDocumentsList key="legal" tab={DOCUMENTS_TAB.LEGAL} />,
+    [DOCUMENTS_TAB.LOAN_REGISTRATION]: <LegalDocumentsList key="loan" tab={DOCUMENTS_TAB.LOAN_REGISTRATION} />,
+    [DOCUMENTS_TAB.INDIVIDUAL]: <LegalDocumentsList key="individual" tab={DOCUMENTS_TAB.INDIVIDUAL} />
 }
 
 const LoanDocumentSection = () => {
