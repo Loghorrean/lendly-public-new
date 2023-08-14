@@ -1,5 +1,4 @@
 import styles from "./CompanyRequisites.module.scss";
-import TertiaryHeading from "@/src/shared/ui/typography/Heading/decorators/TertiaryHeading";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import RoundProgressBar from "@/src/shared/ui/utils/RoundProgressBar";
@@ -75,7 +74,7 @@ const CompanyRequisites = () => {
                             Генеральный директор
                         </div>
                         <div className={styles.company_requisites__value}>
-                            Волгин Александр Валерьевич
+                            Градинар Екатерина Викторовна
                         </div>
                     </div>
                 </div>

@@ -26,7 +26,7 @@ const InvestIntoSection = () => {
                 <div className={styles.invest_into_section__cards}>
                     <InvestIntoCard
                         index="01"
-                        content="Например, строительство или реконструкцию коммерческой недвижимости. Доход зависит от прибыли проекта."
+                        content="Например, в строительство или реконструкцию коммерческой недвижимости. Доход зависит от прибыли проекта."
                         title="В проекты"
                         className={styles.invest_into_section__first_card}
                     />

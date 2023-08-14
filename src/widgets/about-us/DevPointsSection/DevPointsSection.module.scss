@@ -10,11 +10,11 @@
   }
   position: relative;
   &__heading {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     position: sticky;
-    top: 7rem;
+    top: 6rem;
     @include m.media("tablet") {
-      top: 6rem;
+      top: 5rem;
     }
   }
   &__list {
@@ -42,11 +42,17 @@
     background-image: url("/images/noise.png"), url("/images/about-us/card-background-2020.png");
     background-position: center, center bottom;
     background-size: cover;
+    &_second_content {
+      grid-column: span 2;
+    }
   }
   &__third_card {
     z-index: 13;
     background-image: url("/images/noise.png"), url("/images/about-us/card-background-2021.png");
     background-position: right bottom;
+    & > footer > div {
+      grid-column: span 2;
+    }
   }
   &__fourth_card {
     z-index: 14;
@@ -68,7 +74,7 @@
     }
     &_second_content {
       @include m.media("tablet", "min") {
-        grid-column: 3 / 4;
+        grid-column: 3 / 5;
       }
     }
   }

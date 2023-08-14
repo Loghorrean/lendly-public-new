@@ -86,7 +86,7 @@
     gap: 3.5rem;
   }
   &__second_heading {
-    max-width: 27.5rem;
+    max-width: 40rem;
     @include m.hideOnBreakpoint("tablet");
   }
   &__links {

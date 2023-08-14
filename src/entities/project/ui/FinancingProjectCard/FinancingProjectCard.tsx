@@ -63,7 +63,7 @@ const FinancingProjectCard = () => {
                     </div>
                     <div className={styles.financing_project_card__block}>
                         <div className={styles.financing_project_card__heading}>
-                            ROI
+                            Доходность
                         </div>
                         <div className={styles.financing_project_card__value}>
                             18%

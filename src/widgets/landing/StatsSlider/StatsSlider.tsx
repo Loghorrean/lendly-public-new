@@ -19,7 +19,7 @@ const defaultStats: Array<PlatformStat> = [
     },
     {
         prefix: "от",
-        value: "35%",
+        value: "30%",
         text: "годовых для инвестиций в займы"
     },
     {

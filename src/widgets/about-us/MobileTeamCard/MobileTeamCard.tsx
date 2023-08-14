@@ -8,6 +8,9 @@ type Props = BlockProps & {
 }
 
 const MobileTeamCard = ({ member, ...props }: Props) => {
+    const renderDescription = () => {
+        return member.description.length >= 60 ? member.description.substring(0, 60) + "..." : member.description;
+    }
     return (
         <div {...props} className={cn(styles.mobile_team_card, props.className)}>
             <ProjectImage src={member.photo} alt="Team member" width={326} height={320} className={styles.mobile_team_card__image} />
@@ -18,9 +21,10 @@ const MobileTeamCard = ({ member, ...props }: Props) => {
                 <p className={styles.mobile_team_card__position}>
                     {member.position}
                 </p>
-                <div className={styles.mobile_team_card__description}>
-                    {member.description.length >= 60 ? member.description.substring(0, 60) + "..." : member.description}
-                </div>
+                <div
+                    className={styles.mobile_team_card__description}
+                    dangerouslySetInnerHTML={{ __html: renderDescription() }}
+                ></div>
             </div>
         </div>
     );

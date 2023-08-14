@@ -7,8 +7,8 @@ import {useMemo} from "react";
 
 const actualDocuments: Array<ProjectDocument> = [
     {
-        title: "Устав (редакция от 13.05.2021 г.)",
-        slug: "charter-2021",
+        title: "Устав (редакция от 13.05.2023 г.)",
+        slug: "charter-2023",
         mimetype: "Pdf",
         size: "968 КБ",
         link: "https://youtube.com"

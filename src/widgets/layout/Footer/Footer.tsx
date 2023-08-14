@@ -25,17 +25,17 @@ const Footer = () => {
                     </address>
                     <ul className={styles.footer__links}>
                         <li>
-                            <ProjectLink href="information-disclosure" className={styles.footer__link}>
+                            <ProjectLink href="/page/information-disclosure" className={styles.footer__link}>
                                 Ракрытие информации&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>
                         <li>
-                            <ProjectLink href="documents" className={styles.footer__link}>
+                            <ProjectLink href="/page/documents" className={styles.footer__link}>
                                 Актуальные документы&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>
                         <li>
-                            <ProjectLink href="archive" className={styles.footer__link}>
+                            <ProjectLink href="/page/archive" className={styles.footer__link}>
                                 Архив документов&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>

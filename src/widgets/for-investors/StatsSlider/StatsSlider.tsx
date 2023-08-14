@@ -32,7 +32,7 @@ const StatsSlider = () => {
                     <ForInvestorsThirdIcon />
                     <div className={styles.stats_slider__item}>
                         <p className={styles.stats_slider__value}>
-                            35%
+                            30%
                         </p>
                         <p className={styles.stats_slider__text}>
                             Средняя доходность от инвестиций в проекты

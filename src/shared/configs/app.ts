@@ -1,6 +1,9 @@
 import { isNotEmpty } from "@/src/shared/utils";
 
 export const appConfig = {
+    get cabinetBaseUrl() {
+        return process.env.NEXT_PUBLIC_CABINET_BASE_URL ?? "";
+    },
     get apiBaseUrl() {
         return process.env.NEXT_PUBLIC_API_BASE_URL ?? "";
     },
