@@ -96,6 +96,9 @@
   &__ltv {
     color: var(--font-medium-gray-color);
   }
+  &__image {
+    border-radius: 0.5rem;
+  }
   &__id {
     position: absolute;
     bottom: 1rem;

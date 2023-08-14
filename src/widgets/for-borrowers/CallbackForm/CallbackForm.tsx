@@ -15,9 +15,37 @@ import {
 import {Checkbox} from "@/src/shared/ui/form";
 import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 import {useToggle} from "@/src/shared/utils";
+import {SyntheticEvent, useState} from "react";
+import {createDefaultPhone, Phone} from "@/src/entities/phone/models";
+import {useActionMessages} from "@/src/shared/action-messages/store";
+import {useSendPublicRequestMutation} from "@/src/entities/callback/hooks";
+import {ACTION_MESSAGE_TYPE} from "@/src/shared/action-messages/model/ActionMessage";
+import InputPhone from "@/src/entities/phone/ui/InputPhone";
+import Loader from "@/src/shared/ui/loaders/Loader";
+import {COUNTRY_CODE} from "@/src/entities/phone/models/CountryCode";
 
 const CallbackForm = () => {
+    const { addMessage } = useActionMessages();
     const [checked, toggle] = useToggle();
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState<Phone>(createDefaultPhone());
+    const [goal, setGoal] = useState("");
+    const sendRequest = useSendPublicRequestMutation();
+    const handleClick = async (event: SyntheticEvent) => {
+        event.preventDefault();
+        await sendRequest.mutateAsync({
+            name,
+            contact: `${phone.countryCode}${phone.number}`,
+            comment: goal
+        }, {
+            onSuccess: () => {
+                addMessage(ACTION_MESSAGE_TYPE.SUCCESS, "Запрос отправлен!");
+                setGoal("");
+                setName("");
+                setPhone({ countryCode: COUNTRY_CODE.RU, number: "" });
+            }
+        });
+    }
     return (
         <form className={styles.callback_form}>
             <TertiaryHeading>
@@ -31,7 +59,7 @@ const CallbackForm = () => {
                 <CommonLabel htmlFor="name">
                     Имя
                 </CommonLabel>
-                <CommonInput id="name">
+                <CommonInput id="name" value={name} onChange={setName}>
                     <CommonInput.Container>
                         <CommonInput.Input placeholder="Иванов Иван Иванович" />
                     </CommonInput.Container>
@@ -41,26 +69,24 @@ const CallbackForm = () => {
                 <CommonLabel htmlFor="phone">
                     Телефон
                 </CommonLabel>
-                <CommonInput id="phone">
-                    <CommonInput.Container>
-                        <CommonInput.Input placeholder="+7 (900)-000-00-00" />
-                    </CommonInput.Container>
-                </CommonInput>
+                <InputPhone phone={phone} setPhone={setPhone} />
             </div>
             <div className={styles.callback_form__input_container}>
                 <CommonLabel htmlFor="target">
                     Цель
                 </CommonLabel>
-                <CommonInput id="target">
+                <CommonInput id="target" value={goal} onChange={setGoal}>
                     <CommonInput.Container>
                         <CommonInput.Input asTextarea placeholder="Коротко о займе" />
                     </CommonInput.Container>
                 </CommonInput>
             </div>
             <PrimaryButton arrow color={PRIMARY_BUTTON_COLOR.GREEN} wide>
-                <Button type="submit" className={styles.callback_form__submit}>
-                    Стать заемщиком
-                    <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
+                <Button type="submit" className={styles.callback_form__submit} onClick={handleClick}>
+                    { sendRequest.isLoading ? <Loader /> : <>
+                        Стать заемщиком
+                        <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
+                    </> }
                 </Button>
             </PrimaryButton>
             <Checkbox checked={checked} onChange={toggle}>

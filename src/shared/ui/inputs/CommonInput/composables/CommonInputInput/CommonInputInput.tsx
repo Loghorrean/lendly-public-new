@@ -25,7 +25,7 @@ const CommonInputInput = ({ asTextarea = false, ...props }: CommonInputInputProp
         return <textarea
             placeholder={props.placeholder}
             id={props.id}
-            defaultValue={value}
+            value={value}
             onChange={handleChange}
             className={cn(styles.common_input_input, props.className)}
             rows={5}
