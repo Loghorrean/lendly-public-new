@@ -14,10 +14,10 @@
   }
   @include typo.tertiaryHeading;
   @include m.media("tablet", "min") {
-    &:nth-child(-n+3) {
+    &:nth-child(-n + 3) {
       grid-column: span 2;
     }
-    &:nth-last-child(-n+2) {
+    &:nth-last-child(-n + 2) {
       grid-column: span 3;
     }
   }

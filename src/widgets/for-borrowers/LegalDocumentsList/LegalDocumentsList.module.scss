@@ -7,8 +7,12 @@
     grid-template-columns: repeat(6, minmax(10px, 1fr));
   }
   @include m.media("tablet") {
-    grid-gap: 1rem;
-    grid-template-columns: repeat(5, 25rem);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    & > li {
+      min-width: 25rem;
+    }
     max-width: 100vw;
     padding-inline: 1rem;
     overflow: auto;
@@ -17,5 +21,10 @@
   @include m.media("mobile") {
     grid-template-columns: 1fr;
     grid-gap: 0.5rem;
+  }
+  &__half {
+    @include m.media("tablet", "min") {
+      grid-column: span 3 !important;
+    }
   }
 }
