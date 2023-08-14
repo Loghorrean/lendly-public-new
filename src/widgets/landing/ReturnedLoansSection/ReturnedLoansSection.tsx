@@ -13,8 +13,19 @@ import {
 import ReturnedLoanCard from "@/src/widgets/landing/ReturnedLoanCard";
 import mockImage from "@/public/images/landing/mock-pic.png";
 import GreenText from "@/src/shared/ui/typography/GreenText";
+import {useGetFinishedProjectsList} from "@/src/entities/project/hooks";
+import {useMemo} from "react";
+import {isNotEmpty} from "@/src/shared/utils";
 
 const ReturnedLoansSection = () => {
+    const getFinishedProjects = useGetFinishedProjectsList(2);
+    const renderCards = useMemo(() => {
+        if (isNotEmpty(getFinishedProjects.data)) {
+            return getFinishedProjects.data.map(project => {
+                return <ReturnedLoanCard project={project} key={project.uuid} />
+            });
+        }
+    }, [getFinishedProjects.data]);
     return (
         <section className={styles.returned_loans_section}>
             <Container>
@@ -26,28 +37,7 @@ const ReturnedLoansSection = () => {
             </Container>
             <Container needsDisabling>
                 <div className={styles.returned_loans_section__list}>
-                    <ReturnedLoanCard
-                        image={mockImage}
-                        investedPercent={50}
-                        id="332932-7666"
-                        amount={{ amount: 6500000000, currencyCode: "RUB" }}
-                        left={{ amount: 0, currencyCode: "RUB" }}
-                        rating="CCC"
-                        rate={10}
-                        term={35}
-                        target={{ amount: 3000000000, currencyCode: "RUB" }}
-                    />
-                    <ReturnedLoanCard
-                        image={mockImage}
-                        investedPercent={75}
-                        id="332932-7666"
-                        amount={{ amount: 1494488200, currencyCode: "RUB" }}
-                        left={{ amount: 0, currencyCode: "RUB" }}
-                        rating="A"
-                        rate={1}
-                        term={24}
-                        target={{ amount: 1300000000, currencyCode: "RUB" }}
-                    />
+                    { renderCards }
                 </div>
             </Container>
             <Container>
