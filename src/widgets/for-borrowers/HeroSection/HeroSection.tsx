@@ -28,7 +28,7 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                             </Heading>
                         </PrimaryHeading>
                         <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow>
-                            <ProjectLink href="/auth/register" className={styles.hero_section__link}>
+                            <ProjectLink href="/auth/register-borrower" className={styles.hero_section__link}>
                                 Получить заём
                                 <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
                             </ProjectLink>

@@ -10,6 +10,7 @@ import {
 import {ObjectValues} from "@/src/shared/utils";
 import {useState} from "react";
 import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
+import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 
 const QUESTION_THEMES = {
     GENERAL: "GENERAL",
@@ -85,10 +86,13 @@ const QuestionThemesList = () => {
                     </Button>
                 </PrimaryButton>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow wide>
-                    <Button className={styles.question_themes_list__more_button}>
+                    <ExternalLink
+                        href="https://t.me/lendlychat"
+                        className={styles.question_themes_list__more_button}
+                    >
                         Обсудить на форуме Lendly
                         <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.GRAY} />
-                    </Button>
+                    </ExternalLink>
                 </PrimaryButton>
             </div>
         </aside>

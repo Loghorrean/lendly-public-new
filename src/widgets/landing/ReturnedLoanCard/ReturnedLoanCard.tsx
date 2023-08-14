@@ -24,6 +24,7 @@ const ReturnedLoanCard = ({ image, investedPercent, id, amount, left, rating, ra
                 <div className={styles.returned_loan_card__image_container}>
                     <div className={styles.returned_loan_card__percentage}>
                         {investedPercent}%
+                        <span className={styles.returned_loan_card__ltv}>LTV</span>
                     </div>
                     <ProjectImage src={image} alt="Project image" fill />
                     <div className={styles.returned_loan_card__id}>

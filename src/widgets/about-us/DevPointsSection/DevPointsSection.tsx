@@ -32,11 +32,8 @@ const DevPointsSection = () => {
                             <div>
                                 Выдали первый займ
                             </div>
-                            <div>
-                                Начали предлагать инвестиции в займы на вторичном рынке
-                            </div>
-                            <div>
-                                Запустили/реализовали механизм вторичного рынка
+                            <div className={styles.dev_points_section__second_card_second_content}>
+                                Впервые на рынке крауда реализован механизм продажи займов на вторичном рынке с байбэком
                             </div>
                             <div>
                                 Выдали самый крупный заём на сумму ₽27 млн
@@ -47,10 +44,7 @@ const DevPointsSection = () => {
                                 Вступили в реестр Центрального Банка
                             </div>
                             <div>
-                                Начали предлагать инвестиции в займы на вторичном рынке с байбэком
-                            </div>
-                            <div>
-                                Реализовали механизм вторичного рынка с байбэк
+                                Впервые на рынке крауда реализован механизм продажи займов на вторичном рынке с байбэком
                             </div>
                         </DevPointCard>
                         <DevPointCard year={2022} cardIndex={22} className={styles.dev_points_section__fourth_card}>
@@ -61,11 +55,11 @@ const DevPointsSection = () => {
                         </DevPointCard>
                         <DevPointCard year={2023} cardIndex={23} className={styles.dev_points_section__fifth_card}>
                             <div className={styles.dev_points_section__fifth_card_first_content}>
-                                Сделали ребрендинг
+                                Сделали редизайн логотипа, сайта, а кабинет инвестора стал простым и удобным
                             </div>
                             <div className={styles.dev_points_section__fifth_card_second_content}>
-                                Впервые вышли на пятую позицию в рейтинге краудинвестинговых
-                                компаний по сумме выдачи займов
+                                Завершили первый проект финансирования в коммерческую недвижимость,
+                                доходность инвесторов 46% за 3 мес.
                             </div>
                         </DevPointCard>
                     </ul>

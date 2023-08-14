@@ -19,9 +19,7 @@ const TeamCard = ({ member, ...props }: Props) => {
             <p className={styles.team_card__name}>{member.name}</p>
             <p className={styles.team_card__position}>{member.position}</p>
         </div>
-        <div className={styles.team_card__description}>
-            {member.description}
-        </div>
+        <div className={styles.team_card__description} dangerouslySetInnerHTML={{ __html: member.description }}></div>
     </div>
 }
 

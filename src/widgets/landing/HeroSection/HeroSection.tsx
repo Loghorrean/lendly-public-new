@@ -62,7 +62,7 @@ const HeroSection = ({ isFixed, ...props }: Props, ref: ForwardedRef<HTMLDivElem
                         <div className={styles.hero_section__right}>
                             <TertiaryHeading>
                                 <Heading headingType={HEADING_TYPE.H2} className={styles.hero_section__second_heading}>
-                                    Платформа для инвестиций в займы для бизнеса и проекты
+                                    Платформа для инвестиций в займы для бизнеса и проекты, обеспеченные залогом недвижимости
                                 </Heading>
                             </TertiaryHeading>
                             <div className={styles.hero_section__links}>

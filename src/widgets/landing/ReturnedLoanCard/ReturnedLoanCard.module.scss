@@ -82,6 +82,8 @@
     right: 1rem;
     @include m.box(4rem);
     @include m.centerWithFlex;
+    gap: 0.25rem;
+    flex-direction: column;
     border-radius: 50%;
     background-color: var(--white-color);
     color: var(--primary-green-color);
@@ -90,6 +92,9 @@
     letter-spacing: v.$letter-spacing-1;
     line-height: 1rem;
     @include typo.trimProperties;
+  }
+  &__ltv {
+    color: var(--font-medium-gray-color);
   }
   &__id {
     position: absolute;

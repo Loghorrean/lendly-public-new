@@ -54,7 +54,7 @@ const MainDifferencesBlock = () => {
             </DifferencesCard>
             <DifferencesCard heading="Минимальная инвестиция">
                 <div>
-                    <Money money={{ amount: 30000000, currencyCode: "RUB" }} />
+                    <Money money={{ amount: 20000000, currencyCode: "RUB" }} />
                 </div>
                 <div>
                     <Money money={{ amount: 1000000, currencyCode: "RUB" }} />
@@ -76,7 +76,7 @@ const MainDifferencesBlock = () => {
             </DifferencesCard>
             <DifferencesCard heading="Как платить НДФЛ">
                 <div>
-                    Заёмщик удерживает сам
+                    Удерживает заёмщик
                 </div>
                 <div>
                     Lendly передаёт сведения о доходах физлица в налоговую, инвестор оплачивает налог сам

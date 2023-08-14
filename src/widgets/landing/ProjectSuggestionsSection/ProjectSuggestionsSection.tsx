@@ -86,7 +86,7 @@ const ProjectSuggestionsSection = () => {
             </Container>
             <Container>
                 <PrimaryButton arrow wide color={PRIMARY_BUTTON_COLOR.GREEN}>
-                    <ProjectLink href="/auth/register">
+                    <ProjectLink href="/auth/register-borrower">
                         Предложить проект
                         <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
                     </ProjectLink>

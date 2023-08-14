@@ -66,19 +66,19 @@ const LoanTermsSection = () => {
                 </header>
                 <div className={styles.loan_terms_section__slider}>
                     <Slider {...settings}>
-                        <TermsBlock title="Сумма" value={<><p>50 000 000</p><RubleSvg /></>}>
+                        <TermsBlock title="Сумма" value={<><p>до 50 000 000</p><RubleSvg /></>}>
                             <MoneyImage />
                         </TermsBlock>
-                        <TermsBlock title="Процентная ставка" value="18 - 33%">
+                        <TermsBlock title="Процентная ставка" value="18 - 30%">
                             <ChartImage />
                         </TermsBlock>
                         <TermsBlock title="Срок погашения" value="До 12 месяцев">
                             <ClockImage />
                         </TermsBlock>
-                        <TermsBlock title="Сумма" value={<><p>50 000 000</p><RubleSvg /></>}>
+                        <TermsBlock title="Сумма" value={<><p>до 50 000 000</p><RubleSvg /></>}>
                             <MoneyImage />
                         </TermsBlock>
-                        <TermsBlock title="Процентная ставка" value="18 - 33%">
+                        <TermsBlock title="Процентная ставка" value="18 - 30%">
                             <ChartImage />
                         </TermsBlock>
                         <TermsBlock title="Срок погашения" value="До 12 месяцев">

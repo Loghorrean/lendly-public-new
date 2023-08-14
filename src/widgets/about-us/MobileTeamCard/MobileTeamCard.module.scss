@@ -13,6 +13,8 @@
     border-radius: 1rem;
     overflow: hidden;
     filter: grayscale(100%);
+    object-fit: cover;
+    object-position: center top;
   }
   &__content {
     padding: 1.5rem;

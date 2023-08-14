@@ -16,7 +16,7 @@
   }
   &__list {
     padding-left: 1rem;
-    max-width: calc(100vw - 1rem);
+    max-width: 100vw;
     overflow: auto hidden;
     @include m.scrollbarWidth;
     display: flex;
