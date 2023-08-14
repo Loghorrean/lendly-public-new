@@ -1,0 +1,25 @@
+@use "src/shared/styles/typography" as typo;
+
+.input_money {
+  background-color: transparent;
+  border: none;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  @include typo.primaryText;
+  color: var(--font-dark-color);
+  &::placeholder {
+    color: var(--font-dark-color);
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+  &_container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    &:focus-within {
+      border-color: var(--color-primary);
+    }
+  }
+}

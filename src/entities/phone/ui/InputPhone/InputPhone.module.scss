@@ -1,0 +1,31 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
+
+.input_phone {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--stroke-on-white-color);
+    border-radius: 1.125rem;
+    &__input {
+        flex-grow: 1;
+        min-width: 0;
+        max-width: 100%;
+        border: none;
+        @include typo.primaryText;
+        color: var(--font-dark-color);
+        &::placeholder {
+            @include typo.primaryText;
+            color: var(--font-dark-color);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &__country_code {
+        @include typo.primaryText;
+        color: var(--font-dark-color);
+    }
+}

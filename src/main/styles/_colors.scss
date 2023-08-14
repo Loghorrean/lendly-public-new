@@ -25,4 +25,14 @@
     --light-theme-gray-color: #{v.$light-theme-gray-color};
     --bg-green-color: #{v.$bg-green-color};
     --red-error-color: #{v.$red-error-color};
+
+    --error-border-color: #{v.$color-error-border};
+    --error-background-color: #{v.$color-error-background};
+    --error-base-color: #{v.$color-error-base};
+    --warning-border-color: #{v.$color-warning-border};
+    --warning-background-color: #{v.$color-warning-bg};
+    --warning-base-color: #{v.$color-warning-base};
+    --success-border-color: #{v.$success-color-border};
+    --success-background-color: #{v.$success-color-bg};
+    --success-base-color: #{v.$success-color};
 }
