@@ -9,6 +9,7 @@ import {Tooltip} from "@/src/shared/ui/utils";
 import QuestionIcon from "@/src/shared/ui/svg/QuestionIcon";
 import TooltipContent from "@/src/shared/ui/utils/Tooltip/composables/TooltipContent";
 import HomeLink from "@/src/shared/ui/links/HomeLink";
+import ExternalLink from "@/src/shared/ui/links/ExternalLink";
 
 const minWidth = 120;
 const minHeight = 40;
@@ -51,7 +52,13 @@ const LandingLogo = () => {
             />
             <div ref={textRef} className={styles.landing_logo__text}>
                 <span>Инвестиционная платформа. Лицензия ЦБ №34</span>
-                <Tooltip tooltipContent={<TooltipContent>Какой-то текст</TooltipContent>}><QuestionIcon /></Tooltip>
+                <Tooltip
+                    tooltipContent={<TooltipContent>
+                        <ExternalLink href="https://cbr.ru/finorg/foinfo/?ogrn=1187847185140">
+                            Подробнее
+                        </ExternalLink>
+                    </TooltipContent>}
+                ><QuestionIcon /></Tooltip>
             </div>
             <HomeLink className={styles.landing_logo__link} />
         </div>
