@@ -1,0 +1,11 @@
+.action_message_container {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 80;
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

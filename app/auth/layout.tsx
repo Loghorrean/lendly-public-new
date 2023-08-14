@@ -7,6 +7,7 @@ import AuthHeader from "@/src/widgets/auth/AuthHeader";
 import Main from "@/src/shared/ui/layout/Main";
 import styles from "./styles.module.scss";
 import AuthLinks from "@/src/widgets/auth/AuthLinks";
+import ActionMessageContainer from "@/src/shared/action-messages/ui/ActionMessageContainer";
 
 export default function AuthLayout({ children }: PropsWithChildren) {
     return (
@@ -22,6 +23,7 @@ export default function AuthLayout({ children }: PropsWithChildren) {
                 </div>
             </Main>
         </Content>
+        <ActionMessageContainer />
         </body>
     );
 }

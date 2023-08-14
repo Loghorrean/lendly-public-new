@@ -22,19 +22,42 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import Loader from "@/src/shared/ui/loaders/Loader";
+import {useSendPublicRequestMutation} from "@/src/entities/callback/hooks";
+import {createDefaultPhone, Phone} from "@/src/entities/phone/models";
+import {Money} from "@/src/shared/models/common";
+import {useActionMessages} from "@/src/shared/action-messages/store";
+import {useRouter} from "next/navigation";
+import {ACTION_MESSAGE_TYPE} from "@/src/shared/action-messages/model/ActionMessage";
+import InputPhone from "@/src/entities/phone/ui/InputPhone";
+import InputMoney from "@/src/shared/ui/inputs/InputMoney";
 
 const loanOptions = ["Квартира", "Коммерческое помещение", "Промышленный объект", "Земельный участок", "Дом", "Другое"];
 
 const BorrowerForm = () => {
-    const [loading, setLoading] = useState(false);
+    const { addMessage } = useActionMessages();
+    const router = useRouter();
+    const [company, setCompany] = useState("");
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState<Phone>(createDefaultPhone());
+    const [money, setMoney] = useState<Money>({ amount: 0, currencyCode: "RUB" });
+    const [location, setLocation] = useState("");
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [infoAgreed, toggleInfo] = useToggle();
     const [rulesAccepted, toggleRules] = useToggle();
+    const sendRequest = useSendPublicRequestMutation();
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
-        setLoading(true);
-        await sleep(3000);
-        setLoading(false);
+        await sendRequest.mutateAsync({
+            name,
+            contact: email,
+            comment: JSON.stringify({ company, phone, money, location, selected: selectedOption })
+        }, {
+            onSuccess: () => {
+                addMessage(ACTION_MESSAGE_TYPE.SUCCESS, "Запрос отправлен");
+                router.push("/auth/register");
+            }
+        });
     }
     return (
         <CommonAuthBlock className={styles.borrower_form_block}>
@@ -52,7 +75,7 @@ const BorrowerForm = () => {
                         <CommonLabel htmlFor="inn">
                             Наименование (ИНН)
                         </CommonLabel>
-                        <CommonInput id="inn">
+                        <CommonInput id="inn" value={company} onChange={setCompany}>
                             <CommonInput.Container>
                                 <CommonInput.Input placeholder="Название компании или ИНН" />
                             </CommonInput.Container>
@@ -62,7 +85,7 @@ const BorrowerForm = () => {
                         <CommonLabel htmlFor="email">
                             Электронная почта (логин)
                         </CommonLabel>
-                        <CommonInput id="email">
+                        <CommonInput id="email" value={email} onChange={setEmail}>
                             <CommonInput.Container>
                                 <CommonInput.Input placeholder="ivan@example.com" />
                             </CommonInput.Container>
@@ -72,7 +95,7 @@ const BorrowerForm = () => {
                         <CommonLabel htmlFor="contact">
                             Контактное лицо
                         </CommonLabel>
-                        <CommonInput id="contact">
+                        <CommonInput id="contact" value={name} onChange={setName}>
                             <CommonInput.Container>
                                 <CommonInput.Input placeholder="Иванов Иван Иванович" />
                             </CommonInput.Container>
@@ -82,21 +105,13 @@ const BorrowerForm = () => {
                         <CommonLabel htmlFor="phone">
                             Телефон
                         </CommonLabel>
-                        <CommonInput id="phone">
-                            <CommonInput.Container>
-                                <CommonInput.Input placeholder="+7 (000) 000-00-00" />
-                            </CommonInput.Container>
-                        </CommonInput>
+                        <InputPhone phone={phone} setPhone={setPhone} />
                     </div>
                     <div className={styles.borrower_form__group}>
                         <CommonLabel htmlFor="money">
                             Сумма займа
                         </CommonLabel>
-                        <CommonInput id="money">
-                            <CommonInput.Container>
-                                <CommonInput.Input placeholder="10 000 000 ₽" />
-                            </CommonInput.Container>
-                        </CommonInput>
+                        <InputMoney money={money} onValueChanged={setMoney} placeholder="10 000 000 ₽" />
                     </div>
                     <div className={styles.borrower_form__group}>
                         <CommonLabel htmlFor="type">
@@ -143,9 +158,9 @@ const BorrowerForm = () => {
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} wide arrow>
                     <Button type="submit" className={cn(
                         styles.borrower_form__submit,
-                        resultIf(loading, styles.borrower_form__submit___loading)
+                        resultIf(sendRequest.isLoading, styles.borrower_form__submit___loading)
                     )}>
-                        { loading ? <Loader /> : <>
+                        { sendRequest.isLoading ? <Loader /> : <>
                             Регистрация
                             <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
                         </> }
