@@ -12,75 +12,66 @@ import {
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import AsLink from "@/src/shared/ui/buttons/decorators/AsLink";
 
-const QUESTION_THEMES = {
-    INVESTMENTS: "INVESTMENTS",
-    LOANS: "LOANS",
-    PLATFORM: "PLATFORM",
-    LAW: "LAW",
-    LTV: "LTV"
-} as const;
-
-type QuestionTheme = ObjectValues<typeof QUESTION_THEMES>;
-
 const BlogAside = () => {
-    const [currentTheme, setCurrentTheme] = useState<QuestionTheme>(QUESTION_THEMES.INVESTMENTS);
+    const [tags, setTags] = useState<Array<string>>([]);
+    const toggleTag = (tag: string) => {
+        if (tags.includes(tag)) {
+            setTags(prev => prev.filter(element => element !== tag));
+            return;
+        }
+        setTags(prev => [...prev, tag]);
+    }
     return (
         <aside className={styles.blog_aside}>
             <ul className={styles.blog_aside__list}>
-                <li>
-                    <AsLink>
-                        <button
-                            className={styles.blog_aside__link}
-                            aria-current={currentTheme === QUESTION_THEMES.INVESTMENTS}
-                            onClick={() => setCurrentTheme(QUESTION_THEMES.INVESTMENTS)}
-                        >
-                            Инвестиции <ArrowRight fill="#05B768" size={SVG_CONTAINER_SIZE.SIZE_20} />
-                        </button>
-                    </AsLink>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("investment")}
+                    onClick={() => {toggleTag("investment")}}
+                >
+                    Инвестиции
                 </li>
-                <li>
-                    <AsLink>
-                        <button
-                            className={styles.blog_aside__link}
-                            aria-current={currentTheme === QUESTION_THEMES.LOANS}
-                            onClick={() => setCurrentTheme(QUESTION_THEMES.LOANS)}
-                        >
-                            Займы <ArrowRight fill="#05B768" size={SVG_CONTAINER_SIZE.SIZE_20} />
-                        </button>
-                    </AsLink>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("loans")}
+                    onClick={() => {toggleTag("loans")}}
+                >
+                    Займы
                 </li>
-                <li>
-                    <AsLink>
-                        <button
-                            className={styles.blog_aside__link}
-                            aria-current={currentTheme === QUESTION_THEMES.PLATFORM}
-                            onClick={() => setCurrentTheme(QUESTION_THEMES.PLATFORM)}
-                        >
-                            Платформа <ArrowRight fill="#05B768" size={SVG_CONTAINER_SIZE.SIZE_20} />
-                        </button>
-                    </AsLink>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("platform")}
+                    onClick={() => {toggleTag("platform")}}
+                >
+                    Платформа
                 </li>
-                <li>
-                    <AsLink>
-                        <button
-                            className={styles.blog_aside__link}
-                            aria-current={currentTheme === QUESTION_THEMES.LAW}
-                            onClick={() => setCurrentTheme(QUESTION_THEMES.LAW)}
-                        >
-                            Закон <ArrowRight fill="#05B768" size={SVG_CONTAINER_SIZE.SIZE_20} />
-                        </button>
-                    </AsLink>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("law")}
+                    onClick={() => {toggleTag("law")}}
+                >
+                    Закон
                 </li>
-                <li>
-                    <AsLink>
-                        <button
-                            className={styles.blog_aside__link}
-                            aria-current={currentTheme === QUESTION_THEMES.LTV}
-                            onClick={() => setCurrentTheme(QUESTION_THEMES.LTV)}
-                        >
-                            LTV <ArrowRight fill="#05B768" size={SVG_CONTAINER_SIZE.SIZE_20} />
-                        </button>
-                    </AsLink>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("ltv")}
+                    onClick={() => {toggleTag("ltv")}}
+                >
+                    LTV
+                </li>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("statistics")}
+                    onClick={() => {toggleTag("statistics")}}
+                >
+                    Статистика рынка
+                </li>
+                <li
+                    className={styles.blog_aside__tag}
+                    aria-selected={tags.includes("news")}
+                    onClick={() => {toggleTag("news")}}
+                >
+                    Новости
                 </li>
             </ul>
             <div className={styles.blog_aside__more}>
