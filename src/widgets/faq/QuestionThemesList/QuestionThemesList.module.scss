@@ -65,6 +65,9 @@
     width: calc(min(100%, 22.5rem));
     @include m.hideOnBreakpoint("tablet");
   }
+  &__mail_link {
+    color: var(--white-color) !important;
+  }
   &__more_button {
     @include typo.buttonBigText;
   }

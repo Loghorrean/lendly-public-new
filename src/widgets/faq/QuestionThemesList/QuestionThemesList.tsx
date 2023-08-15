@@ -7,10 +7,11 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
-import {ObjectValues} from "@/src/shared/utils";
+import {cn, ObjectValues} from "@/src/shared/utils";
 import {useState} from "react";
 import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
 import ExternalLink from "@/src/shared/ui/links/ExternalLink";
+import {ProjectLink} from "@/src/shared/ui/links";
 
 const QUESTION_THEMES = {
     GENERAL: "GENERAL",
@@ -80,10 +81,13 @@ const QuestionThemesList = () => {
             </ul>
             <div className={styles.question_themes_list__more}>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow wide>
-                    <Button className={styles.question_themes_list__more_button}>
+                    <ExternalLink
+                        href="mailto:agent@lendly.ru"
+                        className={cn(styles.question_themes_list__more_button, styles.question_themes_list__mail_link)}
+                    >
                         Задать свой вопрос
                         <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
-                    </Button>
+                    </ExternalLink>
                 </PrimaryButton>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow wide>
                     <ExternalLink

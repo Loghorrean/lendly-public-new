@@ -1,6 +1,5 @@
 import styles from "./AllQuestions.module.scss";
 import Question from "@/src/widgets/faq/Question";
-import {useToggle} from "@/src/shared/utils";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
