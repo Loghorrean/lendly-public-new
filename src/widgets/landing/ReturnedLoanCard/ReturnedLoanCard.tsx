@@ -1,9 +1,7 @@
 import styles from "./ReturnedLoanCard.module.scss";
-import { Money as MoneyModel } from "@/src/shared/models/common";
 import {ProjectImage} from "@/src/shared/ui/images";
 import ProgressBar from "@/src/shared/ui/utils/ProgressBar";
 import Money from "@/src/shared/ui/utils/Money";
-import {StaticImageData} from "next/image";
 import {FinishedProject} from "@/src/entities/project/model";
 import {hexIdToDec, isValueEmpty} from "@/src/shared/utils";
 
