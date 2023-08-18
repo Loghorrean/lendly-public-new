@@ -11,13 +11,25 @@ import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
-import {SyntheticEvent} from "react";
+import {SyntheticEvent, useState} from "react";
 import AuthLink from "@/src/widgets/auth/AuthLink";
+import {useCreateAutologinToken} from "@/src/entities/auth/hooks";
+import {appConfig} from "@/src/shared/configs";
 
 const LoginForm = () => {
-    const handleSubmit = (event: SyntheticEvent) => {
+    const login = useCreateAutologinToken();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
-        console.log("FORM SUBMITTED");
+        await login.mutateAsync({
+            username,
+            password
+        }, {
+            onSuccess: (data) => {
+                window.location.href = `${appConfig.cabinetBaseUrl}/autologin?token=${data.token}`;
+            }
+        });
     }
     return (
         <form className={styles.login_form} onSubmit={handleSubmit}>
@@ -26,7 +38,7 @@ const LoginForm = () => {
                     <CommonLabel htmlFor="email">
                         E-mail
                     </CommonLabel>
-                    <CommonInput id="email">
+                    <CommonInput id="email" value={username} onChange={setUsername}>
                         <CommonInput.Container>
                             <CommonInput.Input placeholder="ivan@example.com" />
                         </CommonInput.Container>
@@ -36,7 +48,7 @@ const LoginForm = () => {
                     <CommonLabel htmlFor="password">
                         Пароль
                     </CommonLabel>
-                    <PasswordInput id="password">
+                    <PasswordInput id="password" value={password} onChange={setPassword}>
                         <PasswordInput.Container>
                             <PasswordInput.Input placeholder="Пароль" />
                         </PasswordInput.Container>
