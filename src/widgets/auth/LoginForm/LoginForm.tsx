@@ -27,7 +27,7 @@ const LoginForm = () => {
             password
         }, {
             onSuccess: (data) => {
-                window.location.href = `${appConfig.cabinetBaseUrl}/autologin?token=${data.token}`;
+                window.location.href = `${appConfig.cabinetBaseUrl}/auth/autologin?token=${data.token}`;
             }
         });
     }
