@@ -11,6 +11,12 @@ const nextConfig = {
                 port: "",
                 pathname: "/image/**",
             },
+            {
+                protocol: "https",
+                hostname: "cdn.lendly.ru",
+                port: "",
+                pathname: "/image/**",
+            },
         ],
     },
 }

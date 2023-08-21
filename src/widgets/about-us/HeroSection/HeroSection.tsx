@@ -1,11 +1,10 @@
 import MainSection from "@/src/shared/ui/layout/MainSection";
 import styles from "./HeroSection.module.scss";
 import {BlockProps, cn} from "@/src/shared/utils";
-import React, {ForwardedRef} from "react";
+import React, {ForwardedRef, useEffect, useState} from "react";
 import {Container} from "@/src/shared/ui/layout";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
-import PrimaryHeading from "@/src/shared/ui/typography/Heading/decorators/PrimaryHeading";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
 import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
 import {ProjectLink} from "@/src/shared/ui/links";
@@ -14,7 +13,6 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import GreenText from "@/src/shared/ui/typography/GreenText";
-import {Button} from "@/src/shared/ui/buttons";
 import ArrowBottom from "@/src/shared/ui/svg/arrows/ArrowBottom";
 
 const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
@@ -31,9 +29,9 @@ const HeroSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                     </ProjectLink>
                 </PrimaryButton>
             </Container>
-            <a href="#bottom" className={styles.hero_section__bottom_btn}>
-                <ArrowBottom />
-            </a>
+            {/*<a href="#bottom" className={styles.hero_section__bottom_btn}>*/}
+            {/*    <ArrowBottom />*/}
+            {/*</a>*/}
         </MainSection>
     );
 }

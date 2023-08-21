@@ -3,7 +3,7 @@ import {Container} from "@/src/shared/ui/layout";
 import {ObjectValues} from "@/src/shared/utils";
 import {ReactElement, useState} from "react";
 import ActualDocuments from "@/src/widgets/about-us/ActualDocuments";
-import ArchiveDocuments from "@/src/widgets/about-us/ArchiveDocuments";
+import {LEGAL_DOCUMENT_TYPE} from "@/src/entities/legal-document/model";
 
 const DOCUMENTS_TAB = {
     ACTUAL: "ACTUAL",
@@ -13,14 +13,14 @@ const DOCUMENTS_TAB = {
 type DocumentsTab = ObjectValues<typeof DOCUMENTS_TAB>;
 
 const documentsMap: Record<DocumentsTab, ReactElement> = {
-    [DOCUMENTS_TAB.ACTUAL]: <ActualDocuments />,
-    [DOCUMENTS_TAB.ARCHIVE]: <ArchiveDocuments />
+    [DOCUMENTS_TAB.ACTUAL]: <ActualDocuments type={LEGAL_DOCUMENT_TYPE.ACTIVE} key={LEGAL_DOCUMENT_TYPE.ACTIVE} />,
+    [DOCUMENTS_TAB.ARCHIVE]: <ActualDocuments type={LEGAL_DOCUMENT_TYPE.ARCHIVED} key={LEGAL_DOCUMENT_TYPE.ARCHIVED} />
 };
 
 const DocumentsSection = () => {
     const [currentTab, setCurrentTab] = useState<DocumentsTab>(DOCUMENTS_TAB.ACTUAL);
     return (
-        <section className={styles.documents_section}>
+        <section className={styles.documents_section} id="documents">
             <Container>
                 <ul className={styles.documents_section__tabs} role="tablist">
                     <li

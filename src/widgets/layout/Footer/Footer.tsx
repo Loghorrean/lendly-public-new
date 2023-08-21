@@ -30,7 +30,7 @@ const Footer = () => {
                             </ProjectLink>
                         </li>
                         <li>
-                            <ProjectLink href="/page/documents" className={styles.footer__link}>
+                            <ProjectLink href="/about-us#documents" className={styles.footer__link}>
                                 Актуальные документы&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>
@@ -40,12 +40,12 @@ const Footer = () => {
                             </ProjectLink>
                         </li>
                         <li>
-                            <ProjectLink href="about-us" className={styles.footer__link}>
+                            <ProjectLink href="/about-us" className={styles.footer__link}>
                                 О платформе&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>
                         <li>
-                            <ProjectLink href="faq" className={styles.footer__link}>
+                            <ProjectLink href="/faq" className={styles.footer__link}>
                                 FAQ&nbsp;<ArrowRight fill="#ffffff" />
                             </ProjectLink>
                         </li>

@@ -6,20 +6,18 @@ import PdfIcon from "@/src/shared/ui/svg/PdfIcon";
 import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
 import {ProjectLink} from "@/src/shared/ui/links";
 import {useTargetBlank} from "@/src/shared/utils/hooks/useTargetBlank";
-
-export type ProjectDocument = {
-    title: string;
-    slug: string;
-    link: string;
-    mimetype: string;
-    size: string;
-}
+import {LegalDocument} from "@/src/entities/legal-document/model";
 
 type Props = {
-    document: ProjectDocument;
+    document: LegalDocument;
 }
 
 const CommonDocument = ({ document }: Props) => {
+    const getLink = () => {
+        const documentNameIndex = document.url.indexOf("/page");
+        const origin = typeof window !== "undefined" ? window.location.origin : "";
+        return `${origin}${document.url.slice(documentNameIndex)}`;
+    }
     const [hovered, setHovered] = useState(false);
     return (
         <li
@@ -27,7 +25,7 @@ const CommonDocument = ({ document }: Props) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <ProjectLink {...useTargetBlank()} href={`/documents/${document.slug}`} className={styles.common_document__content}>
+            <ProjectLink {...useTargetBlank()} href={getLink()} className={styles.common_document__content}>
                 <div className={styles.common_document__title}>
                     {document.title}
                 </div>
@@ -35,7 +33,7 @@ const CommonDocument = ({ document }: Props) => {
                     <div className={styles.common_document__file}>
                         <PdfIcon fill={hovered ? "#05B768" : "#212226"} />
                         <span className={styles.common_document__mimetype}>
-                            {document.mimetype}, {document.size}
+                            {document.format}, {document.size}
                         </span>
                     </div>
                     <div className={styles.common_document__link}>

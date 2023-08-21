@@ -11,7 +11,6 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import ReturnedLoanCard from "@/src/widgets/landing/ReturnedLoanCard";
-import mockImage from "@/public/images/landing/mock-pic.png";
 import GreenText from "@/src/shared/ui/typography/GreenText";
 import {useGetFinishedProjectsList} from "@/src/entities/project/hooks";
 import {useMemo} from "react";

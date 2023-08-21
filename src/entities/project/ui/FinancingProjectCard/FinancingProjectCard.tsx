@@ -4,14 +4,19 @@ import mockLogo from "@/public/images/project/mock-project-logo.png";
 import Image from "next/image";
 import {Button} from "@/src/shared/ui/buttons";
 import {Money} from "@/src/shared/ui/utils";
+import {FinishedProject} from "@/src/entities/project/model";
 
-const FinancingProjectCard = () => {
+type Props = {
+    project: FinishedProject;
+}
+
+const FinancingProjectCard = ({ project }: Props) => {
     return (
         <li className={styles.financing_project_card}>
             <div className={styles.financing_project_card__container}>
                 <div className={styles.financing_project_card__ids}>
                     <div className={cn(styles.financing_project_card__id, styles.financing_project_card__id___dark)}>
-                        ID 332932-7666
+                        ID {project.paymentCode}
                     </div>
                     <div className={cn(styles.financing_project_card__id, styles.financing_project_card__id___green)}>
                         Первичный рынок
@@ -26,7 +31,7 @@ const FinancingProjectCard = () => {
                             Размер предложения
                         </div>
                         <div className={styles.financing_project_card__value}>
-                            <Money money={{ amount: 12294488200, currencyCode: "RUB" }} />
+                            <Money money={project.targetSum} />
                         </div>
                     </div>
                     <div className={styles.financing_project_card__block}>
@@ -34,7 +39,7 @@ const FinancingProjectCard = () => {
                             Цена предложения
                         </div>
                         <div className={styles.financing_project_card__value}>
-                            <Money money={{ amount: 194488200, currencyCode: "RUB" }} />
+                            <Money money={project.targetSum} />
                         </div>
                     </div>
                     <div className={styles.financing_project_card__block}>
@@ -42,7 +47,7 @@ const FinancingProjectCard = () => {
                             Ставка по договору
                         </div>
                         <div className={styles.financing_project_card__value}>
-                            18%
+                            {project.interestRate}%
                         </div>
                     </div>
                     <div className={styles.financing_project_card__block}>
@@ -50,7 +55,7 @@ const FinancingProjectCard = () => {
                             Оставшийся срок
                         </div>
                         <div className={styles.financing_project_card__value}>
-                            20 месяцев
+                            {project.initialTerm} месяцев
                         </div>
                     </div>
                     <div className={styles.financing_project_card__block}>
@@ -66,7 +71,7 @@ const FinancingProjectCard = () => {
                             Доходность
                         </div>
                         <div className={styles.financing_project_card__value}>
-                            18%
+                            {project.interestRate}%
                         </div>
                     </div>
                 </div>
