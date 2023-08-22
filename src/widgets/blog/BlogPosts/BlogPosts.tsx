@@ -4,7 +4,13 @@ import {NewsArticle} from "@/src/widgets/landing/NewsCard/NewsCard";
 import blogImage1 from "@/public/images/blog/blog-image-1.png";
 import blogImage2 from "@/public/images/blog/blog-image-2.png";
 import BlogPaginator from "@/src/widgets/blog/BlogPaginator";
-import {useState} from "react";
+import {useMemo, useState} from "react";
+import {usePagination} from "@/src/shared/ui/pagination/utils/usePagination";
+import {useGetPostsList} from "@/src/entities/post/hooks";
+import Pagination from "@/src/shared/ui/pagination/ui/Pagination";
+import PaginationContent from "@/src/shared/ui/pagination/ui/PaginationContent";
+import DynamicPaginator from "@/src/shared/ui/pagination/ui/DynamicPaginator";
+import {isNotEmpty} from "@/src/shared/utils";
 
 const mockArticles: Array<NewsArticle> = [
     {
@@ -49,16 +55,24 @@ const mockArticles: Array<NewsArticle> = [
 const articlesPerPage = 5;
 
 const BlogPosts = () => {
+    const { page, perPage } = usePagination();
+    const getPostsList = useGetPostsList({ page, perPage });
     const [activePage, setActivePage] = useState(1);
-    const renderArticles = () => {
-        return mockArticles.map(article => <NewsCard article={article} key={article.uuid} />)
-    }
+    const renderArticles = useMemo(() => {
+        if (isNotEmpty(getPostsList.data)) {
+            return getPostsList.data.items.map(item => <NewsCard post={item} key={item.slug} />);
+        }
+    }, [getPostsList.data]);
     return (
         <div className={styles.blog_posts}>
-            <ul className={styles.blog_posts__list}>
-                { renderArticles() }
-            </ul>
-            <BlogPaginator activePage={activePage} onClick={setActivePage} />
+            <Pagination loading={getPostsList.isLoading} totalCount={getPostsList.data?.totalCount ?? 0} >
+                <PaginationContent>
+                    <ul className={styles.blog_posts__list}>
+                        { renderArticles }
+                    </ul>
+                </PaginationContent>
+                <DynamicPaginator />
+            </Pagination>
         </div>
     );
 }

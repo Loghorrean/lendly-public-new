@@ -20,7 +20,7 @@
       border-color: var(--primary-green-color);
     }
   }
-  &___large {
+  &:nth-child(3n) {
     max-width: 56.8125rem;
     grid-column: 1 / -1;
   }

@@ -1,5 +1,3 @@
-import {CallbackRequest} from "@/src/entities/callback/model";
-import {createCallbackManager} from "@/src/entities/callback/api";
 import {useMutation, UseMutationOptions} from "@tanstack/react-query";
 import {LenderRegistrationInput, RegisteredUser} from "@/src/entities/registration/model";
 import {createRegistrationManager} from "@/src/entities/registration/api";
