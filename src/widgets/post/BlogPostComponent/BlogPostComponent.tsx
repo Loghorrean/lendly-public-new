@@ -255,7 +255,7 @@ const BlogPostComponent = () => {
                             и ручной скоринг Лендли. Выбирайте подходящую стратегию и получайте до 25,7% годовых.
                         </p>
                         <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow>
-                            <ProjectLink href="/auth/register" className={styles.blog_post__conclusion_link}>
+                            <ProjectLink href="/auth/register-lender" className={styles.blog_post__conclusion_link}>
                                 Стать инвестором <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.BLACK} />
                             </ProjectLink>
                         </PrimaryButton>

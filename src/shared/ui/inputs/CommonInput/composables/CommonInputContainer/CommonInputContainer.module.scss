@@ -18,8 +18,9 @@
     }
     &:focus-within {
         border-color: var(--medium-dark-background-color);
-    }
-    &:has(input:not(:placeholder-shown)) {
         border-width: 2px;
     }
+    //&:has(input:not(:placeholder-shown)) {
+    //    border-width: 2px;
+    //}
 }
