@@ -11,6 +11,9 @@
     padding-inline: 1rem;
   }
   @include m.scrollbarWidth;
+  &__placeholder {
+    @include m.centerWithFlex;
+  }
   &__card {
     min-width: 26.25rem;
   }
