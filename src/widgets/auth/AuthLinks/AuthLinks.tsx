@@ -6,12 +6,16 @@ const AuthLinks = () => {
     const pathname = usePathname();
     //TODO: ADD MORE EXPLICIT LINKS
     const explicitLinks = [
-        "/auth/forgot-password"
+        "/auth/forgot-password",
+        "/auth/change-password"
     ];
+    const isExplicitActive = (path: string) => {
+        return explicitLinks.filter(item => path.startsWith(item)).length !== 0;
+    }
     return (
         <ul className={styles.auth_links} role="tablist">
             <li className={styles.auth_links__element} role="tab">
-                <ProjectLink href="/auth/login" explicitActive={explicitLinks.includes(pathname)} className={styles.auth_links__link}>
+                <ProjectLink href="/auth/login" explicitActive={isExplicitActive(pathname)} className={styles.auth_links__link}>
                     Вход
                 </ProjectLink>
             </li>
