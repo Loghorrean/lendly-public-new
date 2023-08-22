@@ -10,10 +10,11 @@ import {Post} from "@/src/entities/post/model";
 
 type Props = BlockProps<HTMLLIElement> & {
     post: Post;
+    showDescription?: boolean;
 }
 
 //TODO: REFACTOR CARD, WHEN PHOTO IS RESOLVED
-const NewsCard = ({ post, ...props }: Props) => {
+const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
     // const isWhite = () => {
     //     return isNotEmpty(article.photo) && article.large;
     // }
@@ -45,7 +46,13 @@ const NewsCard = ({ post, ...props }: Props) => {
                     <Heading headingType={HEADING_TYPE.H3} className={styles.news_card__title}>
                         { post.title }
                     </Heading>
-                    { isNotEmpty(post.shortContent) && <p className={styles.news_card__description}>{ post.shortContent }</p> }
+                    {
+                        isNotEmpty(post.shortContent) && showDescription
+                        && <p
+                            className={styles.news_card__description}
+                            dangerouslySetInnerHTML={{ __html: post.shortContent }}>
+                        </p>
+                    }
                 </div>
                 <footer className={styles.news_card__footer}>
                     {/*<ProjectLink href={`/blog/${post.slug}`} className={cn(*/}

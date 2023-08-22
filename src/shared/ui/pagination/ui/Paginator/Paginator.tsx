@@ -15,10 +15,9 @@ type PaginatorQuery = {
     [key: string]: number;
 };
 
-//TODO: ADD MAX NUMBER OF PAGES
 const Paginator = () => {
-    const pathname = usePathname();
     const context = usePaginationContext();
+    const pathname = usePathname();
 
     const countPages = (): number => {
         return Math.ceil(context.totalCount / context.perPage);
@@ -40,6 +39,7 @@ const Paginator = () => {
         return (
             <ProjectLink
                 href={previousPageUrl}
+                scroll={false}
                 className={cn(styles.previous_page_link, resultIf(isDisabled, styles.previous_page_link___disabled))}
             >
                 <div className={styles.my_page_link_container}>
@@ -49,34 +49,13 @@ const Paginator = () => {
         );
     };
 
-    const renderPages = () => {
-        const buffer: Array<ReactElement> = [];
-        for (let i = 0; i < countPages(); ++i) {
-            const isActive = context.page === i + 1;
-            const href = generatePageUrl(i + 1);
-            buffer.push(
-                <li key={i}>
-                    <ProjectLink
-                        href={href}
-                        className={cn(
-                            styles.my_page_link,
-                            resultIf(isActive, cn(styles.my_page_link___active, styles.my_page_link_container))
-                        )}
-                    >
-                        <span>{i + 1}</span>
-                    </ProjectLink>
-                </li>
-            );
-        }
-        return buffer;
-    };
-
     const nextPageLink = () => {
         const isDisabled = context.page >= countPages();
         const previousPageUrl = isDisabled ? "#" : generatePageUrl(context.page + 1);
         return (
             <ProjectLink
                 href={previousPageUrl}
+                scroll={false}
                 className={cn(styles.next_page_link, resultIf(isDisabled, styles.next_page_link___disabled))}
             >
                 <div className={styles.my_page_link_container}>
@@ -84,6 +63,102 @@ const Paginator = () => {
                 </div>
             </ProjectLink>
         );
+    };
+
+    const renderPages = () => {
+        const buffer: Array<ReactElement> = [];
+        const pagesCount = countPages();
+        if (pagesCount <= 7) {
+            for (let i = 1; i <= pagesCount; ++i) {
+                const isActive = context.page === i;
+                const href = generatePageUrl(i);
+                buffer.push(
+                    <li key={i}>
+                        <ProjectLink
+                            href={href}
+                            scroll={false}
+                            className={cn(
+                                styles.my_page_link,
+                                resultIf(isActive, cn(styles.my_page_link___active, styles.my_page_link_container))
+                            )}
+                        >
+                            {i}
+                        </ProjectLink>
+                    </li>
+                );
+            }
+            return buffer;
+        }
+        const currentPage = context.page;
+        let interval = [currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage + 2];
+        if (interval.includes(1)) {
+            const indexOfOne = interval.indexOf(1);
+            interval = interval.splice(indexOfOne + 1, interval.length - 1);
+        }
+        if (interval.includes(pagesCount)) {
+            const indexOfLast = interval.indexOf(pagesCount);
+            const diff = interval.length - indexOfLast;
+            interval = interval.slice(0, -diff);
+        }
+        const hasOverflowLeft = pagesCount >= 8 && currentPage >= 5;
+        const hasOverflowRight = pagesCount >= 8 && currentPage <= countPages() - 4;
+        buffer.push(
+            <li>
+                <ProjectLink
+                    href={generatePageUrl(1)}
+                    scroll={false}
+                    className={cn(
+                        styles.my_page_link,
+                        resultIf(currentPage === 1, cn(styles.my_page_link___active, styles.my_page_link_container))
+                    )}
+                >
+                    1
+                </ProjectLink>
+            </li>
+        );
+        if (hasOverflowLeft) {
+            buffer.push(<li className={styles.my_page_link}>...</li>);
+        }
+        for (let i = 0; i < interval.length; ++i) {
+            buffer.push(
+                <li key={i}>
+                    <ProjectLink
+                        href={generatePageUrl(interval[i])}
+                        scroll={false}
+                        className={cn(
+                            styles.my_page_link,
+                            resultIf(
+                                currentPage === interval[i],
+                                cn(styles.my_page_link___active, styles.my_page_link_container)
+                            )
+                        )}
+                    >
+                        {interval[i]}
+                    </ProjectLink>
+                </li>
+            );
+        }
+        if (hasOverflowRight) {
+            buffer.push(<li className={styles.my_page_link}>...</li>);
+        }
+        buffer.push(
+            <li>
+                <ProjectLink
+                    href={generatePageUrl(pagesCount)}
+                    scroll={false}
+                    className={cn(
+                        styles.my_page_link,
+                        resultIf(
+                            currentPage === pagesCount,
+                            cn(styles.my_page_link___active, styles.my_page_link_container)
+                        )
+                    )}
+                >
+                    {pagesCount}
+                </ProjectLink>
+            </li>
+        );
+        return buffer;
     };
 
     return (

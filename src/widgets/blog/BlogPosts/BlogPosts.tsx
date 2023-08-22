@@ -10,7 +10,8 @@ import {isNotEmpty} from "@/src/shared/utils";
 
 const BlogPosts = () => {
     const { page, perPage } = usePagination();
-    const getPostsList = useGetPostsList({ page, perPage });
+    const getPostsList
+        = useGetPostsList({ page, perPage }, { queryKey: ["blog-posts", page, perPage] });
     const renderArticles = useMemo(() => {
         if (isNotEmpty(getPostsList.data)) {
             return getPostsList.data.items.map(item => <NewsCard post={item} key={item.slug} />);
@@ -18,7 +19,11 @@ const BlogPosts = () => {
     }, [getPostsList.data]);
     return (
         <div className={styles.blog_posts}>
-            <Pagination loading={getPostsList.isLoading} totalCount={getPostsList.data?.totalCount ?? 0} >
+            <Pagination
+                loading={getPostsList.isLoading}
+                totalCount={getPostsList.data?.totalCount ?? 0}
+                collection={getPostsList.data}
+            >
                 <PaginationContent>
                     <ul className={styles.blog_posts__list}>
                         { renderArticles }

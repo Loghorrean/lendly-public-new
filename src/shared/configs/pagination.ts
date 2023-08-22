@@ -1,4 +1,4 @@
-const DEFAULT_PER_PAGE = 1;
+const DEFAULT_PER_PAGE = 6;
 const DEFAULT_FIRST_PAGE = 1;
 
 export const paginationConfig = {
