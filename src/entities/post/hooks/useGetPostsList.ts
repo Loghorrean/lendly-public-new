@@ -15,6 +15,6 @@ export const useGetPostsList = (input: GetPostsListInput, options?: Omit<UseQuer
             const provider = createPostProvider();
             return provider.getList(input.page, input.perPage);
         },
-        queryKey: options?.queryKey ?? ["finished-projects"]
+        queryKey: options?.queryKey ?? ["posts-list"]
     })
 }

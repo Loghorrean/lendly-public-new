@@ -69,7 +69,7 @@
     @include typo.trimProperties;
   }
   &__content {
-    padding: 2rem 2rem 1.5rem;
+    padding: 6rem 2rem 1.5rem;
     @include m.media("tablet") {
       padding: 1.5rem;
     }

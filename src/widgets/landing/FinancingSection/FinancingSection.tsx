@@ -54,7 +54,7 @@ const FinancingSection = ({ ...props }: BlockProps) => {
             </Container>
             <Container>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN}>
-                    <ProjectLink href="/auth/register">
+                    <ProjectLink href="/auth/register-lender">
                         Стать инвестором
                         <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
                     </ProjectLink>
