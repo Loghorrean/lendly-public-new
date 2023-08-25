@@ -62,7 +62,7 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
                     {/*    Читать статью*/}
                     {/*    <ArrowRight fill={isWhite() ? "#ffffff" : "#05B768"} />*/}
                     {/*</ProjectLink>*/}
-                    <ProjectLink href={`/blog/#`} className={cn(
+                    <ProjectLink href={`/blog/${post.slug}`} className={cn(
                         styles.news_card__link,
                         resultIf(isWhite(), styles.news_card__link___white)
                     )}>

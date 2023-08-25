@@ -82,7 +82,7 @@ const QuestionThemesList = () => {
             <div className={styles.question_themes_list__more}>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow wide>
                     <ExternalLink
-                        href="mailto:agent@lendly.ru"
+                        href="mailto:support@lendly.ru"
                         className={cn(styles.question_themes_list__more_button, styles.question_themes_list__mail_link)}
                     >
                         Задать свой вопрос

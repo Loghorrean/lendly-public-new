@@ -2,9 +2,10 @@
 
 import {ReactNode, useEffect, useRef, useState} from "react";
 import styles from "./StatsSlider.module.scss";
-import RubleSvg from "@/src/shared/ui/svg/currency/RubleSvg";
 import StatsSlide from "@/src/widgets/landing/StatsSlide";
 import {BlockProps, cn} from "@/src/shared/utils";
+import {useGetStats} from "@/src/entities/stats/hooks/useGetStats";
+import Loader from "@/src/shared/ui/loaders/Loader";
 
 export type PlatformStat = {
     value: ReactNode;
@@ -12,37 +13,41 @@ export type PlatformStat = {
     prefix?: ReactNode;
 }
 
-const defaultStats: Array<PlatformStat> = [
-    {
-        value: "1352",
-        text: "инвестора на платформе"
-    },
-    {
-        prefix: "от",
-        value: "30%",
-        text: "годовых для инвестиций в займы"
-    },
-    {
-        prefix: "от",
-        value: "27%",
-        text: "годовых для инвестиций в займы"
-    },
-]
-
 type Props = BlockProps<HTMLUListElement> & {
     initial?: number;
 };
 
 const StatsSlider = ({ initial = 0, ...props }: Props) => {
+    const { data, isLoading } = useGetStats();
     const [activeSlide, setActiveSlide] = useState(initial);
     const activeSlideRef = useRef(activeSlide);
     const renderSlides = () => {
-        return defaultStats.map((stat, index) => <StatsSlide key={index} stat={stat} active={activeSlide === index} />);
+        if (isLoading) {
+            return <Loader dark />
+        }
+        return <ul {...props} className={styles.stats_slider}>
+            <StatsSlide
+                key={0}
+                stat={{ text: "инвестора на платформе", value: `${data?.countInvestors ?? 0}` }}
+                active={activeSlide === 0}
+            />
+            <StatsSlide
+                key={1}
+                stat={{ text: "годовых для инвестиций в займы", value: `${data?.averageInterestRate.toFixed(1) ?? 0}%` }}
+                active={activeSlide === 1}
+            />
+            <StatsSlide
+                key={2}
+                stat={{ text: "годовых для инвестиций в проекты", value: `${data?.averageInterestRate.toFixed(1) ?? 0}%` }}
+                active={activeSlide === 2}
+            />
+        </ul>;
     }
     useEffect(() => {
+        const slidesCount = 2
         let intervalId: ReturnType<typeof setInterval>;
         intervalId = setInterval(() => {
-            if (activeSlideRef.current === defaultStats.length - 1) {
+            if (activeSlideRef.current === slidesCount) {
                 setActiveSlide(0);
                 activeSlideRef.current = 0;
                 return;

@@ -8,6 +8,7 @@ import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/Seco
 import {useGetStaticPage} from "@/src/entities/static-page/hooks";
 import Loader from "@/src/shared/ui/loaders/Loader";
 import {isValueEmpty} from "@/src/shared/utils";
+import {Container} from "@/src/shared/ui/layout";
 
 type Props = {
     param: string;
@@ -26,19 +27,12 @@ const DynamicPageSection = ({ param }: Props) => {
                 </Heading>
             </PrimaryHeading>;
         }
-        console.log(data)
-        return <>
-            <PrimaryHeading>
-                <Heading headingType={HEADING_TYPE.H1}>
-                    Страница
-                </Heading>
-            </PrimaryHeading>
-            <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
-        </>
-    }
+        return <div dangerouslySetInnerHTML={{ __html: data.content }}></div>    }
     return (
         <section className={styles.dynamic_page_section}>
-            { renderPage() }
+            <Container>
+                { renderPage() }
+            </Container>
         </section>
     );
 }

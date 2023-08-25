@@ -38,7 +38,7 @@ const QuestionsSection = () => {
                                 <span>Если хотите быть в курсе</span>
                                 <span>новостей и проектов компании</span>
                             </p>
-                            <ExternalLink href="https://t.me/lendlychat" className={styles.questions_section__link}>
+                            <ExternalLink href="https://t.me/lendly" className={styles.questions_section__link}>
                                 <span>@lendly</span>
                                 <ArrowRight fill="#05B768" />
                             </ExternalLink>
@@ -51,7 +51,7 @@ const QuestionsSection = () => {
                         <ProjectImage src={mailImage} alt="Email image" className={styles.questions_section__mail} />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если хотите обсудить условия</p>
-                            <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>
+                            <ExternalLink href="mailto:support@lendly.ru" className={styles.questions_section__link}>
                                 <span>agent@lendly.ru</span>
                                 <ArrowRight fill="#05B768" />
                             </ExternalLink>
@@ -64,7 +64,7 @@ const QuestionsSection = () => {
                         <ProjectImage src={supportsImage} alt="Support Image" className={styles.questions_section__support} />
                         <footer className={styles.questions_section__block_footer}>
                             <p>Если у вас проблемы с личным кабинетом</p>
-                            <ExternalLink href="https://youtube.com" className={styles.questions_section__link}>
+                            <ExternalLink href="mailto:support@lendly.ru" className={styles.questions_section__link}>
                                 <span>@lendly</span>
                                 <ArrowRight fill="#05B768" />
                             </ExternalLink>
