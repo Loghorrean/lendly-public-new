@@ -58,7 +58,7 @@ const DifferencesSlider = () => {
                         <div className={styles.differences_slider__card_label}>
                             Минимальная инвестиция
                         </div>
-                        <p><Money money={{amount: 1000000, currencyCode: "RUB"}} /></p>
+                        <p><Money money={{amount: 100000, currencyCode: "RUB"}} /></p>
                     </li>
                     <li className={styles.differences_slider__card_row}>
                         <div className={styles.differences_slider__card_label}>
@@ -91,7 +91,7 @@ const DifferencesSlider = () => {
                         <div className={styles.differences_slider__card_label}>
                             Минимальная инвестиция
                         </div>
-                        <p><Money money={{amount: 1000000, currencyCode: "RUB"}} /></p>
+                        <p><Money money={{amount: 100000, currencyCode: "RUB"}} /></p>
                     </li>
                     <li className={styles.differences_slider__card_row}>
                         <div className={styles.differences_slider__card_label}>

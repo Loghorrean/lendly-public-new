@@ -3,7 +3,6 @@ import styles from "./LoanDocumentSection.module.scss";
 import SecondaryHeading from "@/src/shared/ui/typography/Heading/decorators/SecondaryHeading";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
-import {ObjectValues} from "@/src/shared/utils";
 import {ReactElement, useState} from "react";
 import LegalDocumentsList from "@/src/widgets/for-borrowers/LegalDocumentsList";
 import {DOCUMENTS_TAB, DocumentsTab} from "@/src/widgets/for-borrowers/LegalDocumentsList/DocumentsTab";
@@ -39,7 +38,7 @@ const LoanDocumentSection = () => {
                         onClick={() => setCurrentTab(DOCUMENTS_TAB.LOAN_REGISTRATION)}
                         role="tab"
                     >
-                        Для регистрации залога
+                        Для оформления залога
                     </li>
                     <li
                         className={styles.loan_document_section__tab}

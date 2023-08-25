@@ -4,7 +4,6 @@ import {usePathname} from "next/navigation";
 
 const AuthLinks = () => {
     const pathname = usePathname();
-    //TODO: ADD MORE EXPLICIT LINKS
     const explicitLinks = [
         "/auth/forgot-password",
         "/auth/change-password"

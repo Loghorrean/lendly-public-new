@@ -57,10 +57,10 @@ const MainDifferencesBlock = () => {
                     <Money money={{ amount: 20000000, currencyCode: "RUB" }} />
                 </div>
                 <div>
-                    <Money money={{ amount: 1000000, currencyCode: "RUB" }} />
+                    <Money money={{ amount: 100000, currencyCode: "RUB" }} />
                 </div>
                 <div>
-                    <Money money={{ amount: 1000000, currencyCode: "RUB" }} />
+                    <Money money={{ amount: 100000, currencyCode: "RUB" }} />
                 </div>
             </DifferencesCard>
             <DifferencesCard heading="ЭЦП и нотариальная доверенность">
