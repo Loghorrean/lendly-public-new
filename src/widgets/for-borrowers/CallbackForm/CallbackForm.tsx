@@ -90,7 +90,7 @@ const CallbackForm = () => {
                 </Button>
             </PrimaryButton>
             <Checkbox checked={checked} onChange={toggle}>
-                Согласен с <ExternalLink href="https://youtube.com" className={styles.callback_form__rules_link}>
+                Согласен с <ExternalLink href="/page/using-rules " className={styles.callback_form__rules_link}>
                 правилами пользования платформой
             </ExternalLink>
             </Checkbox>
