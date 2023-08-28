@@ -39,7 +39,7 @@ const WhatIsSection = () => {
                             </p>
                         </div>
                         <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE}>
-                            <ProjectLink href="/" className={styles.what_is_section__more}>
+                            <ProjectLink href="/about-us" className={styles.what_is_section__more}>
                                 Узнать больше
                                 <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.BLACK} />
                             </ProjectLink>
