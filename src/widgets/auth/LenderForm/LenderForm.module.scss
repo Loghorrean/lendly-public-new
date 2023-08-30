@@ -47,6 +47,12 @@
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
+  &__captcha {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
   &__checkboxes {
     width: 100%;
     display: flex;

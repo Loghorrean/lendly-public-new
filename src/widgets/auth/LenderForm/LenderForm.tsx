@@ -2,7 +2,7 @@
 
 import {SyntheticEvent, useState} from "react";
 import styles from "./LenderForm.module.scss";
-import {cn, resultIf, useToggle} from "@/src/shared/utils";
+import {cn, isValueEmpty, resultIf, useToggle} from "@/src/shared/utils";
 import CommonAuthBlock from "@/src/widgets/auth/CommonAuthBlock";
 import TertiaryHeading from "@/src/shared/ui/typography/Heading/decorators/TertiaryHeading";
 import {Heading} from "@/src/shared/ui/typography";
@@ -27,9 +27,10 @@ import {useActionMessages} from "@/src/shared/action-messages/store";
 import {LENDER_TYPE, LenderType} from "@/src/entities/registration/model";
 import {ACTION_MESSAGE_TYPE} from "@/src/shared/action-messages/model/ActionMessage";
 import {useRouter} from "next/navigation";
+import ReCaptcha from "@/src/shared/ui/utils/ReCaptcha";
 
 const LenderForm = () => {
-    const { addMessage } = useActionMessages();
+    const { addMessage, addMessagesBulk } = useActionMessages();
     const router = useRouter();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -38,13 +39,44 @@ const LenderForm = () => {
     const [infoAgreed, toggleInfo] = useToggle();
     const [rulesAccepted, toggleRules] = useToggle();
     const { isLoading, mutateAsync } = useRegisterLenderMutation();
+    const [token, setToken] = useState<string | null>(null);
+
+    const validateForm = () => {
+        const errors: Array<string> = [];
+        if (name === "") {
+            errors.push("Не заполнено имя.");
+        }
+        if (email === "") {
+            errors.push("Не заполнен адрес эл. почты.");
+        }
+        if (password === "") {
+            errors.push("Пароль обязателен.");
+        }
+        if (!infoAgreed) {
+            errors.push("Примите согласие на информационное взаимодействие.");
+        }
+        if (!rulesAccepted) {
+            errors.push("Примите правила пользования платформой");
+        }
+        if (isValueEmpty(token)) {
+            errors.push("Подтвердите captcha.");
+        }
+        return errors;
+    }
+
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
+        const errors = validateForm();
+        if (errors.length !== 0) {
+            addMessagesBulk(ACTION_MESSAGE_TYPE.ERROR, errors);
+            return;
+        }
         await mutateAsync({
             email,
             name,
             password,
-            type: selectedType
+            type: selectedType,
+            captchaToken: token as string
         }, {
             onSuccess: () => {
                 addMessage(ACTION_MESSAGE_TYPE.SUCCESS, "Вы успешно зарегистрировались!");
@@ -114,6 +146,9 @@ const LenderForm = () => {
                     >
                         Юр. лицо
                     </RadioButton>
+                </div>
+                <div className={styles.lender_form__captcha}>
+                    <ReCaptcha onChange={setToken} />
                 </div>
                 <div className={styles.lender_form__checkboxes}>
                     <Checkbox checked={infoAgreed} onChange={toggleInfo}>
