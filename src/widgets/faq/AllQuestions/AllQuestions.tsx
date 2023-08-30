@@ -503,66 +503,77 @@ const AllQuestions = ({ search }: Props) => {
             borrower: borrowerQuestions.filter(item => item.title.includes(search)),
         };
     }, [search]);
+    const noQuestionsFound = () => {
+        return filteredQuestions.general.length === 0
+            && filteredQuestions.projects.length === 0
+            && filteredQuestions.loan.length === 0
+            && filteredQuestions.lender.length === 0
+            && filteredQuestions.borrower.length === 0;
+    }
     const renderQuestions = (questions: Array<QuestionModel>) => {
         return questions.map(question => <Question key={question.title} question={question} />);
     }
     return (
         <div className={styles.all_questions}>
-            { filteredQuestions.general.length !== 0 && <div className={styles.all_questions_container}>
-                <AnchorPixel className={styles.all_questions__pixel} id="general" />
-                <SecondaryHeading>
-                    <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
-                        Общие вопросы
-                    </Heading>
-                </SecondaryHeading>
-                <ul className={styles.all_questions__list}>
-                    { renderQuestions(filteredQuestions.general) }
-                </ul>
-            </div> }
-            { filteredQuestions.projects.length !== 0 && <div className={styles.all_questions_container}>
-                <AnchorPixel className={styles.all_questions__pixel} id="projects" />
-                <SecondaryHeading>
-                    <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
-                        Проектное финансирование
-                    </Heading>
-                </SecondaryHeading>
-                <ul className={styles.all_questions__list}>
-                    { renderQuestions(filteredQuestions.projects) }
-                </ul>
-            </div> }
-            { filteredQuestions.loan.length !== 0 && <div className={styles.all_questions_container}>
-                <AnchorPixel className={styles.all_questions__pixel} id="loans" />
-                <SecondaryHeading>
-                    <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
-                        Заём с фиксированной ставкой
-                    </Heading>
-                </SecondaryHeading>
-                <ul className={styles.all_questions__list}>
-                    { renderQuestions(filteredQuestions.loan) }
-                </ul>
-            </div> }
-            { filteredQuestions.lender.length !== 0 && <div className={styles.all_questions_container}>
-                <AnchorPixel className={styles.all_questions__pixel} id="investors" />
-                <SecondaryHeading>
-                    <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
-                        Инвесторам
-                    </Heading>
-                </SecondaryHeading>
-                <ul className={styles.all_questions__list}>
-                    { renderQuestions(filteredQuestions.lender) }
-                </ul>
-            </div> }
-            { filteredQuestions.borrower.length !== 0 && <div className={styles.all_questions_container}>
-                <AnchorPixel className={styles.all_questions__pixel} id="borrowers" />
-                <SecondaryHeading>
-                    <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
-                        Заёмщикам
-                    </Heading>
-                </SecondaryHeading>
-                <ul className={styles.all_questions__list}>
-                    { renderQuestions(filteredQuestions.borrower) }
-                </ul>
-            </div> }
+            { noQuestionsFound() ? <div className={styles.all_questions__placeholder}>
+                По вашему запросу ничего не найдено.
+            </div> : <>
+                { filteredQuestions.general.length !== 0 && <div className={styles.all_questions_container}>
+                    <AnchorPixel className={styles.all_questions__pixel} id="general" />
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
+                            Общие вопросы
+                        </Heading>
+                    </SecondaryHeading>
+                    <ul className={styles.all_questions__list}>
+                        { renderQuestions(filteredQuestions.general) }
+                    </ul>
+                </div> }
+                { filteredQuestions.projects.length !== 0 && <div className={styles.all_questions_container}>
+                    <AnchorPixel className={styles.all_questions__pixel} id="projects" />
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
+                            Проектное финансирование
+                        </Heading>
+                    </SecondaryHeading>
+                    <ul className={styles.all_questions__list}>
+                        { renderQuestions(filteredQuestions.projects) }
+                    </ul>
+                </div> }
+                { filteredQuestions.loan.length !== 0 && <div className={styles.all_questions_container}>
+                    <AnchorPixel className={styles.all_questions__pixel} id="loans" />
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
+                            Заём с фиксированной ставкой
+                        </Heading>
+                    </SecondaryHeading>
+                    <ul className={styles.all_questions__list}>
+                        { renderQuestions(filteredQuestions.loan) }
+                    </ul>
+                </div> }
+                { filteredQuestions.lender.length !== 0 && <div className={styles.all_questions_container}>
+                    <AnchorPixel className={styles.all_questions__pixel} id="investors" />
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
+                            Инвесторам
+                        </Heading>
+                    </SecondaryHeading>
+                    <ul className={styles.all_questions__list}>
+                        { renderQuestions(filteredQuestions.lender) }
+                    </ul>
+                </div> }
+                { filteredQuestions.borrower.length !== 0 && <div className={styles.all_questions_container}>
+                    <AnchorPixel className={styles.all_questions__pixel} id="borrowers" />
+                    <SecondaryHeading>
+                        <Heading headingType={HEADING_TYPE.H2} className={styles.all_questions__heading}>
+                            Заёмщикам
+                        </Heading>
+                    </SecondaryHeading>
+                    <ul className={styles.all_questions__list}>
+                        { renderQuestions(filteredQuestions.borrower) }
+                    </ul>
+                </div> }
+            </> }
         </div>
     );
 }
