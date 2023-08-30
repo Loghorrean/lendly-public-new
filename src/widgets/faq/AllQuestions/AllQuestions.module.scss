@@ -1,4 +1,5 @@
 @use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/typography" as typo;
 
 .all_questions {
   display: flex;
@@ -10,6 +11,9 @@
   }
   @include m.media("mobile") {
     padding-top: 1rem;
+  }
+  &__placeholder {
+    @include typo.primaryText;
   }
   &_container {
     position: relative;
