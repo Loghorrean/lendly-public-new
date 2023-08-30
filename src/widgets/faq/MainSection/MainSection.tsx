@@ -7,7 +7,11 @@ import FaqSearch from "@/src/widgets/faq/FaqSearch";
 import React, {ForwardedRef} from "react";
 import {BlockProps} from "@/src/shared/utils";
 
-const MainSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>) => {
+type Props = BlockProps & {
+    setSearch: (search: string) => void;
+}
+
+const MainSection = ({ setSearch, ...props }: Props, ref: ForwardedRef<HTMLDivElement>) => {
     return (
         <section {...props} className={styles.main_section} ref={ref}>
             <Container>
@@ -16,7 +20,7 @@ const MainSection = ({ ...props }: BlockProps, ref: ForwardedRef<HTMLDivElement>
                         FAQ
                     </Heading>
                 </PrimaryHeading>
-                <FaqSearch />
+                <FaqSearch setSearch={setSearch} />
             </Container>
         </section>
     );
