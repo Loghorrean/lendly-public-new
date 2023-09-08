@@ -11,6 +11,7 @@ import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
 import AsLink from "@/src/shared/ui/buttons/decorators/AsLink";
+import {ProjectLink} from "@/src/shared/ui/links";
 
 const BlogAside = () => {
     const [tags, setTags] = useState<Array<string>>([]);
@@ -86,10 +87,10 @@ const BlogAside = () => {
                     {/*    </Button>*/}
                     {/*</PrimaryButton>*/}
                     <PrimaryButton color={PRIMARY_BUTTON_COLOR.GREEN} arrow wide>
-                        <Button className={styles.blog_aside__button}>
+                        <ProjectLink className={styles.blog_aside__button} href="/auth/register">
                             Подписаться
                             <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.WHITE} />
-                        </Button>
+                        </ProjectLink>
                     </PrimaryButton>
                 </div>
             </div>
