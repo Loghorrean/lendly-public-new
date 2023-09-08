@@ -4,6 +4,7 @@ import ProgressBar from "@/src/shared/ui/utils/ProgressBar";
 import Money from "@/src/shared/ui/utils/Money";
 import {FinishedProject} from "@/src/entities/project/model";
 import {hexIdToDec, isValueEmpty} from "@/src/shared/utils";
+import placeholderImage from "@/public/images/placeholder-image.png";
 
 type Props = {
     project: FinishedProject;
@@ -24,7 +25,7 @@ const ReturnedLoanCard = ({ project }: Props) => {
                         {investedPercent()}%
                         <span className={styles.returned_loan_card__ltv}>LTV</span>
                     </div>
-                    <ProjectImage src={project.photo ?? ""} alt="Project image" fill className={styles.returned_loan_card__image} />
+                    <ProjectImage src={project.photo ?? placeholderImage} alt="Project image" fill className={styles.returned_loan_card__image} />
                     <div className={styles.returned_loan_card__id}>
                         ID {hexIdToDec(project.uuid)}
                     </div>
