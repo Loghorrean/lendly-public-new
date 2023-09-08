@@ -25,19 +25,19 @@ const Footer = () => {
                     </address>
                     <ul className={styles.footer__links}>
                         <li>
-                            <ProjectLink href="/page/information-disclosure" className={styles.footer__link}>
+                            <a href="/about-us#requisites" className={styles.footer__link}>
                                 Ракрытие информации&nbsp;<ArrowRight fill="#ffffff" />
-                            </ProjectLink>
+                            </a>
                         </li>
                         <li>
-                            <ProjectLink href="/about-us#documents" className={styles.footer__link}>
+                            <a href="/about-us#documents" className={styles.footer__link}>
                                 Актуальные документы&nbsp;<ArrowRight fill="#ffffff" />
-                            </ProjectLink>
+                            </a>
                         </li>
                         <li>
-                            <ProjectLink href="/page/archive" className={styles.footer__link}>
+                            <a href="/about-us#documents" className={styles.footer__link}>
                                 Архив документов&nbsp;<ArrowRight fill="#ffffff" />
-                            </ProjectLink>
+                            </a>
                         </li>
                         <li>
                             <ProjectLink href="/about-us" className={styles.footer__link}>
