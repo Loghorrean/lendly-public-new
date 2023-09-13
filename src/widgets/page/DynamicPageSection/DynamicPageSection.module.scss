@@ -1,3 +1,6 @@
 .dynamic_page_section {
     padding-block: 6.5rem 3rem;
+    &__container {
+      padding-inline: 1.5rem;
+    }
 }

@@ -31,7 +31,7 @@ const QuestionsSection = () => {
                                 Если хотите быть в курсе последних
                                 новостей и проектов компании
                             </p>
-                            <ExternalLink className={styles.questions_section__card_link} href="https://t.me/lendlychat">
+                            <ExternalLink className={styles.questions_section__card_link} href="https://t.me/lendly">
                                 @lendly <ArrowRight fill="#05B768" />
                             </ExternalLink>
                         </footer>
@@ -44,7 +44,7 @@ const QuestionsSection = () => {
                             <p className={styles.questions_section__card_text}>
                                 Если у вас проблемы с личным кабинетом
                             </p>
-                            <ExternalLink className={styles.questions_section__card_link} href="https://t.me/lendly">
+                            <ExternalLink className={styles.questions_section__card_link} href="mailto:support@lendly.ru">
                                 @lendly <ArrowRight fill="#05B768" />
                             </ExternalLink>
                         </footer>

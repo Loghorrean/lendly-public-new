@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./DynamicPageSection.module.css";
+import styles from "./DynamicPageSection.module.scss";
 import PrimaryHeading from "@/src/shared/ui/typography/Heading/decorators/PrimaryHeading";
 import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
@@ -31,7 +31,9 @@ const DynamicPageSection = ({ param }: Props) => {
     return (
         <section className={styles.dynamic_page_section}>
             <Container>
-                { renderPage() }
+                <div className={styles.dynamic_page_section__container}>
+                    { renderPage() }
+                </div>
             </Container>
         </section>
     );

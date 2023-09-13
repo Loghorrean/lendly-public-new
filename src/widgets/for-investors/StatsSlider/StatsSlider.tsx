@@ -35,7 +35,7 @@ const StatsSlider = () => {
                     <ForInvestorsThirdIcon />
                     <div className={styles.stats_slider__item}>
                         <div className={styles.stats_slider__value}>
-                            { isLoading ? <Loader dark /> : `${data!.averageInterestRate.toFixed(2)} %` }
+                            { isLoading ? <Loader dark /> : `30%` }
                         </div>
                         <p className={styles.stats_slider__text}>
                             Средняя доходность от инвестиций в проекты
