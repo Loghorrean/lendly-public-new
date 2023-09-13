@@ -78,7 +78,7 @@
     flex-direction: column;
     justify-content: space-between;
     &___no_photo {
-      margin-top: 6rem;
+      //margin-top: 6rem;
       max-height: 100%;
       @include m.media("tablet") {
         margin-top: 4rem;

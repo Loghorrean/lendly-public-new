@@ -5,21 +5,19 @@ import {Heading} from "@/src/shared/ui/typography";
 import {HEADING_TYPE} from "@/src/shared/ui/typography/Heading/Heading";
 import {ProjectLink} from "@/src/shared/ui/links";
 import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
-import {BlockProps, cn, formatDate, isNotEmpty, resultIf} from "@/src/shared/utils";
-import {Post} from "@/src/entities/post/model";
+import {BlockProps, cn, formatDate, isNotEmpty, isValueEmpty, resultIf} from "@/src/shared/utils";
+import {Post, POST_SIZE} from "@/src/entities/post/model";
+import React from "react";
+import {ProjectImage} from "@/src/shared/ui/images";
 
 type Props = BlockProps<HTMLLIElement> & {
     post: Post;
     showDescription?: boolean;
 }
 
-//TODO: REFACTOR CARD, WHEN PHOTO IS RESOLVED
 const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
-    // const isWhite = () => {
-    //     return isNotEmpty(article.photo) && article.large;
-    // }
     const isWhite = () => {
-        return false;
+        return isNotEmpty(post.cover) && post.postSize === POST_SIZE.BIG;
     }
     return (
         <li
@@ -30,17 +28,17 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
                 resultIf(!isWhite(), styles.news_card___hoverable),
                 props.className
             )}
-            // style={{ backgroundImage: resultIf(isWhite(), `url("${article.photo}")`) }}
+            style={{ backgroundImage: resultIf(isWhite(), `url("${post.cover}")`) }}
         >
             <div className={styles.news_card__tag}>
                 Новости
             </div>
-            {/*{ isNotEmpty(article.photo) && !article.large && <div className={styles.news_card__photo}>*/}
-            {/*    <ProjectImage src={article.photo} alt="News photo" fill />*/}
-            {/*</div> }*/}
+            { isNotEmpty(post.cover) && post.postSize !== POST_SIZE.BIG && <div className={styles.news_card__photo}>
+                <ProjectImage src={post.cover} alt="News photo" fill />
+            </div> }
             <div className={cn(
                 styles.news_card__content,
-                // resultIf(isValueEmpty(article.photo) || (isNotEmpty(article.photo) && article.large), styles.news_card__content___no_photo)
+                resultIf(isValueEmpty(post.cover) || (isNotEmpty(post.cover) && post.postSize === POST_SIZE.BIG), styles.news_card__content___no_photo)
             )}>
                 <div className={cn(styles.news_card__main, resultIf(isNotEmpty(post.shortContent), styles.news_card__main___with_desciption))}>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.news_card__title}>
@@ -50,18 +48,11 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
                         isNotEmpty(post.shortContent) && showDescription
                         && <p
                             className={styles.news_card__description}
-                            dangerouslySetInnerHTML={{ __html: post.shortContent }}>
+                            dangerouslySetInnerHTML={{ __html: post.shortDescription }}>
                         </p>
                     }
                 </div>
                 <footer className={styles.news_card__footer}>
-                    {/*<ProjectLink href={`/blog/${post.slug}`} className={cn(*/}
-                    {/*    styles.news_card__link,*/}
-                    {/*    resultIf(isWhite(), styles.news_card__link___white)*/}
-                    {/*)}>*/}
-                    {/*    Читать статью*/}
-                    {/*    <ArrowRight fill={isWhite() ? "#ffffff" : "#05B768"} />*/}
-                    {/*</ProjectLink>*/}
                     <ProjectLink href={`/blog/${post.slug}`} className={cn(
                         styles.news_card__link,
                         resultIf(isWhite(), styles.news_card__link___white)
