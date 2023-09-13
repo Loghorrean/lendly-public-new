@@ -38,7 +38,7 @@ const StatsSlider = ({ initial = 0, ...props }: Props) => {
             />
             <StatsSlide
                 key={2}
-                stat={{ text: "годовых для инвестиций в проекты", value: `${data?.averageInterestRate.toFixed(1) ?? 0}%` }}
+                stat={{ text: "годовых для инвестиций в проекты", value: `30%` }}
                 active={activeSlide === 2}
             />
         </ul>;
