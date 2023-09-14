@@ -77,6 +77,8 @@
     & > img {
       @include m.box(4rem);
       border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
     }
     @include m.media("mobile") {
       gap: 0.5rem;

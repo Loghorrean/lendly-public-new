@@ -1,6 +1,6 @@
 "use client";
 
-import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import buildQuery from "@/src/shared/utils/functions/router/buildQuery";
 import {getQueryObject, isValueEmpty} from "@/src/shared/utils";
 import {useSearchParams} from "next/navigation";
@@ -30,9 +30,6 @@ export function usePaginationFilter<T extends Record<string, any>>({ initial, de
             return { ...defaultState, ...queryObj.filter };
         })
     );
-    useEffect(() => {
-
-    }, []);
     const handleFilter = (newFilter: T | ((prev: T) => T)) => {
         const queryFilter: T = typeof newFilter === "function" ? newFilter(filter) : newFilter;
         window.history.pushState(null, "", `?${buildQuery({ filter: queryFilter })}`);
