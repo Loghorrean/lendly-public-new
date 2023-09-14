@@ -1,27 +1,36 @@
+"use client";
+
 import styles from "./BlogAside.module.scss";
-import {ObjectValues} from "@/src/shared/utils";
-import {useState} from "react";
-import ArrowRight from "@/src/shared/ui/svg/arrows/ArrowRight";
-import {SVG_CONTAINER_SIZE} from "@/src/shared/ui/svg/SvgContainer/SvgContainer";
 import PrimaryButton from "@/src/shared/ui/buttons/decorators/PrimaryButton";
 import {PRIMARY_BUTTON_COLOR} from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButton";
-import {Button} from "@/src/shared/ui/buttons";
 import PrimaryButtonArrow from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow";
 import {
     PRIMARY_BUTTON_ARROW_COLOR
 } from "@/src/shared/ui/buttons/decorators/PrimaryButton/PrimaryButtonArrow/PrimaryButtonArrow";
-import AsLink from "@/src/shared/ui/buttons/decorators/AsLink";
 import {ProjectLink} from "@/src/shared/ui/links";
+import {usePostFilterContext} from "@/src/entities/post/context/BlogFilterContext";
+import {useCallback} from "react";
 
 const BlogAside = () => {
-    const [tags, setTags] = useState<Array<string>>([]);
-    const toggleTag = (tag: string) => {
+    const { filter, setFilter } = usePostFilterContext();
+    const { tags } = filter;
+    const toggleTag = useCallback((tag: string) => {
         if (tags.includes(tag)) {
-            setTags(prev => prev.filter(element => element !== tag));
+            setFilter(prev => {
+                return {
+                    ...prev,
+                    tags: prev.tags.filter(element => element !== tag)
+                }
+            });
             return;
         }
-        setTags(prev => [...prev, tag]);
-    }
+        setFilter(prev => {
+            return {
+                ...prev,
+                tags: [...prev.tags, tag]
+            }
+        });
+    }, [tags]);
     return (
         <aside className={styles.blog_aside}>
             <ul className={styles.blog_aside__list}>

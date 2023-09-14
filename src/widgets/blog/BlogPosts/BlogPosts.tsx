@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./BlogPosts.module.scss";
 import NewsCard from "@/src/widgets/landing/NewsCard";
 import {useMemo} from "react";
@@ -7,11 +9,13 @@ import Pagination from "@/src/shared/ui/pagination/ui/Pagination";
 import PaginationContent from "@/src/shared/ui/pagination/ui/PaginationContent";
 import DynamicPaginator from "@/src/shared/ui/pagination/ui/DynamicPaginator";
 import {isNotEmpty} from "@/src/shared/utils";
+import {usePostFilterContext} from "@/src/entities/post/context/BlogFilterContext";
 
 const BlogPosts = () => {
+    const { filter } = usePostFilterContext();
     const { page, perPage } = usePagination();
     const getPostsList
-        = useGetPostsList({ page, perPage }, { queryKey: ["blog-posts", page, perPage] });
+        = useGetPostsList({ page, perPage, filter }, { queryKey: ["blog-posts", page, perPage, filter] });
     const renderArticles = useMemo(() => {
         if (isNotEmpty(getPostsList.data)) {
             return getPostsList.data.items.map(item => <NewsCard post={item} key={item.slug} />);
