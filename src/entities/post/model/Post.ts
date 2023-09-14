@@ -5,7 +5,8 @@ export interface Post {
     readonly title: string;
     readonly shortDescription: string;
     readonly shortContent: string;
-    readonly hiddenContent?: string;
+    readonly hiddenContent?: string; // Useless stuff
+    readonly content: string;
     readonly author: string;
     readonly publishedAt?: string;
     readonly authorPosition?: string;

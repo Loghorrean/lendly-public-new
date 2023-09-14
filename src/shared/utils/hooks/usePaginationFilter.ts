@@ -3,6 +3,7 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import buildQuery from "@/src/shared/utils/functions/router/buildQuery";
 import {getQueryObject, isValueEmpty} from "@/src/shared/utils";
+import {useSearchParams} from "next/navigation";
 
 type Props<T extends Record<string, any>> = {
     initial?: T;
@@ -10,17 +11,15 @@ type Props<T extends Record<string, any>> = {
 }
 
 export function usePaginationFilter<T extends Record<string, any>>({ initial, defaultState }: Props<T> = {}): [T, Dispatch<SetStateAction<T>>] {
+    const params = useSearchParams();
     const [filter, setFilter] = useState<T>(
         initial ??
         (() => {
-            if (typeof window === "undefined") {
+            const query = params.toString();
+            if (query === "") {
                 return defaultState ?? {} as T;
             }
-            const query = window.location.href;
-            if (query.indexOf("?") === -1) {
-                return defaultState ?? {} as T;
-            }
-            const queryObj = getQueryObject<{ filter: T }>(query.slice(query.indexOf("?")));
+            const queryObj = getQueryObject<{ filter: T }>(`?${query}`);
             const filter = queryObj.filter;
             if (isValueEmpty(filter)) {
                 return defaultState ?? {} as T;
@@ -31,6 +30,9 @@ export function usePaginationFilter<T extends Record<string, any>>({ initial, de
             return { ...defaultState, ...queryObj.filter };
         })
     );
+    useEffect(() => {
+
+    }, []);
     const handleFilter = (newFilter: T | ((prev: T) => T)) => {
         const queryFilter: T = typeof newFilter === "function" ? newFilter(filter) : newFilter;
         window.history.pushState(null, "", `?${buildQuery({ filter: queryFilter })}`);

@@ -74,7 +74,7 @@
     @include typo.trimProperties;
   }
   &__content {
-    padding: 6rem 2rem 1.5rem;
+    padding: 2rem 2rem 1.5rem;
     @include m.media("tablet") {
       padding: 1.5rem;
     }
@@ -83,7 +83,6 @@
     flex-direction: column;
     justify-content: space-between;
     &___no_photo {
-      //margin-top: 6rem;
       max-height: 100%;
       @include m.media("tablet") {
         margin-top: 4rem;
