@@ -76,5 +76,6 @@
   }
   &__button {
     @include typo.buttonBigText;
+    color: var(--white-color) !important;
   }
 }
