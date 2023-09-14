@@ -30,8 +30,10 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
             )}
             style={{ backgroundImage: resultIf(isWhite(), `url("${post.cover}")`) }}
         >
-            <div className={styles.news_card__tag}>
-                Новости
+            <div className={styles.news_card__tags}>
+                { post.tags.map(tag => <div className={styles.news_card__tag} key={tag}>
+                    { tag }
+                </div>) }
             </div>
             { isNotEmpty(post.cover) && post.postSize !== POST_SIZE.BIG && <div className={styles.news_card__photo}>
                 <ProjectImage src={post.cover} alt="News photo" fill />
@@ -45,7 +47,7 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
                         { post.title }
                     </Heading>
                     {
-                        isNotEmpty(post.shortContent) && showDescription
+                        isNotEmpty(post.shortDescription) && showDescription
                         && <p
                             className={styles.news_card__description}
                             dangerouslySetInnerHTML={{ __html: post.shortDescription }}>

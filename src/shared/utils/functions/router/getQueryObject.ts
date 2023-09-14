@@ -43,11 +43,11 @@ export function getQueryObject<T extends QueryObject = object>(query: string): T
                 }
                 if (isLast) {
                     if (isArray) {
-                        prev[cur].push(isDate ? dropIsoTimezone(paramValue) : paramValue);
+                        prev[cur].push(isDate ? dropIsoTimezone(decodeURIComponent(paramValue)) : decodeURIComponent(paramValue));
                     } else if (isDate) {
-                        prev[cur] = dropIsoTimezone(paramValue);
+                        prev[cur] = dropIsoTimezone(decodeURIComponent(paramValue));
                     } else {
-                        prev[cur] = paramValue;
+                        prev[cur] = decodeURIComponent(paramValue);
                     }
                 }
                 return prev[cur];

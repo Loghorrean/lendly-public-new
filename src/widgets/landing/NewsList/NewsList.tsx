@@ -6,7 +6,7 @@ import Loader from "@/src/shared/ui/loaders/Loader";
 
 const NewsList = ({ ...props }: BlockProps<HTMLUListElement>) => {
     const getPostsList
-        = useGetPostsList({ page: 1, perPage: 4 }, { queryKey: ["short-news"] });
+        = useGetPostsList({ page: 1, perPage: 4, filter: { tags: [], title: "" } }, { queryKey: ["short-news"] });
     if (getPostsList.isLoading) {
         return <Loader dark />;
     }

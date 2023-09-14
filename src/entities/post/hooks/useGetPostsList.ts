@@ -1,11 +1,12 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import {createPostProvider} from "@/src/entities/post/api";
 import {Collection} from "@/src/shared/models/common/Collection";
-import {Post} from "@/src/entities/post/model";
+import {Post, PostFilter} from "@/src/entities/post/model";
 
 type GetPostsListInput = {
     page: number;
     perPage: number;
+    filter: PostFilter;
 }
 
 export const useGetPostsList = (input: GetPostsListInput, options?: Omit<UseQueryOptions<Collection<Post>>, "queryFn">) => {
@@ -13,8 +14,8 @@ export const useGetPostsList = (input: GetPostsListInput, options?: Omit<UseQuer
         ...options,
         queryFn: async () => {
             const provider = createPostProvider();
-            return provider.getList(input.page, input.perPage);
+            return provider.getList(input.page, input.perPage, input.filter);
         },
-        queryKey: options?.queryKey ?? ["posts-list"]
+        queryKey: options?.queryKey ?? ["posts-list", input.page, input.perPage, input.filter],
     })
 }

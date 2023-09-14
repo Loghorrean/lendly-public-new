@@ -8,6 +8,7 @@ export * from "./useHandleOutsideClick";
 export * from "./useLatest";
 export * from "./useMountAnimation";
 export * from "./useOneTimeAction";
+export * from "./usePaginationFilter";
 export * from "./usePrevious";
 export * from "./useSetComplexObject";
 export * from "./useToggle";

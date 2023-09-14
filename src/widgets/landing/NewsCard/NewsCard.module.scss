@@ -48,14 +48,19 @@
       flex-grow: 1;
     }
   }
-  &__tag {
+  &__tags {
     position: absolute;
     top: 2rem;
     left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     @include m.media("tablet") {
       top: 1.5rem;
       left: 1.5rem;
     }
+  }
+  &__tag {
     z-index: 15;
     background-color: var(--light-theme-gray-color);
     color: var(--font-dark-color);
