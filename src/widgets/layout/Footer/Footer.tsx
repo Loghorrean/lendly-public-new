@@ -30,12 +30,12 @@ const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="/about-us#documents" className={styles.footer__link}>
+                            <a href="/about-us?tab=ACTUAL#documents" className={styles.footer__link}>
                                 Актуальные документы&nbsp;<ArrowRight fill="#ffffff" />
                             </a>
                         </li>
                         <li>
-                            <a href="/about-us#documents" className={styles.footer__link}>
+                            <a href="/about-us?tab=ARCHIVE#documents" className={styles.footer__link}>
                                 Архив документов&nbsp;<ArrowRight fill="#ffffff" />
                             </a>
                         </li>

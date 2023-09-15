@@ -90,10 +90,7 @@ const QuestionThemesList = () => {
                     </ExternalLink>
                 </PrimaryButton>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.WHITE} arrow wide>
-                    <ExternalLink
-                        href="https://t.me/lendlychat"
-                        className={styles.question_themes_list__more_button}
-                    >
+                    <ExternalLink className={styles.question_themes_list__more_button} href="https://forum.lendly.ru">
                         Обсудить на форуме Lendly
                         <PrimaryButtonArrow color={PRIMARY_BUTTON_ARROW_COLOR.GRAY} />
                     </ExternalLink>

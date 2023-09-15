@@ -1,9 +1,10 @@
 import styles from "./DocumentsSection.module.scss";
 import {Container} from "@/src/shared/ui/layout";
-import {ObjectValues} from "@/src/shared/utils";
+import {isValueEmpty, ObjectValues} from "@/src/shared/utils";
 import {ReactElement, useState} from "react";
 import ActualDocuments from "@/src/widgets/about-us/ActualDocuments";
 import {LEGAL_DOCUMENT_TYPE} from "@/src/entities/legal-document/model";
+import {useSearchParams} from "next/navigation";
 
 const DOCUMENTS_TAB = {
     ACTUAL: "ACTUAL",
@@ -18,7 +19,17 @@ const documentsMap: Record<DocumentsTab, ReactElement> = {
 };
 
 const DocumentsSection = () => {
-    const [currentTab, setCurrentTab] = useState<DocumentsTab>(DOCUMENTS_TAB.ACTUAL);
+    const searchParams = useSearchParams();
+    const [currentTab, setCurrentTab] = useState<DocumentsTab>(() => {
+        const tab = searchParams.get("tab");
+        if (isValueEmpty(tab)) {
+            return DOCUMENTS_TAB.ACTUAL;
+        }
+        if (Object.keys(DOCUMENTS_TAB).includes(tab)) {
+            return tab as DocumentsTab;
+        }
+        return DOCUMENTS_TAB.ACTUAL
+    });
     return (
         <section className={styles.documents_section} id="documents">
             <Container>
