@@ -4,10 +4,12 @@ import {useGetFinishedProjectsList} from "@/src/entities/project/hooks";
 import {useMemo} from "react";
 import {isNotEmpty} from "@/src/shared/utils";
 import Loader from "@/src/shared/ui/loaders/Loader";
+import {PROJECT_TYPE} from "@/src/entities/project/model";
 
 const ProjectsHorizontalList = () => {
     const getFinishedProjects = useGetFinishedProjectsList(
         3,
+        PROJECT_TYPE.PROJECT,
         {
             queryKey: ["finished-horizontal-projects"]
         }

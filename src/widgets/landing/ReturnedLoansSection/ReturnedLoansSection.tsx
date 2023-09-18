@@ -15,9 +15,10 @@ import GreenText from "@/src/shared/ui/typography/GreenText";
 import {useGetFinishedProjectsList} from "@/src/entities/project/hooks";
 import {useMemo} from "react";
 import {isNotEmpty} from "@/src/shared/utils";
+import {useGetPublicProjectsList} from "@/src/entities/project/hooks/useGetPublicProjectsList";
 
 const ReturnedLoansSection = () => {
-    const getFinishedProjects = useGetFinishedProjectsList(2);
+    const getFinishedProjects = useGetPublicProjectsList(2);
     const renderCards = useMemo(() => {
         if (isNotEmpty(getFinishedProjects.data)) {
             return getFinishedProjects.data.map(project => {
