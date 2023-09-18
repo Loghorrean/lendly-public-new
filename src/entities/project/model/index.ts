@@ -1,2 +1,4 @@
+export * from "./enum";
+
 export * from "./FinishedProject";
-export * from "./ProjectStatus";
+export * from "./PublicProject";

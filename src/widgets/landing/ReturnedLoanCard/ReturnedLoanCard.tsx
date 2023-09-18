@@ -2,12 +2,12 @@ import styles from "./ReturnedLoanCard.module.scss";
 import {ProjectImage} from "@/src/shared/ui/images";
 import ProgressBar from "@/src/shared/ui/utils/ProgressBar";
 import Money from "@/src/shared/ui/utils/Money";
-import {FinishedProject} from "@/src/entities/project/model";
+import {PublicProject} from "@/src/entities/project/model";
 import {hexIdToDec, isValueEmpty} from "@/src/shared/utils";
 import placeholderImage from "@/public/images/placeholder-image.png";
 
 type Props = {
-    project: FinishedProject;
+    project: PublicProject;
 }
 
 const ReturnedLoanCard = ({ project }: Props) => {
@@ -22,7 +22,7 @@ const ReturnedLoanCard = ({ project }: Props) => {
             <div className={styles.returned_loan_card__container}>
                 <div className={styles.returned_loan_card__image_container}>
                     <div className={styles.returned_loan_card__percentage}>
-                        {investedPercent()}%
+                        {project.ltv}%
                         <span className={styles.returned_loan_card__ltv}>LTV</span>
                     </div>
                     <ProjectImage src={project.photo ?? placeholderImage} alt="Project image" fill className={styles.returned_loan_card__image} />
