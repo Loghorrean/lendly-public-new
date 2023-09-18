@@ -1,6 +1,14 @@
+@use "src/shared/styles/mixins" as m;
+
 .dynamic_page_section {
     padding-block: 6.5rem 3rem;
     &__container {
-      padding-inline: 1.5rem;
+      padding-inline: 12.5%;
+      @include m.media("tablet") {
+        padding-inline: 10%;
+      }
+      @include m.media("mobile") {
+        padding-inline: 5%;
+      }
     }
 }
