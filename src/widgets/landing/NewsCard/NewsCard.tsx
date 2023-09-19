@@ -38,10 +38,13 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
             { isNotEmpty(post.cover) && post.postSize !== POST_SIZE.BIG && <div className={styles.news_card__photo}>
                 <ProjectImage src={post.cover} alt="News photo" fill />
             </div> }
-            <div className={cn(
-                styles.news_card__content,
-                resultIf(isValueEmpty(post.cover) || (isNotEmpty(post.cover) && post.postSize === POST_SIZE.BIG), styles.news_card__content___no_photo)
-            )}>
+            <div
+                className={cn(
+                    styles.news_card__content,
+                    resultIf(isValueEmpty(post.cover) || (isNotEmpty(post.cover) && post.postSize === POST_SIZE.BIG), styles.news_card__content___no_photo),
+                    resultIf(isValueEmpty(post.cover) && post.tags.length !== 0, styles.news_card__content___empty)
+                )}
+            >
                 <div className={cn(styles.news_card__main, resultIf(isNotEmpty(post.shortContent), styles.news_card__main___with_desciption))}>
                     <Heading headingType={HEADING_TYPE.H3} className={styles.news_card__title}>
                         { post.title }
