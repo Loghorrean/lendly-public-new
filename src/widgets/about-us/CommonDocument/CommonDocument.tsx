@@ -13,8 +13,12 @@ type Props = {
 }
 
 const CommonDocument = ({ document }: Props) => {
+    console.log(document);
     const getLink = () => {
         const documentNameIndex = document.url.indexOf("/page");
+        if (documentNameIndex === -1) {
+            return document.url;
+        }
         const origin = typeof window !== "undefined" ? window.location.origin : "";
         return `${origin}${document.url.slice(documentNameIndex)}`;
     }
