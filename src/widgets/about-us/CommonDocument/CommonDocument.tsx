@@ -13,7 +13,6 @@ type Props = {
 }
 
 const CommonDocument = ({ document }: Props) => {
-    console.log(document);
     const getLink = () => {
         const documentNameIndex = document.url.indexOf("/page");
         if (documentNameIndex === -1) {
