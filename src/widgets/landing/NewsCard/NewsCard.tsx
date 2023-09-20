@@ -26,6 +26,7 @@ const NewsCard = ({ post, showDescription = true, ...props }: Props) => {
                 styles.news_card,
                 resultIf(isWhite(), styles.news_card___white),
                 resultIf(!isWhite(), styles.news_card___hoverable),
+                resultIf(post.postSize === POST_SIZE.BIG, styles.news_card___big),
                 props.className
             )}
             style={{ backgroundImage: resultIf(isWhite(), `url("${post.cover}")`) }}

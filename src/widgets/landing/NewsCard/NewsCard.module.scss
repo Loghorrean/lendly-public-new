@@ -11,16 +11,16 @@
   border: 1px solid var(--stroke-on-white-color);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 32.5rem;
-  @include m.media("tablet") {
-    min-height: 24.5rem;
-  }
+  //min-height: 32.5rem;
+  //@include m.media("tablet") {
+  //  min-height: 24.5rem;
+  //}
   &:hover {
     & .news_card__footer {
       border-color: var(--primary-green-color);
     }
   }
-  &:nth-child(3n) {
+  &___big {
     max-width: 56.8125rem;
     grid-column: 1 / -1;
   }
