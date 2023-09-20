@@ -36,13 +36,16 @@
   }
   &__photo {
     border-radius: 0.5rem 0.5rem 1rem 1rem;
-    max-height: 50%;
+    max-height: calc(min(50%, 16.25rem));
     aspect-ratio: 360 / 260;
     width: 100%;
     position: relative;
     & > img {
       border-radius: inherit;
       aspect-ratio: 360 / 260;
+      object-fit: cover;
+      object-position: center;
+      max-height: 16.25rem;
     }
     @include m.media("tablet", "min") {
       flex-grow: 1;
