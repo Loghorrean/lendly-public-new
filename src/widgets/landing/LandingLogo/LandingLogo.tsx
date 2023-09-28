@@ -1,6 +1,6 @@
 "use client";
 
-import landingLogoImage from "@/public/images/landing/landing-logo.png";
+import landingLogoImage from "@/public/images/landing/lendly_logo.svg";
 import {useEffect, useRef, useState} from "react";
 import {ProjectImage} from "@/src/shared/ui/images";
 import styles from "./LandingLogo.module.scss";
